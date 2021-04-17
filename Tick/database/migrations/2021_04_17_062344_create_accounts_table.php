@@ -17,7 +17,7 @@ class CreateAccountsTable extends Migration
             $table->id('account_id');
             $table->integer('theme_id')->unsigned()->default(1);
             $table->integer('level_id')->unsigned()->default(1);
-            $table->string('header');
+            $table->string('header')->nullable();
             $table->integer('points_earned')->default(0);
             $table->integer('experience')->default(0);
             $table->timestamps();

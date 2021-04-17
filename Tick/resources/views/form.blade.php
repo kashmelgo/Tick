@@ -37,20 +37,14 @@
                             <div class="card-header font-weight-bold">{{ __('Create Account (2/2)') }}</div>
             
                             <div class="card-body">
-                                <form method="POST" action="/form">
+                                <form method="POST" action="/form"  enctype="multipart/form-data">
                                     @csrf
             
                                     <div class="form-group row">
-                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+                                        <label for="fname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
             
                                         <div class="col-md-6">
-                                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"  placeholder="e.g. John" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-            
-                                            @error('name')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
+                                            <input id="fname" type="text" class="form-control"  placeholder="e.g. John" name="fname" required autocomplete="fname" autofocus>
                                         </div>
                                     </div>
             
@@ -58,13 +52,7 @@
                                         <label for="lname" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
             
                                         <div class="col-md-6">
-                                            <input id="lname" type="text" class="form-control @error('lname') is-invalid @enderror"  placeholder="e.g. Doe" name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus>
-            
-                                            @error('lname')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
+                                            <input id="lname" type="text" class="form-control"  placeholder="e.g. Doe" name="lname" required autocomplete="lname" autofocus>
                                         </div>
                                     </div>
             
@@ -89,13 +77,13 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="edu-attainment" class="col-md-4 col-form-label text-md-right">{{ __('Educational Attainment') }}</label>
+                                        <label for="attainment" class="col-md-4 col-form-label text-md-right">{{ __('Educational Attainment') }}</label>
             
                                         <div class="col-md-6 ">
-                                            <select id="edu-attainment" class="form-control w-75" name="edu-attainment" required>
+                                            <select id="attainment" class="form-control w-75" name="attainment" required>
                                                 <option value="" hidden>Select . . .</option>
-                                                <option value="Male">Highschool</option>
-                                                <option value="Female">College</option>
+                                                <option value="HighSchool">Highschool</option>
+                                                <option value="College">College</option>
                                             </select>
                                         </div>
                                     </div>
@@ -109,10 +97,10 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="profile-picture" class="col-md-4 col-form-label text-md-right">{{ __('Profile Picture') }}</label>
+                                        <label for="profile" class="col-md-4 col-form-label text-md-right">{{ __('Profile Picture') }}</label>
             
                                         <div class="col-md-6">
-                                            <input id="profile-picture" type="file" class="form-control" name="profile-picture">
+                                            <input id="profile" type="file" class="form-control" name="profile">
                                         </div>
                                     </div>
 
@@ -159,7 +147,7 @@
                                             <label class="col-md-4 col-form-label text-md-right">{{ __('Postal Code') }}</label>
             
                                             <div class="col-md-6">
-                                                <input id="postal-code" type="number" class="form-control w-50" name="postal-code"  required autofocus>
+                                                <input id="postal" type="number" class="form-control w-50" name="postal"  required autofocus>
                                             </div>
                                         </div>
                                     </div>
