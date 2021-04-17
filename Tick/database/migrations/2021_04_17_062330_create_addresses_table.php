@@ -19,7 +19,7 @@ class CreateAddressesTable extends Migration
             $table->string('barangay');
             $table->string('town');
             $table->string('province');
-            $table->integer('postal_code');
+            $table->bigInteger('postal_code');
             $table->timestamps();
         });
     }
