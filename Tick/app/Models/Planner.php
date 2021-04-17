@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Planner extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'planner_id';
+    public function plan()
+    {
+        return $this->hasMany('App\Models\Plan', 'plan_id', 'plan_id');
+    }
 }
