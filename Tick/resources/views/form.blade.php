@@ -104,7 +104,7 @@
                                         <label for="contact" class="col-md-4 col-form-label text-md-right">{{ __('Contact Number') }}</label>
             
                                         <div class="col-md-6">
-                                            <input id="contact" type="number" class="form-control" name="email" placeholder="09XXXXXXXXX" required>
+                                            <input id="contact" type="number" class="form-control" name="contact" placeholder="09XXXXXXXXX" required>
                                         </div>
                                     </div>
 
