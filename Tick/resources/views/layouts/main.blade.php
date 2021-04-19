@@ -43,24 +43,59 @@
                         <div class="col-4 bg-dark rounded-left">
                             <p class="text-light">Level</p>
                         </div>
-                        <div class="col-8 rounded-right" style="background-color: rgb(87, 87, 87)">
+                        <div class="col-8 rounded-right bg-secondary">
                             <p class="text-light">Experience</p>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <a href="/planner" class="text-dark text-decoration-none ">
-                    <div class="container to-planner pt-3 pb-1 rounded shadow-sm">
-                        <h5><strong>Planner</strong></h5>
-                    </div>
-                </a>
-                <a href="/todolist" class="text-dark text-decoration-none ">
-                    <div class="container to-todolist pt-3 pb-1 rounded shadow-sm mt-2">
-                        <h5><strong>To-Do List</strong></h5>
-                    </div>
-                </a>
+                <div class="container mt-3">
+                    <p class="font-weight-bold">Overview</p>
+                    <a href="/home" class="text-secondary text-decoration-none p-0">
+                        <div class="container to-planner px-4 py-2 rounded shadow-sm">
+                            <span class="align-middle">Dashboard</span>
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="container mt-3">
+                    <p class="font-weight-bold">Planner</p>
+                    <a href="{{ route('planner') }}" class="text-secondary text-decoration-none p-0">
+                        <div class="container to-planner px-4 py-2 rounded shadow-sm">
+                            <span class="align-middle">All</span>
+                        </div>
+                    </a>
+                    <a href="{{ route('planner-weekly') }}" class="text-secondary text-decoration-none p-0">
+                        <div class="container to-planner px-4 py-2 rounded shadow-sm">
+                            <span class="align-middle">Weekly</span>
+                        </div>
+                    </a>
+                    <a href="{{ route('planner-monthly') }}" class="text-secondary text-decoration-none p-0">
+                        <div class="container to-planner px-4 py-2 rounded shadow-sm">
+                            <span class="align-middle">Monthly</span>
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="container mt-3">
+                    <p class="font-weight-bold">To-Do List</p>
+                    <a href="{{ route('todolist') }}" class="text-secondary text-decoration-none p-0">
+                        <div class="container to-planner px-4 py-2 rounded shadow-sm">
+                            <span class="align-middle">All</span>
+                        </div>
+                    </a>
+                    <a href="{{ route('todolist-weekly') }}" class="text-secondary text-decoration-none p-0">
+                        <div class="container to-planner px-4 py-2 rounded shadow-sm">
+                            <span class="align-middle">Weekly</span>
+                        </div>
+                    </a>
+                    <a href="{{ route('todolist-monthly') }}" class="text-secondary text-decoration-none p-0">
+                        <div class="container to-planner px-4 py-2 rounded shadow-sm">
+                            <span class="align-middle">Monthly</span>
+                        </div>
+                    </a>
+                </div>
             </div>
-            
         </div>
         <div class="col-md-10 ">
             @yield('content') <!--Insert Planner and To Do list View Here!-->
