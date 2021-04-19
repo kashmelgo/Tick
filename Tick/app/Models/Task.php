@@ -14,4 +14,5 @@ class Task extends Model
     {
         return $this->belongsTo('App\Models\ToDoList', 'task_id', 'task_id');
     }
+    protected $table = 'task';
 }

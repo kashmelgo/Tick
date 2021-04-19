@@ -1,0 +1,18 @@
+body{
+    background-color: #f4f4f4;
+}
+
+#tasklist{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 1px 1px;
+    width: 30%;
+    transform: translateX(25%);
+}
+
+#circle-tick{
+    color: blackphp;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 10px;
+}

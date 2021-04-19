@@ -23,3 +23,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/form', [App\Http\Controllers\UserController::class, 'index'])->name('form');
 Route::post('/form', [App\Http\Controllers\UserController::class, 'store'])->name('form');
+Route::get('/tasks', 'App\Http\Controllers\TaskController@index');
