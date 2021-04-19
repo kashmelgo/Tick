@@ -16,3 +16,28 @@ body{
     width: 1.5rem;
     margin-right: 10px;
 }
+.logout-logo{
+    color: #fff;
+}
+
+.logout-logo:hover{
+    color: red;
+}
+
+.to-planner:hover{
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+.to-todolist:hover{
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    div {
+      display: none;
+    }
+  }

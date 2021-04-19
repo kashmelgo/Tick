@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="container-fluid p-5 text-center">
-        <p>Dashboard</p>
+        <p>To-Do List Monthly</p>
     </div>
 @endsection
