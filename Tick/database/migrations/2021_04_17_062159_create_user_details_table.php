@@ -18,8 +18,8 @@ class CreateUserDetailsTable extends Migration
             $table->integer('address_id')->unsigned();
             $table->string('fname');
             $table->string('lname');
-            $table->string('image');
-            $table->integer('contact_num');
+            $table->string('image')->nullable();
+            $table->bigInteger('contact_num');
             $table->date('birthdate');
             $table->enum('gender',['Male','Female']);
             $table->enum('educational_attainment',['Highschool','College']);

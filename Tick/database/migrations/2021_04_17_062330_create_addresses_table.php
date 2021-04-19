@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRewardTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateRewardTable extends Migration
      */
     public function up()
     {
-        Schema::create('reward', function (Blueprint $table) {
-            $table->id('reward_id');
-            $table->integer('task_id')->unsigned();
-            $table->enum('task_type',['Assignment','Project']);
-            $table->integer('points_earned');
+        Schema::create('addresses', function (Blueprint $table) {
+            $table->id('address_id');
+            $table->string('street');
+            $table->string('barangay');
+            $table->string('town');
+            $table->string('province');
+            $table->bigInteger('postal_code');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateRewardTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reward');
+        Schema::dropIfExists('addresses');
     }
 }
