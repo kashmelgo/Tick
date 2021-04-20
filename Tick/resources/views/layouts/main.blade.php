@@ -24,8 +24,8 @@
 <body>
     <div class="container-fluid row m-0 p-0">
         <div class="col-md-2 row vh-100 border-right shadow-sm p-0">
-            <div class="col-lg-2 bg-dark d-flex align-items-end">
-                <div class="container m-2 p-0">
+            <div class="col-lg-2 bg-dark d-flex align-items-end p-0">
+                <div class="container w-50 mx-auto">
                     <a class="logout" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
