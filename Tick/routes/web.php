@@ -31,3 +31,5 @@ Route::get('/planner-monthly', [App\Http\Controllers\PlannerController::class, '
 Route::get('/todolist', [App\Http\Controllers\ToDoListController::class, 'index'])->name('todolist');
 Route::get('/todolist-weekly', [App\Http\Controllers\ToDoListController::class, 'weekly'])->name('todolist-weekly');
 Route::get('/todolist-monthly', [App\Http\Controllers\ToDoListController::class, 'monthly'])->name('todolist-monthly');
+
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');

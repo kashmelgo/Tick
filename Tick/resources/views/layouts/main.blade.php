@@ -25,16 +25,23 @@
     <div class="container-fluid row m-0 p-0">
         <div class="col-md-2 row vh-100 border-right shadow-sm p-0">
             <div class="col-lg-2 bg-dark d-flex align-items-end p-0">
-                <div class="container w-50 mx-auto">
-                    <a class="logout" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt logout-logo"></i>
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
+                <div class="container d-flex flex-column m-0 p-0">
+                    <div class="container w-50 mx-auto my-2">
+                        <a href="{{ route('profile') }}">
+                            <i class="far fa-user-circle profile-button"></i>
+                        </a>
+                    </div>
+                    <div class="container w-50 mx-auto my-1">
+                        <a class="logout" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            <i class="fas fa-sign-out-alt logout-logo"></i>
+                        </a>
+    
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-10 p-2 m-0">

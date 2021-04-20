@@ -7,6 +7,15 @@
     color: red;
 }
 
+.profile-button{
+    color: #fff;
+    font-size: .9vw;
+}
+
+.profile-button:hover{
+    color: greenyellow;
+}
+
 .to-planner:hover{
     background-color: #3a3a3a;
     color: #fff;
