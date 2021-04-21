@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Models\Task;
+use App\Models\User;
+use App\Models\Todolist;
+use League\CommonMark\Extension\TaskList\TaskListExtension;
 
 class ToDoListController extends Controller
 {
@@ -13,7 +19,10 @@ class ToDoListController extends Controller
      */
     public function index()
     {
-        return view('todolist');
+        $lists = Todolist::where('student_id', Auth::user()->id)->get();
+        $tasks = Task::all();
+        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+
     }
     public function weekly()
     {
@@ -24,25 +33,53 @@ class ToDoListController extends Controller
         return view('todolist-monthly');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function showaddList(){
+
+        return view ('todolist-add');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function showaddTask($id){
+
+        $task_id = $id;
+        return view ('todolist-add-task', compact('task_id'));
+    }
+    public function createTask(Request $request){
+        $lists = Todolist::where('student_id', Auth::user()->id)->get();
+
+        $task = new Task;
+
+        $task->task_id = $request->task_id;
+        $task->task = $request->task;
+        $task->due_date = $request->due_date;
+        $task->time = $request->time;
+        $task->task_type = $request->task_type;
+        $task->subject = $request->subject;
+        $task->date_finished = null;
+        $task->task_points = 50; //temporary sksksks
+        $task->save();
+
+        $tasks = Task::all();
+        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+    }
+
+    public function createList(Request $request){
+
+
+    $id = Auth::user()->id;
+
+    $list = new Todolist;
+    $list->list_name = $request->list_name;
+    $list->student_id = $id;
+    $value= DB::table('to_do_lists')->get()->count();
+    $list->task_id=$value+1;
+    $list->list_id = $list->task_id;
+    $list->save();
+
+    $lists = Todolist::where('student_id', Auth::user()->id)->get();
+    $tasks = Task::all();
+    return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+
+
     }
 
     /**
@@ -51,9 +88,12 @@ class ToDoListController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showList($id)
     {
-        //
+        $list = Todolist::where('student_id', $id)->get();
+
+        return view('todolist', compact ('list'));
+
     }
 
     /**

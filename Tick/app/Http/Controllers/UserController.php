@@ -40,7 +40,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $id = Auth::user()->id;
 
         $details = new UserDetails;
@@ -77,7 +77,7 @@ class UserController extends Controller
 
         $timestamp = DB::table('user_details')->where('user_detail_id', $id)->value('created_at');
         DB::update('update users set user_detail_id = ?, account_id = ?, created_at = ?, updated_at = ? where id = ?', [$id,$id,$timestamp,$timestamp,$id]);
-        
+
         return redirect('/home');
     }
 

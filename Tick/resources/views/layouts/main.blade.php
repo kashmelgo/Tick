@@ -37,7 +37,7 @@
                                             document.getElementById('logout-form').submit();">
                             <i class="fas fa-sign-out-alt logout-logo"></i>
                         </a>
-    
+
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
@@ -86,7 +86,7 @@
                 <hr>
                 <div class="container mt-3">
                     <p class="font-weight-bold">To-Do List</p>
-                    <a href="{{ route('todolist') }}" class="text-secondary text-decoration-none p-0">
+                    <a href="{{ route('todolist')}}" class="text-secondary text-decoration-none p-0">
                         <div class="container to-planner px-4 py-2 rounded shadow-sm">
                             <span class="align-middle">All</span>
                         </div>
@@ -110,3 +110,4 @@
     </div>
 </body>
 </html>
+
