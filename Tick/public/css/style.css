@@ -16,6 +16,15 @@ body{
     width: 1.5rem;
     margin-right: 10px;
 }
+
+.card-bottom{
+    height: 35vh;
+}
+
+.card-top{
+    height: 21vh;
+}
+
 .logout-logo{
     color: #fff;
     font-size: .8vw
