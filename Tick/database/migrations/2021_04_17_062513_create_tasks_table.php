@@ -22,7 +22,7 @@ class CreateTasksTable extends Migration
             $table->enum('task_type',['Assignment','Project']);
             $table->string('subject');
             $table->enum('status',['done','unfinished','overdue'])->default('unfinished');
-            $table->date('date_finished')->default(NULL);
+            $table->date('date_finished')->nullable();
             $table->integer('task_points');
             $table->timestamps();
         });

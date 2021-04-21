@@ -18,6 +18,7 @@ body{
 }
 .logout-logo{
     color: #fff;
+    font-size: .8vw
 }
 
 .logout-logo:hover{
