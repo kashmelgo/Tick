@@ -79,7 +79,6 @@ class UserController extends Controller
         DB::update('update users set user_detail_id = ?, account_id = ?, created_at = ?, updated_at = ? where id = ?', [$id,$id,$timestamp,$timestamp,$id]);
         
         return redirect('/home');
-        
     }
 
     /**

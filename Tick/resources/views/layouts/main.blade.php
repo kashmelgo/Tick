@@ -104,7 +104,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-10 ">
+        <div class="col-md-10 pl-5 ml-2">
             @yield('content') <!--Insert Planner and To Do list View Here!-->
         </div>
     </div>

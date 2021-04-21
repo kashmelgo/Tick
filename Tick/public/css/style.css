@@ -1,3 +1,11 @@
+.card-bottom{
+    height: 35vh;
+}
+
+.card-top{
+    height: 21vh;
+}
+
 .logout-logo{
     color: #fff;
     font-size: .8vw;
@@ -7,6 +15,10 @@
     color: red;
 }
 
+.profile-bottom{
+    height: 65%;
+}
+
 .profile-button{
     color: #fff;
     font-size: .9vw;
@@ -14,6 +26,23 @@
 
 .profile-button:hover{
     color: greenyellow;
+}
+
+.profile-head{
+    height: 35%;
+}
+
+.profile-info{
+    font-size: 1vw;
+}
+
+.profile-name{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.profile-picture{
+    font-size: 12vw;
 }
 
 .to-planner:hover{
