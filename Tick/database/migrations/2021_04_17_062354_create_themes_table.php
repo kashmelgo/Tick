@@ -15,6 +15,7 @@ class CreateThemesTable extends Migration
     {
         Schema::create('themes', function (Blueprint $table) {
             $table->id('theme_id');
+            $table->string('theme_name');
             $table->string('interface_color');
             $table->string('font_color');
             $table->integer('cost');
