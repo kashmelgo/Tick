@@ -84,9 +84,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('user_details')->where('user_detail_id', Auth::user()->id)->update(['fname' => $request->fname,'lname' => $request->lname,
+        'birthdate' => $request->birthdate,'gender' => $request->gender,'educational_attainment' => $request->attainment,'contact_num' => $request->contact]);
+        DB::table('addresses')->where('address_id', Auth::user()->id)->update(['street' => $request->street,'barangay' => $request->barangay,
+        'town' => $request->town,'province' => $request->province,'postal_code' => $request->postal ]);
+        return redirect()->action([ProfileController::class, 'index']);
     }
 
     /**

@@ -44,7 +44,7 @@
                                         <label for="fname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
             
                                         <div class="col-md-6">
-                                            <input id="fname" type="text" class="form-control"  placeholder="e.g. John" name="fname" required autocomplete="fname" autofocus>
+                                            <input id="fname" type="text" class="form-control text-capitalize"  placeholder="e.g. John" name="fname" required autocomplete="fname" autofocus>
                                         </div>
                                     </div>
             
@@ -52,7 +52,7 @@
                                         <label for="lname" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
             
                                         <div class="col-md-6">
-                                            <input id="lname" type="text" class="form-control"  placeholder="e.g. Doe" name="lname" required autocomplete="lname" autofocus>
+                                            <input id="lname" type="text" class="form-control text-capitalize"  placeholder="e.g. Doe" name="lname" required autocomplete="lname" autofocus>
                                         </div>
                                     </div>
             
@@ -115,7 +115,7 @@
                                             <label class="col-md-4 col-form-label text-md-right">{{ __('Street') }}</label>
             
                                             <div class="col-md-6">
-                                                <input id="street" type="text" class="form-control" name="street"  required autofocus>
+                                                <input id="street" type="text" class="form-control text-capitalize" name="street"  required autofocus>
                                             </div>
                                         </div>
 
@@ -123,7 +123,7 @@
                                             <label class="col-md-4 col-form-label text-md-right">{{ __('Barangay') }}</label>
             
                                             <div class="col-md-6">
-                                                <input id="barangay" type="text" class="form-control" name="barangay"  required autofocus>
+                                                <input id="barangay" type="text" class="form-control text-capitalize" name="barangay"  required autofocus>
                                             </div>
                                         </div>
 
@@ -131,7 +131,7 @@
                                             <label class="col-md-4 col-form-label text-md-right">{{ __('Town/City') }}</label>
             
                                             <div class="col-md-6">
-                                                <input id="town" type="text" class="form-control" name="town"  required autofocus>
+                                                <input id="town" type="text" class="form-control text-capitalize" name="town"  required autofocus>
                                             </div>
                                         </div>
 
@@ -139,7 +139,7 @@
                                             <label class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
             
                                             <div class="col-md-6">
-                                                <input id="province" type="text" class="form-control" name="province"  required autofocus>
+                                                <input id="province" type="text" class="form-control text-capitalize" name="province"  required autofocus>
                                             </div>
                                         </div>
 
