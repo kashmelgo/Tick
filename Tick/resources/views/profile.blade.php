@@ -164,30 +164,30 @@
                 </div>
             <div class="row mx-5 mb-3 profile-bottom d-flex justify-content-between">
                 <div class="col-4 p-1">
-                    <div class="container bg-secondary h-100 card p-2 text-light text-center">
-                        <div class="container bg-dark card mb-2 h-50 p-3 text-light text-center">
+                    <div class="container bg-light h-100 card p-2 text-light text-center shadow">
+                        <div class="container bg-light shadow card mb-2 h-50 p-3 text-dark text-center">
                             Task Statistics
                         </div>
-                        <div class="container bg-dark card p-3 h-50 text-light text-center">
+                        <div class="container bg-light shadow card p-3 h-50 text-dark text-center">
                             Planner records
                         </div>
                     </div>
                 </div>
                 <div class="col-4 mt-1">
-                    <div class="container bg-secondary card-top card mb-3 p-3 text-light text-center">
+                    <div class="container bg-light card-top card mb-3 p-3 text-dark shadow text-center">
                         Level and Experience
                     </div>
-                    <div class="container bg-secondary card-bottom card p-2 text-light text-center">
-                            <div class="container bg-dark card mb-2 h-75 p-3 text-light text-center">
+                    <div class="container bg-light shadow card-bottom card p-2 text-light text-center">
+                            <div class="container bg-light card mb-2 h-75 p-3 text-dark shadow text-center">
                                 Theme Used
                             </div>
-                            <div class="container bg-secondary p-0 card h-25 text-light text-center">
-                                <button class="btn btn-dark w-100 h-100">Theme Shop</button>
+                            <div class="container bg-light shadow p-0 card h-25 text-dark text-center">
+                                <button class="btn btn-light shadow w-100 h-100">Theme Shop</button>
                             </div>
                     </div>
                 </div>
                 <div class="col-4 p-1">
-                    <div class="container bg-secondary h-100 card p-3 text-light text-center">
+                    <div class="container bg-dark shadow h-100 card p-3 text-light text-center">
                         User Settings
                     </div>
                 </div>

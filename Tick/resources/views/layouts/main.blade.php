@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/script.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/e97029e132.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
@@ -23,7 +24,7 @@
 </head>
 <body>
     <div class="container-fluid row m-0 p-0">
-        <div class="col-md-2 row vh-100 border-right shadow-sm p-0">
+        <div class="col-md-2 row vh-100 border-right shadow p-0 bg-light">
             <div class="col-lg-2 bg-dark d-flex align-items-end p-0">
                 <div class="container d-flex flex-column m-0 p-0">
                     <div class="container w-50 mx-auto my-2">
@@ -105,7 +106,7 @@
             </div>
         </div>
         <div class="col-md-10 pl-5 ml-2">
-            @yield('content') <!--Insert Planner and To Do list View Here!-->
+            @yield('content') 
         </div>
     </div>
 </body>
