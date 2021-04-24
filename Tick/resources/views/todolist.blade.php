@@ -1,6 +1,10 @@
 @extends('layouts.main')
 
-@section('content')
+@section('content') 
+<!--
+//show all todolist
+//when a certain todolist is clicked, it will redirect to another page containing all task inside that todolist
+-->
     <div class="container-fluid p-5 text-center">
         <p>To Do List</p>
         <a href= "{{route('todolist-add')}}"  class="btn btn-primary">

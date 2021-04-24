@@ -26,8 +26,18 @@ slider.addEventListener('mouseleave', stopDragging, false);
 
 function openPreview() {
   document.getElementById("preview").style.display = "block";
+  var addcol = document.getElementById("main-menu");
+  addcol.classList.remove("col-12");
+  addcol.classList.add("col-8");
 }
 
 function closePreview() {
   document.getElementById("preview").style.display = "none";
+  var addcol = document.getElementById("main-menu");
+  addcol.classList.remove("col-8");
+  addcol.classList.add("col-12");
+}
+
+function redirect(id){
+  window.location.href = ""; //change the route
 }

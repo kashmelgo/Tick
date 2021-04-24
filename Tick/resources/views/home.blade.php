@@ -7,62 +7,98 @@
         </div>
         <hr class="mb-0 p-0">
         <div class="row">
-            <div class="col-8">
+            <div id="main-menu" class="col-12">
                 <div class="container-fluid dashboard-upper wrapper p-2">
-                    <div class="item mr-1 rounded shadow-sm">
+                    <div class="item mx-2 rounded shadow-sm">
                         <div class="card h-100 w-100 p-0">
                             <div class="container task-header rounded bg-dark text-light w-100">List Title</div>
-                            <div class="container task-body w-100" style="cursor: pointer"></div>
+                            <div class="container task-body w-100 py-2 px-3" onclick="redirect(task_id)" style="cursor: pointer">
+                                <p class="m-0">task 1</p>
+                                <p class="m-0">task 2</p>
+                                <p class="m-0">task 3</p>
+                                <p class="m-0">task 4</p>
+                                <p class="m-0">task 5</p>
+                            </div> <!--change task_id-->
                             <div class="container p-2 task-footer w-100 d-flex flex-row-reverse">
                                 <button class="btn btn-outline-secondary" onclick="openPreview()">Preview</button>
                             </div>
                         </div>
                     </div>
-                    <div class="item mr-1 rounded shadow-sm">
+                    <div class="item mx-2 rounded shadow-sm">
                         <div class="card h-100 w-100 p-0">
                             <div class="container task-header rounded bg-dark text-light w-100">List Title</div>
-                            <div class="container task-body w-100" style="cursor: pointer"></div>
+                            <div class="container task-body w-100 py-2 px-3" onclick="redirect(task_id)" style="cursor: pointer">
+                                <p class="m-0">task 1</p>
+                                <p class="m-0">task 2</p>
+                            </div> <!--change task_id-->
                             <div class="container p-2 task-footer w-100 d-flex flex-row-reverse">
                                 <button class="btn btn-outline-secondary" onclick="openPreview()">Preview</button>
                             </div>
                         </div>
                     </div>
-                    <div class="item mr-1 rounded shadow-sm">
+                    <div class="item mx-2 rounded shadow-sm">
                         <div class="card h-100 w-100 p-0">
                             <div class="container task-header rounded bg-dark text-light w-100">List Title</div>
-                            <div class="container task-body w-100" style="cursor: pointer"></div>
+                            <div class="container task-body w-100 py-2 px-3" onclick="redirect(task_id)" style="cursor: pointer">
+                                <p class="m-0">task 1</p>
+                                <p class="m-0">task 2</p>
+                                <p class="m-0">task 3</p>
+                            </div> <!--change task_id-->
                             <div class="container p-2 task-footer w-100 d-flex flex-row-reverse">
                                 <button class="btn btn-outline-secondary" onclick="openPreview()">Preview</button>
                             </div>
                         </div>
                     </div>
-                    <div class="item mr-1 rounded shadow-sm">
+                    <div class="item mx-2 rounded shadow-sm">
                         <div class="card h-100 w-100 p-0">
                             <div class="container task-header rounded bg-dark text-light w-100">List Title</div>
-                            <div class="container task-body w-100" style="cursor: pointer"></div>
+                            <div class="container task-body w-100 py-2 px-3" onclick="redirect(task_id)" style="cursor: pointer">
+                                <p class="m-0">task 1</p>
+                                <p class="m-0">task 2</p>
+                            </div> <!--change task_id-->
                             <div class="container p-2 task-footer w-100 d-flex flex-row-reverse">
                                 <button class="btn btn-outline-secondary" onclick="openPreview()">Preview</button>
                             </div>
                         </div>
                     </div>
-                    <div class="item mr-1 rounded shadow-sm">
+                    <div class="item mx-2 rounded shadow-sm">
                         <div class="card h-100 w-100 p-0">
                             <div class="container task-header rounded bg-dark text-light w-100">List Title</div>
-                            <div class="container task-body w-100" style="cursor: pointer"></div>
+                            <div class="container task-body w-100 py-2 px-3" onclick="redirect(task_id)" style="cursor: pointer">
+                                <p class="m-0">task 1</p>
+                                <p class="m-0">task 2</p>
+                                <p class="m-0">task 3</p>
+                                <p class="m-0">task 4</p>
+                            </div> <!--change task_id-->
+                            <div class="container p-2 task-footer w-100 d-flex flex-row-reverse">
+                                <button class="btn btn-outline-secondary" onclick="openPreview()">Preview</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item mx-2 rounded shadow-sm">
+                        <div class="card h-100 w-100 p-0">
+                            <div class="container task-header rounded bg-dark text-light w-100">List Title</div>
+                            <div class="container task-body w-100 py-2 px-3" onclick="redirect(task_id)" style="cursor: pointer">
+                                <p class="m-0">task 1</p>
+                                <p class="m-0">task 2</p>
+                                <p class="m-0">task 3</p>
+                                <p class="m-0">task 4</p>
+                                <p class="m-0">task 5</p>
+                            </div> <!--change task_id-->
                             <div class="container p-2 task-footer w-100 d-flex flex-row-reverse">
                                 <button class="btn btn-outline-secondary" onclick="openPreview()">Preview</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid dashboard-lower py-2 pl-2 pr-0 w-100">
-                    <div class="container h-100 w-100 shadow bg-light rounded">
+                <div class="container-fluid dashboard-lower pb-2 pr-0 w-100">
+                    <div class="container h-100 w-100 shadow bg-light rounded m-0">
                         Planner Here
                     </div>
                 </div>
             </div>
-            <div class="col-4 p-2">
-                <div id="preview" class="container rounded shadow bg-light shadow h-100 rounded p-0" style="display: none">
+            <div id="preview" class="col-4 p-2" style="display: none">
+                <div  class="container rounded shadow bg-light shadow h-100 rounded p-0">
                     <div class="container-fluid d-flex justify-content-between bg-dark" style="height: 55px">
                         <div class="text-light px-2 p-3"><p class="h5">Task Preview</p></div>
                         <div></div>
