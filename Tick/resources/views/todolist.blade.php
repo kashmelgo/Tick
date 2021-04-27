@@ -18,10 +18,10 @@
         @forelse($lists as $list);
         <div id="tasklist" class="container p-5 m-0">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <h4 id="list-name"> {{$list->list_name}} </h4>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <a href= "{{route('showaddTask', $list->task_id)}}"  class="btn btn-link">
                         <svg id ="plus-circle" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -30,8 +30,14 @@
                     </a>
                     @foreach($tasks as $task)
                         @if($task->task_id === $list->task_id)
-                            <p>{{$task->task}}</p>
-                        @endif
+                            @csrf
+                            <a href=""></a>
+                            <form action="{{ route('todolist-deleteTask') }}" method="POST" role="form">
+                                @csrf
+                                <input type="hidden" id="tasks_id" name="tasks_id" value="{{$task->tasks_id}}">
+                                <input class="btn btn-primary" type="submit" value="Delete">
+                            </form>
+                        @enddif
                     @endforeach
                 </div>
             </div>

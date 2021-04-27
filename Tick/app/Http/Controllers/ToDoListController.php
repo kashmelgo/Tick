@@ -62,6 +62,15 @@ class ToDoListController extends Controller
         return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
     }
 
+    public function deleteTask(Request $request){
+        $task = Task::where('tasks_id', $request->tasks_id);
+        $task->delete();
+
+        $lists = Todolist::where('student_id', Auth::user()->id)->get();
+        $tasks = Task::all();
+        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+    }
+
     public function createList(Request $request){
 
 

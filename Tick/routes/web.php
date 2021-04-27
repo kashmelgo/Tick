@@ -28,11 +28,18 @@ Route::get('/planner', [App\Http\Controllers\PlannerController::class, 'index'])
 Route::get('/planner-weekly', [App\Http\Controllers\PlannerController::class, 'weekly'])->name('planner-weekly');
 Route::get('/planner-monthly', [App\Http\Controllers\PlannerController::class, 'monthly'])->name('planner-monthly');
 
+
 Route::get('/todolist', [App\Http\Controllers\ToDoListController::class, 'index'])->name('todolist');
+
+
 Route::get('/todolist-add', [App\Http\Controllers\ToDoListController::class, 'showaddList'])->name('todolist-add');
 Route::post('/todolist-add',[App\Http\Controllers\ToDoListController::class, 'createList'])->name('todolist-add.createList');
 Route::get('/todolist-add-task/{task_id}', [App\Http\Controllers\ToDoListController::class, 'showaddTask'])->name('showaddTask');
+
 Route::post('/todolist-add-task', [App\Http\Controllers\ToDoListController::class, 'createTask'])->name('todolist-add-task.createTask');
+Route::post('/todolist-add-task', [App\Http\Controllers\ToDoListController::class, 'createTask'])->name('todolist-add-task.createTask');
+
+Route::post('/todolist', [App\Http\Controllers\ToDoListController::class, 'deleteTask'])->name('todolist-deleteTask');
 
 
 
