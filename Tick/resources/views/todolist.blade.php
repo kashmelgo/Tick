@@ -27,13 +27,13 @@
                     @foreach($tasks as $task)
                         @if($task->task_id === $list->task_id)
                             @csrf
-                            <a href="{{route('todolist-update')}}">{{$task->task}}</a>
+                            <a href=""></a>
                             <form action="{{ route('todolist-deleteTask') }}" method="POST" role="form">
                                 @csrf
                                 <input type="hidden" id="tasks_id" name="tasks_id" value="{{$task->tasks_id}}">
                                 <input class="btn btn-primary" type="submit" value="Delete">
                             </form>
-                        @endif
+                        @enddif
                     @endforeach
                 </div>
             </div>
