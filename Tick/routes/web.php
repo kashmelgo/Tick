@@ -30,7 +30,7 @@ Route::get('/planner-monthly', [App\Http\Controllers\PlannerController::class, '
 
 
 Route::get('/todolist', [App\Http\Controllers\ToDoListController::class, 'index'])->name('todolist');
-
+Route::get('seeTask', [App\Http\Controllers\TodolistController::class, 'seeTask'])->name('seeTask');
 
 Route::get('/todolist-add', [App\Http\Controllers\ToDoListController::class, 'showaddList'])->name('todolist-add');
 Route::post('/todolist-add',[App\Http\Controllers\ToDoListController::class, 'createList'])->name('todolist-add.createList');

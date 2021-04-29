@@ -62,6 +62,12 @@ class ToDoListController extends Controller
         return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
     }
 
+    public function seeTask(Request $request){
+        $editTask = Task::find($request->tasks_id);
+
+
+    }
+
     public function deleteTask(Request $request){
         $task = Task::where('tasks_id', $request->tasks_id);
         $task->delete();
@@ -69,6 +75,10 @@ class ToDoListController extends Controller
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
         $tasks = Task::all();
         return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+    }
+
+    public function editTask(Request $request, $id){
+
     }
 
     public function createList(Request $request){
