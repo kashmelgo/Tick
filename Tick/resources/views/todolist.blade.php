@@ -15,7 +15,7 @@
         </a>
     </div>
     <div class="col-md-6 container p-5 m-0 float-left">
-        @forelse($lists as $list);
+        @foreach($lists as $list);
         <div id="tasklist" class="col-md-6 container p-5 m-0">
             <div class="row">
                 <div class="col-md-6">
@@ -33,12 +33,11 @@
                     @foreach($tasks as $task)
                         @if($task->task_id === $list->task_id)
                             @csrf
-                            <form action="{{route('seeTask')}}" method="GET">
-                                @csrf
-                                <input onclick ="openTaskEdit()" type="hidden" id="tasks_id" name="tasks_id" value="{{$task->tasks_id}}">
-                                <button  type="submit" class ="btn btn-primary" onclick="openTaskEdit()"> Edit </button>
-                            </form>
                             <p> {{$task->task}} </p>
+                             <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-myTask = "{{$task->task}}" data-mySubject = "{{$task->subject}}" data-myDue = "{{$task->due_date}}" data-myTime = "{{$task->time}}" data-myTaskType = "{{$task->task_type}}"" data-toggle="modal" data-target="#editTaskModal">
+                               Edit
+                            </button>
                             <form action="{{ route('todolist-deleteTask') }}" method="POST" role="form">
                                 @csrf
                                 <input type="hidden" id="tasks_id" name="tasks_id" value="{{$task->tasks_id}}">
@@ -49,40 +48,58 @@
                 </div>
             </div>
         </div>
-        @empty
-        <h1> No lists found, add a list! </h1>
-        @endforelse
+        @endforeach
+    </div>
 
+
+  <!-- Modal -->
+  <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                    <form class="" method="POST" action="{{route('todolist-editTask','test')}}">
+                        {{csrf_field()}}
+                        <div class="form-group">
+                            <label><h5>Task</h5></label>
+                            <input type="text" class="form-control-plaintext input-group-lg" name="task" id="task">
+                        <div class="form-group">
+                        <div class="form-group">
+                            <label><h5>Subject</h5></label>
+                            <input type="text" class="form-control-plaintext input-group-lg" name="subject" id="subject">
+                        <div class="form-group">
+                            <label><h5>Due Date</h5></label>
+                            <input type="date" class="form-control-plaintext input-group-lg" id="due_date" name="due_date">
+                        </div>
+                        <div class="form-group">
+                            <label><h5>Time</h5></label>
+                            <input type="time" class="form-control-plaintext input-group-lg" name="time" id="time" value="{{old('time')}}">
+                        </div>
+                        <div class="form-group">
+                            <label><h5>Task Type</h5></label> <br>
+                            <label class="radio-inline"> Project <input type="radio" class="form-control-plaintext input-group-lg" name="task_type" id="task_type" value="project"> </label>
+                            <label class="radio-inline"> Assignment <input type="radio" class="form-control-plaintext input-group-lg" name="task_type" id="task_type" value="assignment"> </label>
+                        </div>
+                        <input type="hidden" id="list_id" name="task_id" value="{{}}">
+                        <div class="form-group">
+                            <input class="btn btn-primary" type="submit" value="Submit">
+                        </div>
+                    </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
-    <div class="d-flex container col-md-2 m-0 p-0" id="taskEdit" style="display">
-        <form class="" method="POST" role="form">
-            {{csrf_field()}}
-            <div class="form-group">
-                <label><h5>Task</h5></label>
-                <input type="text" class="form-control-plaintext input-group-lg" name="task" id="" placeholder="Input task..." value="Input task">
-            <div class="form-group">
-            <div class="form-group">
-                <label><h5>Subject</h5></label>
-                <input type="text" class="form-control-plaintext input-group-lg" name="subject" id="" placeholder="Input subject..." value="Input subject">
-            <div class="form-group">
-                <label><h5>Due Date</h5></label>
-                <input type="date" class="form-control-plaintext input-group-lg" id="due_date" name="due_date">
-            </div>
-            <div class="form-group">
-                <label><h5>Time</h5></label>
-                <input type="time" class="form-control-plaintext input-group-lg" name="time" id="" value="{{old('time')}}">
-            </div>
-            <div class="form-group">
-                <label><h5>Task Type</h5></label> <br>
-                <label class="radio-inline"> Project <input type="radio" class="form-control-plaintext input-group-lg" name="task_type" id="" value="project"> </label>
-                <label class="radio-inline"> Assignment <input type="radio" class="form-control-plaintext input-group-lg" name="task_type" id="" value="assignment"> </label>
-            </div>
-            <input type="hidden" id="list_id" name="task_id" value="{{}}">
-            <div class="form-group">
-                <input class="btn btn-primary" type="submit" value="Submit">
-            </div>
-        </form>
-    </div>
+</div>
+
 
     {{-- <div class="col-md-10 container p-5">
         <div id="tasklist" class="container p-5 float-left">
@@ -113,6 +130,8 @@
         </div>
     </div>
  --}}
+
+
 
 
 @endsection

@@ -109,6 +109,32 @@
             @yield('content')
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $('#editTaskModal').on('show.bs.modal', function (event) {
+
+        console.log('Modal opened')
+
+        var button = $(event.relatedTarget)
+        var task = button.data('myTask')
+        var subject = button.data('mySubject')
+        var due_date = button.data('myDue')
+        var time = button.data('myTime')
+        var task_type = button.data('myTaskType')
+
+        var modal = $(this)
+
+        modal.find('.modal-body #task').val(task);
+        modal.find('.modal-body #subject').val(subject);
+        modal.find('.modal-body #due_date').val(due_date);
+        modal.find('.modal-body #time').val(time);
+        modal.find('.modal-body #task_type').val(task_type);
+        modal.find('.modal-body #task').val(task);
+        })
+    </script>
+
 </body>
 </html>
 

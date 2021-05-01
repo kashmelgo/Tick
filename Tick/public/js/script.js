@@ -41,3 +41,5 @@ function closePreview() {
 function redirect(id){
   window.location.href = ""; //change the route
 }
+
+
