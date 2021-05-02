@@ -1,0 +1,924 @@
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    background-color: #202020;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  a {
+    color: #47b2e4;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #73c5eb;
+    text-decoration: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Jost", sans-serif;
+  }
+
+  
+  
+  /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+  .back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #202020;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid white;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+    font-size: 24px;
+    color:white;
+    line-height: 0;
+  }
+  
+  .back-to-top:hover {
+    background: white;
+    color: rgb(24, 24, 24);
+  }
+  
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+  #header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    background-color: rgb(26, 26, 26);
+    height: 70px;
+  }
+  
+  #header.header-scrolled, #header.header-inner-pages {
+    background: rgba(20, 20, 20, 0.9);
+  }
+  
+  #header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+    /*--------------------------------------------------------------
+  # Login Signup Modal
+  --------------------------------------------------------------*/
+  
+  #loginModal,#signupModal{
+    background-color: rgb(26, 26, 26, 0.9);
+  }
+
+  #loginModal .modal-content,#signupModal .modal-content{
+    border: 1px solid rgb(61, 61, 61);
+  }
+
+  #loginModal .modal-header,#signupModal .modal-header{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    font-weight: 800;
+    border-bottom: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  #loginModal .modal-header button,#signupModal .modal-header button{
+     background-color: rgb(26, 26, 26);
+     border: 0;
+  }
+
+  #loginModal .modal-header button i,#signupModal .modal-header button i{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    font-size: 1.3rem;
+  }
+
+  #loginModal .modal-header button i:hover,#signupModal .modal-header button i:hover{
+    color: rgb(238, 62, 62);
+  }
+
+  #loginModal .modal-body,#signupModal .modal-body{
+    background-color: #202020;
+    color: #fff;
+  }
+
+  #loginModal .modal-footer,#signupModal .modal-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    border-top: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #loginModal .modal-footer,#signupModal .modal-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    border-top: 0;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .instead-btn{
+    background-color: rgb(26, 26, 26);
+    color: rgb(155, 155, 155);
+    font-size: .8rem;
+    border: 0;
+    transition: .3s;
+  }
+
+  .instead-btn:hover{
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+  }
+
+  .confirm-btn{
+    background-color: #47b2e4;
+    color: #fff;
+    font-size: .8rem;
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+  }
+
+  .confirm-btn:hover{
+    background-color: #1e79a3;
+    color: #fff;
+  }
+
+  #loginModal form .form-group,#signupModal form .form-group{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #47b2e4;
+  }
+
+  #loginModal form .form-group input,#signupModal form .form-group input{
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    width: 100%;
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+  }
+
+    /*--------------------------------------------------------------
+  # Signup Page
+  --------------------------------------------------------------*/
+  
+  #signup-page{
+    height: calc(100vh - 70px);
+    background-color: #202020;
+    padding-top: 1%;
+    margin-top: 70px;
+  }
+
+  #signup-page .row{
+    height: 100%;
+  }
+
+  #signup-page .col-9{
+    padding: 2% 5%;
+  }
+
+  .signup-credentials{
+    border: 1px solid rgb(61, 61, 61);
+  }
+  
+  .signup-credentials .card-header{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 20px;
+    font-size:1.2rem;
+    font-weight: 600;
+  }
+
+  .signup-credentials .card-body{
+    background-color: #1d1d1d;
+    color: #47b2e4;
+    padding: 0;
+    margin: 0;
+  }
+
+  .signup-credentials-form{
+    padding: 20px
+  }
+
+  .signup-credentials-form label{
+    margin-left: 50px;
+  }
+
+  .signup-credentials-form .form-group{
+    margin: 20px 0;
+  }
+
+  .signup-credentials .form-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 10px;
+  }
+
+  .signup-credentials input{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: #fff;
+  }
+
+  .signup-credentials .form-footer .footer-buttons{
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+    margin: 10px;
+  }
+  
+  .signup-credentials-instead-btn{
+    background-color: rgb(26, 26, 26);
+    color: rgb(155, 155, 155);
+    font-size: .8rem;
+    border: 0;
+    transition: .3s;
+  }
+
+  .signup-credentials-instead-btn:hover{
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+  }
+
+  .signup-credentials-confirm-btn{
+    background-color: #202020;
+    color: #fff;
+    font-size: .8rem;
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+  }
+
+  .signup-credentials-confirm-btn:hover{
+    background-color: #1e79a3;
+    color: #fff;
+  }
+
+  .signup-information{
+    border: 1px solid rgb(61, 61, 61);
+  }
+  
+  .signup-information .card-header{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 20px;
+    font-size:1.2rem;
+    font-weight: 600;
+  }
+
+  .signup-information .card-body{
+    background-color: #1d1d1d;
+    color: #47b2e4;
+    padding: 0;
+    margin: 0;
+  }
+
+  .signup-information-form{
+    padding: 20px
+  }
+
+  .signup-information-form label{
+    margin-left: 50px;
+  }
+
+  .signup-information-form .form-group{
+    margin: 15px 0;
+  }
+
+  .signup-information .form-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 10px;
+  }
+
+  .signup-information input[type=date],.signup-information input[type=file]{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: rgb(133, 133, 133);
+  }
+
+
+  .signup-information input{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: #fff;
+  }
+  
+  .signup-information select{
+    border: 1.5px solid #202020;
+    border-radius: 50px;
+    background-color: #47b2e4;
+    color: #000;
+  }
+
+  .signup-information select option{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: #fff;
+  }
+
+  .signup-information .form-footer .footer-buttons{
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    margin: 10px;
+  }
+
+  .signup-information-confirm-btn{
+    background-color: #47b2e4;
+    color: #fff;
+    font-size: .8rem;
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+    width: 100px;
+  }
+
+  .signup-information-confirm-btn:hover{
+    background-color: #1e79a3;
+    color: #fff;
+  }
+
+  #signup-page .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+  
+  @-webkit-keyframes up-down {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(-40px);
+    }
+  }
+  
+  @keyframes up-down {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(-40px);
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # Login Page
+  --------------------------------------------------------------*/
+  
+  #login-page{
+    height: calc(100vh - 70px);
+    background-color: #202020;
+    padding-top: 1%;
+    margin-top: 70px;
+  }
+
+  #login-page .row{
+    height: 100%;
+  }
+
+  #login-page .col-9{
+    padding: 2% 5%;
+  }
+
+  .login-credentials{
+    border: 1px solid rgb(61, 61, 61);
+  }
+  
+  .login-credentials .card-header{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 20px;
+    font-size:1.2rem;
+    font-weight: 600;
+  }
+
+  .login-credentials .card-body{
+    background-color: #1d1d1d;
+    color: #47b2e4;
+    padding: 0;
+    margin: 0;
+  }
+
+  .login-credentials-form{
+    padding: 20px
+  }
+
+  .login-credentials-form label{
+    margin-left: 50px;
+  }
+
+  .login-credentials-form .form-group{
+    margin: 20px 0;
+  }
+
+  .login-credentials .form-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 10px;
+  }
+
+  .login-credentials input{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: #fff;
+  }
+
+  .login-credentials .form-footer .footer-buttons{
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+    margin: 10px;
+  }
+  
+  .login-credentials-instead-btn{
+    background-color: rgb(26, 26, 26);
+    color: rgb(155, 155, 155);
+    font-size: .8rem;
+    border: 0;
+    transition: .3s;
+  }
+
+  .login-credentials-instead-btn:hover{
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+  }
+
+  .login-credentials-confirm-btn{
+    background-color: #47b2e4;
+    color: #fff;
+    font-size: .8rem;
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+  }
+
+  .login-credentials-confirm-btn:hover{
+    background-color: #1c6e94;
+    color: #fff;
+  }
+
+  #login-page .col-5 img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+
+  #login-page .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+  
+  @-webkit-keyframes up-down {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(-40px);
+    }
+  }
+  
+  @keyframes up-down {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(-40px);
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .navbar button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  
+  .navbar button:hover, .navbar .active, .navbar li:hover > a {
+    color: #47b2e4;
+  }
+
+  .navbar .login {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    border: 0;
+    font-weight: 600;
+  }
+  
+  .navbar .signup-nav {
+    padding: 8px 20px;
+    margin-left: 10px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    border: 2px solid #47b2e4;
+    font-weight: 600;
+  }
+  
+  .navbar .signup-nav:hover {
+    color: #fff;
+    background: #31a9e1;
+  }
+  
+  /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: #202020;
+  }
+  
+  #hero .container {
+    padding-top: 72px;
+  }
+  
+  #hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+  }
+  
+  #hero h2 {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
+  
+  #hero .signup {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px 11px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0 0 0;
+    color: #fff;
+    background: #47b2e4;
+  }
+  
+  #hero .signup:hover {
+    background: #209dd8;
+  }
+  
+  #hero .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+  
+  @-webkit-keyframes up-down {
+    0% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes up-down {
+    0% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+  section {
+    padding: 120px 0;
+    overflow: hidden;
+  }
+  
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .section-title h2::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+  }
+  
+  .section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    bottom: 0;
+    left: calc(50% - 20px);
+  }
+  
+  .section-title p {
+    margin-bottom: 0;
+  }
+  
+  /*--------------------------------------------------------------
+  # About Us
+  --------------------------------------------------------------*/
+
+  .about{
+    background-color: rgb(26, 26, 26);  
+    color: rgb(192, 192, 192);
+  }
+
+  .about .section-title{
+    color: #47b2e4;
+  }
+
+  .about .section-title h2::after{
+    background-color: #47b2e4;
+  }
+
+  .about .content h3 {
+    font-weight: 800;
+    font-size: 26px;  
+  }
+  
+  .about .content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Services
+  --------------------------------------------------------------*/
+
+  .services{
+    background-color: #202020;
+    color: #47b2e4;
+  }
+
+
+  .services .section-title h2::after{
+    background-color: #47b2e4;
+  }
+
+  .services .icon-box {
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 5%;
+    padding: 50px 30px;
+    transition: all ease-in-out 0.4s;
+    background: rgb(26, 26, 26);
+  }
+  
+  .services .icon-box .icon {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .services .icon-box .icon i {
+    color: #47b2e4;
+    font-size: 40px;
+    transition: 0.3s;
+  }
+  
+  .services .icon-box h4 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  .services .icon-box p {
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+    color: rgb(192, 192, 192);
+  }
+  
+  .services .icon-box:hover {
+    transform: translateY(-10px);
+  }
+  
+  .services .icon-box:hover h4 a {
+    color: #47b2e4;
+  }
+  
+  /*--------------------------------------------------------------
+  # Team
+  --------------------------------------------------------------*/
+
+  .team{
+    background-color: rgb(26, 26, 26);  
+  }
+
+  .tea, .section-title p{
+    color: rgb(192, 192, 192);;
+  }
+
+  .team .section-title h2{
+    color: #47b2e4;
+  }
+
+  .team .section-title h2::after{
+    background-color: #47b2e4;
+  }
+
+  .team .member {
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 5px;
+    background: #fff;
+    transition: 0.5s;
+  }
+  
+  .team .member .pic {
+    overflow: hidden;
+    width: 180px;
+    border-radius: 50%;
+  }
+  
+  .team .member .pic img {
+    transition: ease-in-out 0.3s;
+  }
+  
+  .team .member:hover {
+    transform: translateY(-10px);
+  }
+  
+  .team .member .member-info {
+    padding-left: 30px;
+  }
+  
+  .team .member h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #37517e;
+  }
+  
+  .team .member span {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+  }
+  
+  .team .member span::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #cbd6e9;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .team .member p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+  }
+  
+  .team .member .social {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .team .member .social a {
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: #eff2f8;
+  }
+  
+  .team .member .social a i {
+    color: #37517e;
+    font-size: 16px;
+    margin: 0 2px;
+  }
+  
+  .team .member .social a:hover {
+    background: #47b2e4;
+  }
+  
+  .team .member .social a:hover i {
+    color: #fff;
+  }
+  
+  .team .member .social a + a {
+    margin-left: 8px;
+  }
+
+  /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+  #footer {
+    font-size: 14px;
+    background: #000;
+  }
+  
+  #footer .footer-bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+  }
+  
+  #footer .copyright {
+    float: left;
+  }
+  
+  #footer .credits {
+    float: right;
+    font-size: 13px;
+  }
+  
+  #footer .credits a {
+    transition: 0.3s;
+  }
+  

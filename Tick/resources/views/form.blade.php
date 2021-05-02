@@ -1,4 +1,146 @@
-<!doctype html>
+@extends('layouts.app2')
+
+@section('header')
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto pt-1"><a href="">Tick</a></h1>
+
+    </div>
+  </header>
+@endsection
+
+@section('signup-page')
+    <div id="signup-page" class="container" >
+        <div class="row">
+            <div class="col-4 my-auto" data-aos="zoom-in" data-aos-delay="200">
+                <img src="{{asset('images/step2.png')}}" alt="" class="w-100 img-fluid animated">
+            </div>
+            <div class="col-8 my-auto"  data-aos="fade-up" data-aos-delay="200">
+                <div class="card signup-information">
+                    <div class="card-header">{{ __('Create Account : User Information') }}</div>
+                    
+                    <form method="POST" action="/register/personal-information">
+                        @csrf
+                        <div class="card-body">
+                            <div class="signup-information-form">
+                                <div class="form-group row">
+                                    <label for="fname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+        
+                                    <div class="col-md-6">
+                                        <input id="fname" type="text" class="form-control text-capitalize"  placeholder="e.g. John" name="fname" required autocomplete="fname" autofocus>
+                                    </div>
+                                </div>
+        
+                                <div class="form-group row">
+                                    <label for="lname" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+        
+                                    <div class="col-md-6">
+                                        <input id="lname" type="text" class="form-control text-capitalize"  placeholder="e.g. Doe" name="lname" required autocomplete="lname" autofocus>
+                                    </div>
+                                </div>
+        
+                                <div class="form-group row">
+                                    <label for="birthdate" class="col-md-4 col-form-label text-md-right">{{ __('Birthdate') }}</label>
+        
+                                    <div class="col-md-6 ">
+                                        <input id="birthdate" type="date" class="form-control" name="birthdate" value="" required>
+                                    </div>
+                                </div>
+        
+                                <div class="form-group row">
+                                    <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+        
+                                    <div class="col-md-6 ">
+                                        <select id="gender" class="form-control" name="gender" required>
+                                            <option value="" hidden>Select . . .</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+        
+                                <div class="form-group row">
+                                    <label for="attainment" class="col-md-4 col-form-label text-md-right">{{ __('Educational Attainment') }}</label>
+        
+                                    <div class="col-md-6 ">
+                                        <select id="attainment" class="form-control" name="attainment" required>
+                                            <option value="" hidden>Select . . .</option>
+                                            <option value="HighSchool">Highschool</option>
+                                            <option value="College">College</option>
+                                        </select>
+                                    </div>
+                                </div>
+        
+                                <div class="form-group row">
+                                    <label for="contact" class="col-md-4 col-form-label text-md-right">{{ __('Contact Number') }}</label>
+        
+                                    <div class="col-md-6">
+                                        <input id="contact" type="number" class="form-control" name="contact" placeholder="09XXXXXXXXX" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="profile" class="col-md-4 col-form-label text-md-right">{{ __('Profile Picture') }}</label>
+        
+                                    <div class="col-md-6">
+                                        <input id="profile" type="file" class="form-control" name="profile">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">{{ __('Street') }}</label>
+            
+                                    <div class="col-md-6">
+                                        <input id="street" type="text" class="form-control text-capitalize" name="street"  required autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">{{ __('Barangay') }}</label>
+            
+                                    <div class="col-md-6">
+                                        <input id="barangay" type="text" class="form-control text-capitalize" name="barangay"  required autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">{{ __('Town/City') }}</label>
+            
+                                    <div class="col-md-6">
+                                        <input id="town" type="text" class="form-control text-capitalize" name="town"  required autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
+            
+                                    <div class="col-md-6">
+                                        <input id="province" type="text" class="form-control text-capitalize" name="province"  required autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">{{ __('Postal Code') }}</label>
+            
+                                    <div class="col-md-6">
+                                        <input id="postal" type="number" class="form-control w-50" name="postal"  required autofocus>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-footer">
+                                <div class="footer-buttons">
+                                    <button type="submit" class="btn signup-information-confirm-btn">{{ __('Create') }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
+
+
+{{-- <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -37,7 +179,7 @@
                             <div class="card-header font-weight-bold">{{ __('Create Account (2/2)') }}</div>
             
                             <div class="card-body">
-                                <form method="POST" action="/form"  enctype="multipart/form-data">
+                                <form method="POST" action="/register/personal-information"  enctype="multipart/form-data">
                                     @csrf
             
                                     <div class="form-group row">
@@ -170,4 +312,4 @@
         </main>
     </div>
 </body>
-</html>
+</html> --}}

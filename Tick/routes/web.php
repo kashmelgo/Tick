@@ -21,8 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/form', [App\Http\Controllers\UserController::class, 'index'])->name('form');
-Route::post('/form', [App\Http\Controllers\UserController::class, 'store'])->name('form');
+Route::get('/register/personal-information', [App\Http\Controllers\UserController::class, 'index'])->name('form');
+Route::post('/register/personal-information', [App\Http\Controllers\UserController::class, 'store'])->name('form');
 
 Route::get('/planner', [App\Http\Controllers\PlannerController::class, 'index'])->name('planner');
 Route::get('/planner-weekly', [App\Http\Controllers\PlannerController::class, 'weekly'])->name('planner-weekly');
