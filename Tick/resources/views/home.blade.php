@@ -1,49 +1,101 @@
-@extends('layouts.main')
+@extends('layouts.app2')
 
 @section('content')
-    <div class="container-fluid h-100 p-0">
-        <div class="container-fluid pt-4 pb-1 dashboard-title">
-            <p class="h1 font-weight-bold">Dashboard</p>
+
+    <div id="dashboard">
+        <div id="side">
+            <!--Profile and  Logout-->
         </div>
-        <hr class="mb-0 p-0">
-        <div class="row">
-            <div id="main-menu" class="col-12">
-                <div class="container-fluid dashboard-upper wrapper p-2">
-                    @foreach($lists as $list)
-                    <div class="item mx-2 rounded shadow-sm">
-                        <div class="card h-100 w-100 p-0">
-                            <div class="container task-header rounded bg-dark text-light w-100">{{$list->list_name}}</div>
-                            <div class="container task-body w-100 py-2 px-3" onclick="redirect(task_id)" style="cursor: pointer">
-                                @foreach($tasks as $task)
-                                    @if($task->task_id === $list->task_id)
-                                        <p class="m-0">{{$task->task}}</p>
-                                    @endif
-                                @endforeach
-                            </div> <!--change task_id-->
-                            <div class="container p-2 task-footer w-100 d-flex flex-row-reverse">
-                                <button class="btn btn-outline-secondary" onclick="openPreview()">Preview</button>
+        <main>
+            <div id="sidebar" class="shadow rounded-right">
+                <div id="sidebar-level">
+                    <div class="level">
+                        <div class="level-num">
+                            <p>Level:</p>
+                            <div>
+                                <h2>1</h2>
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    <div class="experience">
+                        <p>Experience Here</p>
+                    </div>
                 </div>
-                <div class="container-fluid dashboard-lower pb-2 pr-0 w-100">
-                    <div class="container h-100 w-100 shadow bg-light rounded m-0">
-                        Planner Here
+                <hr>
+                <div id="sidebar-tabs">
+                    <div class="sidebar-tab">
+                        <p>Overview</p>
+                        <a href="{{ route('home') }}">
+                            <div class="tab">
+                                <div class="tab-color"></div>
+                                <div class="tab-text"><i class="bi bi-house"></i> Dashboard</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sidebar-tab">
+                        <p>To-Do List</p>
+                        <a href="{{ route('todolist') }}">
+                            <div class="tab">
+                                <div class="tab-color"></div>
+                                <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="tab">
+                                <div class="tab-color"></div>
+                                <div class="tab-text"><i class="bi bi-plus-circle"></i> New List</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sidebar-tab">
+                        <p>Planner</p>
+                        <a href="{{ route('planner') }}">
+                            <div class="tab">
+                                <div class="tab-color"></div>
+                                <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="tab">
+                                <div class="tab-color"></div>
+                                <div class="tab-text"><i class="bi bi-calendar2-plus"></i> Add Plan</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div id="preview" class="col-4 p-2" style="display: none">
-                <div  class="container rounded shadow bg-light shadow h-100 rounded p-0">
-                    <div class="container-fluid d-flex justify-content-between bg-dark" style="height: 55px">
-                        <div class="text-light px-2 p-3"><p class="h5">Task Preview</p></div>
-                        <div></div>
-                        <div class="text-light px-2 p-3">
-                            <i class="fas fa-times" onclick="closePreview()"></i>
+            <div id="main">
+                <div id="main-title">
+                    <h3>Dashboard</h3>
+                </div>
+                <div id="main-content">
+                    <div class="main-content-list">
+                        <a href="">
+                            <div class="exampleCard shadow"></div>
+                        </a>
+                        <a href="">
+                            <div class="exampleCard shadow"></div>
+                        </a>
+                        <a href="">
+                            <div class="exampleCard shadow"></div>
+                        </a>
+                        <a href="">
+                            <div class="exampleCard shadow"></div>
+                        </a>
+                        <a href="">
+                            <div class="exampleCard shadow"></div>
+                        </a>
+                    </div>
+                    <div class="main-content-planner ">
+                        <div class="content-planner shadow text-center">
+                            Planner Preview
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
+
 @endsection
+
+  
