@@ -94,6 +94,9 @@ class ToDoListController extends Controller
 
         $date = Carbon::parse($finTask->due_date . " " . $finTask->time);
         $earnedPoints = ($finTask->task_points * ($date->diffInDays(Carbon::now())));
+
+        Auth::user()->account()->points_earned = $earnedPoints;
+        Auth::user()->account()->experience = $earnedPoints;
     }
 
     public function editTask(Request $request){

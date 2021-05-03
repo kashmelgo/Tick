@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Todolist;
+use App\Models\Task;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $lists = Todolist::where('student_id', Auth::user()->id)->get();
+        $tasks = Task::all();
+        return view('home', ['lists'=>$lists, 'tasks'=>$tasks]);
     }
 }
