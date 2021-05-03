@@ -73,6 +73,7 @@ class UserController extends Controller
         $list = new ToDoList;
         $list->task_id = $id;
         $list->student_id = $id;
+        $list->list_name = "To Do List: ";
         $list->save();
 
         $timestamp = DB::table('user_details')->where('user_detail_id', $id)->value('created_at');
@@ -125,4 +126,6 @@ class UserController extends Controller
     {
         //
     }
+
+
 }
