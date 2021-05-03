@@ -9,6 +9,7 @@ use App\Models\Task;
 use App\Models\User;
 use App\Models\Todolist;
 use League\CommonMark\Extension\TaskList\TaskListExtension;
+use Carbon\Carbon;
 
 class ToDoListController extends Controller
 {
@@ -55,11 +56,18 @@ class ToDoListController extends Controller
         $task->task_type = $request->task_type;
         $task->subject = $request->subject;
         $task->date_finished = null;
-        $task->task_points = 50; //temporary sksksks
+        $task->task_points = $this->getPoints($task->task_type);
         $task->save();
 
         $tasks = Task::all();
         return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+    }
+
+    public function getPoints($string){
+        if($string == "assignment")
+            return 15;
+        else
+            return 20;
     }
 
     public function seeTask(Request $request){
@@ -77,8 +85,31 @@ class ToDoListController extends Controller
         return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
     }
 
-    public function editTask(Request $request, $id){
+    public function finishTask($id){
+        $finTask = Task::find($id);
 
+        $finTask->date_finished = Carbon::now();
+        $finTask->status = "finished";
+
+
+        $date = Carbon::parse($finTask->due_date . " " . $finTask->time);
+        $earnedPoints = ($finTask->task_points * ($date->diffInDays(Carbon::now())));
+    }
+
+    public function editTask(Request $request){
+
+        $task = Task::find($request->tasks_id);
+
+        $task->task = $request->task;
+        $task->subject = $request->subject;
+        $task->due_date = $request->due_date;
+        $task->time = $request->time;
+        $task->task_type = $request->task_type;
+        $task->save();
+
+        $lists = Todolist::where('student_id', Auth::user()->id)->get();
+        $tasks = Task::all();
+        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
     }
 
     public function createList(Request $request){
@@ -97,8 +128,13 @@ class ToDoListController extends Controller
     $lists = Todolist::where('student_id', Auth::user()->id)->get();
     $tasks = Task::all();
     return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+    }
 
+    public function editList(Request $request, $id){
+        $list = ToDoList::find($id);
 
+        $list->task_id = $request->task_id;
+        $list->list_id = $request->task_id;
     }
 
     /**
