@@ -94,13 +94,18 @@ class ToDoListController extends Controller
 
         $finTask->save();
         $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
-        $earnedPoints = ($finTask->task_points * ($date->diffInDays(Carbon::now())));
 
-        $test = Auth::user()->account()->points_earned;
-        $account = Account::where('account_id', Auth::user()->id);
-        dd($account);
-        Auth::user()->account()->experience = $earnedPoints;
+        $earnedPoints = ($finTask->task_points * (($date->diffInHours(Carbon::now()))/24));
 
+        $account = Auth::user()->account;
+        $account->points_earned = $account->points_earned + $earnedPoints;
+        $account->save();
+
+        $account = Auth::user()->account;
+        $account->experience = $account->experience + $earnedPoints;
+        $account->save();
+
+        // check if user will be able to level up code here
         return $this->index();
     }
 
