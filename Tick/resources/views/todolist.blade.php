@@ -1,68 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container-fluid wrapper p5 text-center">
-    <div class="all-tasks">
-        <h2 class="task-list-title">My lists</h2>
-        <ul class="task-list" data-lists></ul>
-
-        <form action="" data-new-list-form>
-        <input
-            type="text"
-            class="new list"
-            data-new-list-input
-            placeholder="new list name"
-            aria-label="new list name"
-        />
-        <button class="btn create" aria-label="create new list">+</button>
-        </form>
-    </div>
-
-    @forelse($lists as $list)
-    <div class="todo-list p-3" data-list-display-container>
-        <div class="todo-header">
-        <h2 class="list-title" data-list-title>{{$list->list_name}}</h2>
-        </div>
-
-        <div class="todo-body">
-        <div class="tasks" data-tasks>
-            {{-- insert for loop for tasks in each list ( @foreach($tasks as $task)
-            @if($task->task_id === $list->task_id)) --}}
-        </div>
-
-        <div class="new-task-creator">
-            <form action="" data-new-task-form>
-                <input
-                    type="text"
-                    data-new-task-input
-                    class="new task"
-                    placeholder="new task name"
-                    aria-label="new task name"
-                />
-                <button class="btn create" aria-label="create new task">+</button>
-                </form>
-        </div>
-
-        <div class="delete-stuff">
-            <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
-            <button class="btn delete" data-delete-list-button>Delete list</button>
-        </div>
-        </div>
-    </div>
-    @empty
-    @endforelse
-
-
-    </div>
-    <template id="task-template">
-        <div class="task">
-        <input type="checkbox" />
-        <label>
-            <span class="custom-checkbox"></span>
-        </label>
-        </div>
-    </template>
-</div>
 
 <div class="container-fluid wrapper p-5 text-center">
     <h1 class="h1 font-weight-bold">To Do List</h1>
@@ -117,6 +55,11 @@
                         <button id = "editTaskBtn" type="button" class="btn btn-primary" data-id="{{$task->tasks_id}}" data-mytask="{{$task->task}}" data-mysubject="{{$task->subject}}" data-mydue="{{$task->due_date}}" data-mytime="{{$task->time}}" data-mytasktype="{{$task->task_type}}" data-toggle="modal" data-target="#editTaskModal">
                            Edit
                         </button>
+                        <form action="{{ route('todolist-finishTask', $task->tasks_id)}}" method="POST" role="form">
+                            @csrf
+                            <input type="hidden" id="tasks_id" name="tasks_id" value="{{$task->tasks_id}}">
+                            <input class="btn btn-primary" type="submit" value="TickBox Here">
+                        </form>
                         <form action="{{ route('todolist-deleteTask') }}" method="POST" role="form">
                             @csrf
                             <input type="hidden" id="tasks_id" name="tasks_id" value="{{$task->tasks_id}}">
@@ -191,3 +134,68 @@
 
 
 @endsection
+
+
+{{--
+<div class="container-fluid wrapper p5 text-center">
+    <div class="all-tasks">
+        <h2 class="task-list-title">My lists</h2>
+        <ul class="task-list" data-lists></ul>
+
+        <form action="" data-new-list-form>
+        <input
+            type="text"
+            class="new list"
+            data-new-list-input
+            placeholder="new list name"
+            aria-label="new list name"
+        />
+        <button class="btn create" aria-label="create new list">+</button>
+        </form>
+    </div>
+
+    @forelse($lists as $list)
+    <div class="todo-list p-3" data-list-display-container>
+        <div class="todo-header">
+        <h2 class="list-title" data-list-title>{{$list->list_name}}</h2>
+        </div>
+
+        <div class="todo-body">
+        <div class="tasks" data-tasks>
+            insert for loop for tasks in each list ( @foreach($tasks as $task)
+            @if($task->task_id === $list->task_id))
+        </div>
+
+        <div class="new-task-creator">
+            <form action="" data-new-task-form>
+                <input
+                    type="text"
+                    data-new-task-input
+                    class="new task"
+                    placeholder="new task name"
+                    aria-label="new task name"
+                />
+                <button class="btn create" aria-label="create new task">+</button>
+                </form>
+        </div>
+
+        <div class="delete-stuff">
+            <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+            <button class="btn delete" data-delete-list-button>Delete list</button>
+        </div>
+        </div>
+    </div>
+    @empty
+    @endforelse
+
+
+    </div>
+    <template id="task-template">
+        <div class="task">
+        <input type="checkbox" />
+        <label>
+            <span class="custom-checkbox"></span>
+        </label>
+        </div>
+    </template>
+</div> --}}
