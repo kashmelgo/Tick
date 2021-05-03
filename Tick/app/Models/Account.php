@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     use HasFactory;
-
+    protected $fillable = [
+        'points_earned',
+        'experience',
+    ];
     protected $primaryKey = 'account_id';
     public function theme()
     {

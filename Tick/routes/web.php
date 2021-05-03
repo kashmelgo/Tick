@@ -42,7 +42,7 @@ Route::post('/todolist-add-task', [App\Http\Controllers\ToDoListController::clas
 Route::post('/todolist-add-task', [App\Http\Controllers\ToDoListController::class, 'createTask'])->name('todolist-add-task.createTask');
 
 Route::post('/todolist', [App\Http\Controllers\ToDoListController::class, 'deleteTask'])->name('todolist-deleteTask');
-
+Route::post('finishTask/{task_id}', [App\Http\Controllers\ToDoListController::class, 'finishTask'])->name('todolist-finishTask');
 
 
 Route::get('/todolist-weekly', [App\Http\Controllers\ToDoListController::class, 'weekly'])->name('todolist-weekly');

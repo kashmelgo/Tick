@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\Todolist;
+use App\Models\Account;
 use League\CommonMark\Extension\TaskList\TaskListExtension;
 use Carbon\Carbon;
 
@@ -88,15 +89,24 @@ class ToDoListController extends Controller
     public function finishTask($id){
         $finTask = Task::find($id);
 
+        $finTask->status = "done";
         $finTask->date_finished = Carbon::now();
-        $finTask->status = "finished";
 
+        $finTask->save();
+        $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
 
-        $date = Carbon::parse($finTask->due_date . " " . $finTask->time);
-        $earnedPoints = ($finTask->task_points * ($date->diffInDays(Carbon::now())));
+        $earnedPoints = ($finTask->task_points * (($date->diffInHours(Carbon::now()))/24));
 
-        Auth::user()->account()->points_earned = $earnedPoints;
-        Auth::user()->account()->experience = $earnedPoints;
+        $account = Auth::user()->account;
+        $account->points_earned = $account->points_earned + $earnedPoints;
+        $account->save();
+
+        $account = Auth::user()->account;
+        $account->experience = $account->experience + $earnedPoints;
+        $account->save();
+
+        // check if user will be able to level up code here
+        return $this->index();
     }
 
     public function editTask(Request $request){
