@@ -7,13 +7,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Task;
 use App\Models\User;
+use App\Models\Level;
 use App\Models\Todolist;
 use App\Models\Account;
 use League\CommonMark\Extension\TaskList\TaskListExtension;
+use App\Traits\LevelUp;
 use Carbon\Carbon;
 
 class ToDoListController extends Controller
 {
+
+    use LevelUp;
     /**
      * Display a listing of the resource.
      *
@@ -106,6 +110,7 @@ class ToDoListController extends Controller
         $account->save();
 
         // check if user will be able to level up code here
+        $levelup = $this->canLevelUp($account->account_id);
         return $this->index();
     }
 
