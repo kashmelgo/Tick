@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.mainFormat')
 
-@section('content')
+@section('pageContent')
     <div class="container-fluid p-5 h-100">
         @foreach ($profile as $profile)
             <div class="container-fluid profile-head m-0 p-0">

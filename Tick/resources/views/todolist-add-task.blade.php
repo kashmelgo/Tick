@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.mainFormat')
 
-@section('content')
+@section('pageContent')
     <div class="container-fluid p-5 text-center">
         <p>To Do List</p>
         <a href= "{{route('todolist-add')}}"  class="btn btn-primary">

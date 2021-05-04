@@ -15,14 +15,6 @@ class PlannerController extends Controller
     {
         return view('planner');
     }
-    public function weekly()
-    {
-        return view('planner-weekly');
-    }
-    public function monthly()
-    {
-        return view('planner-monthly');
-    }
 
     /**
      * Show the form for creating a new resource.
