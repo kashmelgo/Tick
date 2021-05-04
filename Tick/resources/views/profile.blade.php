@@ -176,7 +176,14 @@
                 <div class="col-4 mt-1">
                     <div class="level container-fluid bg-light card-top card mb-3 p-3 text-dark shadow text-center">
                         <h5> Level and Experience </h5>
-                        <div class="box justify-content-center">
+                        <div class="progress w-100 position-relative flex">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{($account->experience / $level->experience_needed) * 100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($account->experience / $level->experience_needed) * 100}}%">
+                                <span> <p class="justify-content-center position-absolute w-100">{{($account->experience / $level->experience_needed) * 100}} %</p> </span>
+                            </div>
+
+                        </div>
+                        <h6></span>Level {{$account->level_id}}</span></h6>
+                        {{-- <div class="box justify-content-center">
                             <div class="percent">
                                 <svg>
                                     <circle cx="70" cy="70" r="70"></circle>
@@ -187,7 +194,7 @@
                                 </div>
                                 <h1 class="level progress">Level 1</h1>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="container bg-light shadow card-bottom card p-2 text-light text-center">
                             <div class="container bg-light card mb-2 h-75 p-3 text-dark shadow text-center">

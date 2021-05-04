@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Level;
+use App\Models\Account;
 
 class ProfileController extends Controller
 {
@@ -31,7 +33,10 @@ class ProfileController extends Controller
         ->where('accounts.account_id', $id)
         ->get();
 
-        return view('profile')->with('profile',$profile)->with('interface',$interface);
+        $level = Level::find(Auth::user()->account->level_id);
+        $account = Account::find(Auth::user()->account_id);
+
+        return view('profile')->with('profile',$profile)->with('interface',$interface)->with('level', $level)->with('account', $account);
     }
 
     /**
