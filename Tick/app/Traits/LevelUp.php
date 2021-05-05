@@ -22,7 +22,6 @@
                 $test = "you leveled up";
 
             }
-            dd($test);
         }
     }
 ?>
