@@ -18,7 +18,7 @@
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
             </div>
         </a>
-        <a href="">
+        <a href="{{ route('todolist-add') }}">
             <div class="tab">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-plus-circle"></i> New List</div>
@@ -51,7 +51,7 @@
             <div class="listCard shadow">
                 <div class="preview">
                     <div class="preview-list-task">
-                        
+
                     </div>
                     <a href="">
                         <div class="preview-view shadow-sm">Preview</div>
@@ -124,4 +124,4 @@
     </div>
 @endsection
 
-  
+
