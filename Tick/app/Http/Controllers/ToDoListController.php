@@ -92,14 +92,21 @@ class ToDoListController extends Controller
 
     public function finishTask($id){
         $finTask = Task::find($id);
+        $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
 
+        // checks if task is overdue. give no points if overdue
+        if(Carbon::now()->floatdiffInHours($date, false) < 0){
+            $finTask->status = "overdue";
+            $finTask->save();
+            return $this->index();
+        }
         $finTask->status = "done";
         $finTask->date_finished = Carbon::now();
 
         $finTask->save();
         $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
 
-        $earnedPoints = ($finTask->task_points * (($date->diffInHours(Carbon::now()))/24));
+        $earnedPoints = ($finTask->task_points * ((Carbon::now()->floatdiffInHours($date, false))/24));
 
         $account = Auth::user()->account;
         $account->points_earned = $account->points_earned + $earnedPoints;
@@ -155,6 +162,13 @@ class ToDoListController extends Controller
         $list->list_id = $request->task_id;
     }
 
+    public function deleteList($id){
+        $list = Todolist::find($id);
+
+        $list->delete();
+
+        $this->index();
+    }
     /**
      * Display the specified resource.
      *

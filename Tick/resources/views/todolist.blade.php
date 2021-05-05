@@ -17,11 +17,11 @@
         <div class="card h-100 w-100 p-0">
             <div class="container task-header rounded bg-dark text-light w-100"> <span><i class="bi bi-pencil-square" aria-hidden="true"></i></span>{{$list->list_name}}</div>
             <div class="container task-body w-100 py-2 px-3">
-                <p class="m-0">task 1</p>
-                <p class="m-0">task 2</p>
-                <p class="m-0">task 3</p>
-                <p class="m-0">task 4</p>
-                <p class="m-0">task 5</p>
+                @foreach($tasks as $task)
+                    @if($task->task_id === $list->task_id)
+                    <p class="m-0">{{$task->task}}</p>
+                    @endif
+                @endforeach
             </div> <!--change task_id-->
             <div class="container p-2 task-footer w-100 d-flex flex-row-reverse">
                 <a class="btn btn-outline-secondary" href ="{{route('showaddTask', $list->task_id)}}">Add Task</a>
@@ -37,6 +37,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h4 id="list-name"> {{$list->list_name}} </h4>
+                <span><a href="{{route('deleteList', $list->task_id)}}"> delete list</a> </span>
             </div>
             <div class="col-md-6">
                 <a href= "{{route('showaddTask', $list->task_id)}}"  class="btn btn-link">

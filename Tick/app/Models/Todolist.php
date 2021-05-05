@@ -9,6 +9,7 @@ class Todolist extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'list_id';
     protected $fillable = [
         'list_name',
         'list_id'

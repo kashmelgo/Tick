@@ -31,6 +31,7 @@ Route::get('/planner-monthly', [App\Http\Controllers\PlannerController::class, '
 
 Route::get('/todolist', [App\Http\Controllers\ToDoListController::class, 'index'])->name('todolist');
 Route::get('seeTask', [App\Http\Controllers\TodolistController::class, 'seeTask'])->name('seeTask');
+Route::get('deleteList/{task_id}', [App\Http\Controllers\ToDoListController::class, 'deleteList'])->name('deleteList');
 
 Route::post('/todolist-editTask', [App\Http\Controllers\ToDoListController::class, 'editTask'])->name('todolist-editTask');
 
