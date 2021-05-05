@@ -123,6 +123,8 @@ class ToDoListController extends Controller
 
     public function editTask(Request $request){
 
+        dd($request);
+
         $task = Task::find($request->tasks_id);
 
         $task->task = $request->task;
@@ -155,11 +157,13 @@ class ToDoListController extends Controller
     return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
     }
 
-    public function editList(Request $request, $id){
-        $list = ToDoList::find($id);
+    public function editList(Request $request){
+        dd($request);
+        $list = ToDoList::find();
 
-        $list->task_id = $request->task_id;
-        $list->list_id = $request->task_id;
+        $list->list_name = $request->list_name;
+
+        return $this->index;
     }
 
     public function deleteList($id){
@@ -167,7 +171,7 @@ class ToDoListController extends Controller
 
         $list->delete();
 
-        $this->index();
+        return $this->index();
     }
     /**
      * Display the specified resource.

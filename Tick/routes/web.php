@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/test', [App\Http\Controllers\HomeController::class, 'test'])->name('test');
 
 Route::get('/register/personal-information', [App\Http\Controllers\UserController::class, 'index'])->name('form');
 Route::post('/register/personal-information', [App\Http\Controllers\UserController::class, 'store'])->name('form');
@@ -32,6 +33,7 @@ Route::get('/planner-monthly', [App\Http\Controllers\PlannerController::class, '
 Route::get('/todolist', [App\Http\Controllers\ToDoListController::class, 'index'])->name('todolist');
 Route::get('seeTask', [App\Http\Controllers\TodolistController::class, 'seeTask'])->name('seeTask');
 Route::get('deleteList/{task_id}', [App\Http\Controllers\ToDoListController::class, 'deleteList'])->name('deleteList');
+Route::post('editList', [App\Http\Controllers\ToDoListController::class, 'editList'])->name('editList');
 
 Route::post('/todolist-editTask', [App\Http\Controllers\ToDoListController::class, 'editTask'])->name('todolist-editTask');
 
