@@ -135,6 +135,20 @@
         modal.find('.modal-body #task_type').val(task_type);
         modal.find('.modal-body #tasks_id').val(id);
         })
+
+        $('#editListModal').on('show.bs.modal', function (event) {
+
+
+        var button = $(event.relatedTarget)
+        var id = $(event.relatedTarget).data('id')
+        var list = $(event.relatedTarget).data('listname')
+
+        var modal = $(this)
+        modal.find('.modal-body #list').val(list);
+        modal.find('.modal-body #task_id').val(id);
+        })
+
+
     </script>
 
 </body>
