@@ -1075,6 +1075,23 @@
     transition: .3s;
   }
 
+  #sidebar-tabs .sidebar-tab .active{
+    pointer-events: none;
+    background-color: #1a1a1a;
+  }
+
+  #sidebar-tabs .sidebar-tab .active .tab-color{
+    background-color: #0e8fca;
+    width: 20px;
+    transition: .3s;
+  }
+
+  #sidebar-tabs .sidebar-tab .active .tab-text{
+    color: #0e8fca;
+    width: 230px;
+    transition: .3s;
+  }
+
   #main{
     margin: 0;
     padding: 0;
