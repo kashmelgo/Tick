@@ -939,6 +939,42 @@
     background-color: rgb(26, 26, 26);
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  #side div{
+    height: 40px;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  #side div a{
+    height: 100%;
+    width: 100%;
+  }
+  
+  #side div p{
+    font-size: 1.4rem;
+  }
+
+  #side .to-profile a{
+    color: lightgreen;
+  }
+
+  #side .logout a:hover{
+    color: rgb(206, 56, 56);
+    transition: .5s;
+  }
+
+  #side .logout a{
+    color: rgb(255, 83, 83);
+  }
+
+  #side .to-profile a:hover{
+    color: rgb(103, 173, 103);
+    transition: .5s;
   }
 
   #dashboard main{

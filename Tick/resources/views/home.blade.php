@@ -4,7 +4,23 @@
 
     <div id="dashboard">
         <div id="side">
-            <!--Profile and  Logout-->
+
+            <div class="logout">
+                <a  href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    <p><i class="bi bi-box-arrow-left"></i></p>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+
+            <div class="to-profile">
+                <a href="{{ route('profile') }}">
+                    <p><i class="bi bi-person-circle"></i></p>
+                </a>
+            </div>
         </div>
         <main>
             <div id="sidebar" class="shadow rounded-right">
