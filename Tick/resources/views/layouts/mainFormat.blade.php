@@ -56,7 +56,7 @@
                                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
                             </div>
                         </a>
-                        <a href="">
+                        <a href="{{route('todolist-add')}}">
                             <div class="tab">
                                 <div class="tab-color"></div>
                                 <div class="tab-text"><i class="bi bi-plus-circle"></i> New List</div>
@@ -88,4 +88,4 @@
 
 @endsection
 
-  
+

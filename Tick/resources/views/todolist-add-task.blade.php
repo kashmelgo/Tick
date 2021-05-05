@@ -10,7 +10,7 @@
             </svg>
         </a>
     </div>
-    <div>
+    <div class="card d-flex m-5 p-5 shadow-lg">
         <form class="col-md-12" action="{{ route('todolist-add-task.createTask') }}" method="POST" role="form">
             {{csrf_field()}}
             <div class="form-group">

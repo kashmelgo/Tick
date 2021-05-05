@@ -16,7 +16,7 @@
     <div id="todolist-list" class="item mx-2 rounded shadow-sm">
         <div class="card h-100 w-100 p-0">
             <div class="container task-header rounded bg-dark text-light w-100 list-name"> <h2>{{$list->list_name}} </h2>
-                <a href="{{route('deleteList', $list->list_id)}}"> delete list </a>
+                <a href="{{route('deleteList', $list->list_id)}}"> delete list button here </a>
             </div>
             <div class="container task-body w-100 py-2 px-3">
                 @foreach($tasks as $task)
