@@ -1505,6 +1505,23 @@
     width: 100%;
   }
 
+  #tasklist .task-done{
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 1.1rem;
+    color: rgb(161, 161, 161);
+    transition: .1s;
+  }
+
+  #tasklist .task-done label{
+    margin-left: 8px;
+    text-decoration: line-through;
+  }
+
+  #tasklist .task-done i{
+    margin-left: 10px;
+  }
+
   
   
   

@@ -88,8 +88,7 @@
                             <i class="bi bi-check-circle-fill"></i>
                             <label for="">Rest</label>
                         </div>
-                        <div class="task task-done">
-                            <i class="bi bi-dash-circle"></i>
+                        <div class="task-done">
                             <i class="bi bi-check-circle-fill"></i>
                             <label for="">Done</label>
                         </div>
@@ -98,7 +97,7 @@
                 </div>
             </div>
             <div class="listCard shadow">
-                <div class="listCard-heading shadow">
+                <div class="listCard-heading">
                     <h5>List Name</h5>
                     <a href="">
                         <i class="bi bi-three-dots-vertical"></i>
@@ -106,11 +105,42 @@
                 </div>
 
                 <div class="listCard-body">
-                    
+                    <a href="">
+                        <div class="add-task-floating">
+                            <div class="shadow-sm"><i class="bi bi-plus"></i></div>
+                        </div>
+                    </a>
+                    <div id="tasklist">
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Sleep</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Eat</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Study</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Rest</label>
+                        </div>
+                        <div class="task-done">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Done</label>
+                        </div>
+                        <div class="tasklist-footer"></div>
+                    </div>
                 </div>
             </div>
             <div class="listCard shadow">
-                <div class="listCard-heading shadow">
+                <div class="listCard-heading">
                     <h5>List Name</h5>
                     <a href="">
                         <i class="bi bi-three-dots-vertical"></i>
@@ -118,11 +148,42 @@
                 </div>
 
                 <div class="listCard-body">
-                    
+                    <a href="">
+                        <div class="add-task-floating">
+                            <div class="shadow-sm"><i class="bi bi-plus"></i></div>
+                        </div>
+                    </a>
+                    <div id="tasklist">
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Sleep</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Eat</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Study</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Rest</label>
+                        </div>
+                        <div class="task-done">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Done</label>
+                        </div>
+                        <div class="tasklist-footer"></div>
+                    </div>
                 </div>
             </div>
             <div class="listCard shadow">
-                <div class="listCard-heading shadow">
+                <div class="listCard-heading">
                     <h5>List Name</h5>
                     <a href="">
                         <i class="bi bi-three-dots-vertical"></i>
@@ -130,7 +191,38 @@
                 </div>
 
                 <div class="listCard-body">
-                    
+                    <a href="">
+                        <div class="add-task-floating">
+                            <div class="shadow-sm"><i class="bi bi-plus"></i></div>
+                        </div>
+                    </a>
+                    <div id="tasklist">
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Sleep</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Eat</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Study</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Rest</label>
+                        </div>
+                        <div class="task-done">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Done</label>
+                        </div>
+                        <div class="tasklist-footer"></div>
+                    </div>
                 </div>
             </div>
         </div>
