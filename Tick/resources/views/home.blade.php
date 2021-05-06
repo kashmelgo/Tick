@@ -51,7 +51,7 @@
             <div class="listCard shadow">
                 <div class="preview">
                     <div class="preview-list-task">
-
+                        
                     </div>
                     <a href="">
                         <div class="preview-view shadow-sm">Preview</div>
