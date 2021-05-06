@@ -2,6 +2,7 @@
   body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
+    background-color: #202020;
   }
 
   body::-webkit-scrollbar {
@@ -1433,6 +1434,20 @@
     border-bottom-right-radius: 10px;
   }
 
+  #todolist-page .listCard .listCard-body a{
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    display: none;
+  }
+
+  #todolist-page .listCard:hover > .listCard-body a{
+    display: block;
+    bottom: 15px;
+    transition: .3s;
+  }
+
+
   #todolist-page .listCard .listCard-body .add-task-floating div{
     height: 50px;
     width: 50px;
@@ -1443,9 +1458,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
   }
 
   #todolist-page .listCard .listCard-body .add-task-floating div:hover{
