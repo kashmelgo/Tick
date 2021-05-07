@@ -47,9 +47,10 @@ Route::post('/todolist-add-task', [App\Http\Controllers\ToDoListController::clas
 Route::post('/todolist', [App\Http\Controllers\ToDoListController::class, 'deleteTask'])->name('todolist-deleteTask');
 Route::post('finishTask/{task_id}', [App\Http\Controllers\ToDoListController::class, 'finishTask'])->name('todolist-finishTask');
 
-
-Route::get('/todolist-weekly', [App\Http\Controllers\ToDoListController::class, 'weekly'])->name('todolist-weekly');
-Route::get('/todolist-monthly', [App\Http\Controllers\ToDoListController::class, 'monthly'])->name('todolist-monthly');
-
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::post('profile/edit', [App\Http\Controllers\ProfileController::class, 'update'])->name('update');
+
+
+//Dummy Routes - Change to connect back-end to front-end
+
+Route::get('todolist/sampleToDoListName', [App\Http\Controllers\ToDoListController::class, 'showListContent'])->name('todolist-tasks');

@@ -220,4 +220,9 @@ class ToDoListController extends Controller
     {
         //
     }
+
+
+    public function showListContent(){
+        return view('todolist-tasks');
+    }
 }

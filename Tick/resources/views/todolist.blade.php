@@ -62,9 +62,66 @@
                 </div>
 
                 <div class="listCard-body">
-                    <a href="">
+                    <a href="{{route('todolist-tasks')}}" class="open-list">
+                        <div class="open-task-floating">
+                            <div class="shadow"><i class="bi bi-view-list"></i></div>
+                        </div>
+                    </a>
+                    <a href="" class="add-task">
                         <div class="add-task-floating">
-                            <div class="shadow-sm"><i class="bi bi-plus"></i></div>
+                            <div class="shadow"><i class="bi bi-plus"></i></div>
+                        </div>
+                    </a>
+                    <div id="tasklist">
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Sleep</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Eat</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Study</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Rest</label>
+                        </div>
+                        <div class="task-done">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Done</label>
+                        </div>
+                        <div class="tasklist-footer"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Test-->
+
+            <div class="listCard shadow">
+                <div class="listCard-heading">
+                    <h5>List Name</h5>
+                    <a href="">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </a>
+                </div>
+
+                <div class="listCard-body">
+                    <a href="{{route('todolist-tasks')}}" class="open-list">
+                        <div class="open-task-floating">
+                            <div class="shadow"><i class="bi bi-view-list"></i></div>
+                        </div>
+                    </a>
+                    <a href="" class="add-task">
+                        <div class="add-task-floating">
+                            <div class="shadow"><i class="bi bi-plus"></i></div>
                         </div>
                     </a>
                     <div id="tasklist">
@@ -105,9 +162,14 @@
                 </div>
 
                 <div class="listCard-body">
-                    <a href="">
+                    <a href="{{route('todolist-tasks')}}" class="open-list">
+                        <div class="open-task-floating">
+                            <div class="shadow"><i class="bi bi-view-list"></i></div>
+                        </div>
+                    </a>
+                    <a href="" class="add-task">
                         <div class="add-task-floating">
-                            <div class="shadow-sm"><i class="bi bi-plus"></i></div>
+                            <div class="shadow"><i class="bi bi-plus"></i></div>
                         </div>
                     </a>
                     <div id="tasklist">
@@ -148,9 +210,14 @@
                 </div>
 
                 <div class="listCard-body">
-                    <a href="">
+                    <a href="{{route('todolist-tasks')}}" class="open-list">
+                        <div class="open-task-floating">
+                            <div class="shadow"><i class="bi bi-view-list"></i></div>
+                        </div>
+                    </a>
+                    <a href="" class="add-task">
                         <div class="add-task-floating">
-                            <div class="shadow-sm"><i class="bi bi-plus"></i></div>
+                            <div class="shadow"><i class="bi bi-plus"></i></div>
                         </div>
                     </a>
                     <div id="tasklist">
@@ -191,9 +258,14 @@
                 </div>
 
                 <div class="listCard-body">
-                    <a href="">
+                    <a href="{{route('todolist-tasks')}}" class="open-list">
+                        <div class="open-task-floating">
+                            <div class="shadow"><i class="bi bi-view-list"></i></div>
+                        </div>
+                    </a>
+                    <a href="" class="add-task">
                         <div class="add-task-floating">
-                            <div class="shadow-sm"><i class="bi bi-plus"></i></div>
+                            <div class="shadow"><i class="bi bi-plus"></i></div>
                         </div>
                     </a>
                     <div id="tasklist">
@@ -225,6 +297,57 @@
                     </div>
                 </div>
             </div>
+            <div class="listCard shadow">
+                <div class="listCard-heading">
+                    <h5>List Name</h5>
+                    <a href="">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </a>
+                </div>
+
+                <div class="listCard-body">
+                    <a href="{{route('todolist-tasks')}}" class="open-list">
+                        <div class="open-task-floating">
+                            <div class="shadow"><i class="bi bi-view-list"></i></div>
+                        </div>
+                    </a>
+                    <a href="" class="add-task">
+                        <div class="add-task-floating">
+                            <div class="shadow"><i class="bi bi-plus"></i></div>
+                        </div>
+                    </a>
+                    <div id="tasklist">
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Sleep</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Eat</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Study</label>
+                        </div>
+                        <div class="task">
+                            <i class="bi bi-dash-circle"></i>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Rest</label>
+                        </div>
+                        <div class="task-done">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <label for="">Done</label>
+                        </div>
+                        <div class="tasklist-footer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--End of Test-->
+
         </div>
     </div>
 @endsection
