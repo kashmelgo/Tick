@@ -1348,7 +1348,6 @@
   }
 
   #todolist-content .add-floating:hover > div i{
-    transition: .3s;
     transform: rotateZ(180deg);
   }
 
@@ -1364,6 +1363,7 @@
 
   #todolist-content .add-floating div i{
     font-size: 3rem;
+    transition: .3s;
   }
 
   #todolist-page{
@@ -1459,6 +1459,9 @@
     opacity: 1;
   }
 
+  #todolist-page .listCard .listCard-body a{
+    transition: .3s;
+  }
 
   #todolist-page .listCard .listCard-body .add-task-floating div{
     height: 50px;
@@ -1570,15 +1573,63 @@
   --------------------------------------------------------------*/
   #todolist-tasks-title{
     height: 70px;
+    padding: 5px;
     margin: auto;
     user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #todolist-tasks-title h3{
-    padding: 5px;
-    padding-top: 18px;
-    padding-left: 20px;
-    margin: auto;
+    margin: 0 15px;
+  }
+
+  #todolist-tasks-title a{
+    margin: 0 15px;
+    padding: 0;
+  }
+
+  #todolist-tasks-title a .back-btn{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 3px solid #b6b6b6;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #todolist-tasks-title a .back-btn i:nth-of-type(1){
+    color: #444444;
+    font-size: 1.5rem;
+  }
+
+  #todolist-tasks-title a .back-btn i:nth-of-type(2){
+    color: #fff;
+    font-size: 1.5rem;
+    display: none;
+  }
+
+  #todolist-tasks-title a div:hover{
+    width: 80px;
+    background-color: #444;
+  }
+
+  #todolist-tasks-title a div:hover{
+    width: 80px;
+    border: 0;
+  }
+
+  #todolist-tasks-title a div:hover > i:nth-of-type(1){
+    display: none;
+  }
+
+  #todolist-tasks-title a div:hover > i:nth-of-type(2){
+    display: block;
   }
 
   #todolist-tasks-content{
@@ -1621,4 +1672,71 @@
 
   #todolist-tasks-content .add-floating div i{
     font-size: 3rem;
+  }
+
+  #tasks{
+    height: 100%;
+    display: flex;
+  }
+
+  #tasks .list-tasks{
+    padding: 5px;
+    width: 40%;
+  }
+
+  #tasks .list-tasks div{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  #tasks .list-side{
+    width: 60%;
+    padding-left: .7%;
+  }
+
+  #tasks .list-side-upper{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #tasks .list-side-upper .task-info{
+    width: 60%;
+    height: 100%;
+    padding: 5px;
+  }
+
+  #tasks .list-side-upper .list-status{
+    width: 40%;
+    height: 100%;
+    padding: 5px;
+  }
+
+  #tasks .list-side .new-task{
+    width: 100%;
+    height: 60%;
+    padding: 5px;
+  }
+
+  #tasks .list-side-upper .task-info div{
+    height: 100%;
+    border-radius: 5px;
+    background-color: #d8e3e7;
+  }
+
+  #tasks .list-side-upper .list-status div{
+    height: 100%;
+    border-radius: 5px;
+    color: #47b2e4;
+    background-color: #132c33;
+  }
+
+  #tasks .list-side .new-task div{
+    height: 100%;
+    border-radius: 5px;
+    background-color: #51c4d3;
   }

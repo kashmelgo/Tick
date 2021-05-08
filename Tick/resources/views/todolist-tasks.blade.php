@@ -44,15 +44,40 @@
 
 @section('pageContent')
     <div id="todolist-tasks-title">
-        <h3>List Name</h3>
-    </div>
-    <div id="todolist-tasks-content">
-        <a href="">
-            <div class="add-floating shadow">
-                <div><i class="bi bi-plus"></i></div>
+        <h3>To-Do List/List Name</h3>
+        <a href="javascript:history.back()">
+            <div class="back-btn">
+                <i class="bi bi-backspace-fill"></i>
+                <i class="bi bi-backspace"></i>
             </div>
         </a>
-        Content added here
+    </div>
+    <div id="todolist-tasks-content">
+        <div id="tasks">
+            <div class="list-tasks">
+                <div class="shadow">
+                    list of tasks
+                </div>
+            </div>
+            <div class="list-side">
+                <div class="list-side-upper">
+                    <div class="task-info">
+                        <div class="shadow-sm">
+                            task details
+                        </div>
+                    </div>
+                    <div class="list-status">
+                        <div class="shadow-sm">
+                            list status
+                        </div>
+                    </div>
+                </div>
+                <div class="new-task">
+                    <div class="shadow-sm">
+                        add task
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
