@@ -1570,6 +1570,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow-y: auto;
+    cursor: pointer;
   }
 
   #todolist-page .listCard .listCard-body::-webkit-scrollbar{
@@ -1775,8 +1776,16 @@
     align-items: center;
   }
 
-  #todolist-tasks-title h3{
+  #todolist-tasks-title p{
     margin: 0 15px;
+    font-size: 1.2rem;
+    color: #888888;
+  }
+
+  #todolist-tasks-title span{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #202020;
   }
 
   #todolist-tasks-title a{
@@ -1873,15 +1882,139 @@
   }
 
   #tasks .list-tasks{
+    height: 100%;
+    width: 100%;
     padding: 5px;
     width: 40%;
+    display: flex;
+    align-items: center;
   }
 
-  #tasks .list-tasks div{
+  #tasks .list-tasks .list-of-tasks{
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    margin: auto;
+    background-color: #fff;
+    padding: 5px;
+  }
+
+  #tasks .list-of-tasks-title{
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #d6d6d6;
+  }
+
+  #tasks .list-of-tasks-title p{
+    margin-top: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #888888;
+  }
+
+  #tasks .list-of-tasks-content{
+    height: calc(100% - 50px);
+    width: 100%;
+    padding-top: 10px;
+  }
+
+
+  #tasks .list-of-tasks-content .task{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: .3s;
+    border: 1px 0;
+    padding: 0;
+  }
+
+  #tasks .list-of-tasks-content .task:hover{
+    border-color: #b6b6b6;
+  }
+
+  #tasks .list-of-tasks-content .task:hover > .unfinished{
+    cursor: pointer;
+    color: rgb(29, 133, 15);
+    background-color: rgb(232, 255, 230);
+    font-weight: 700;
+  }
+
+  #tasks .list-of-tasks-content .task:hover > .task-status-unfinished{
+    cursor: pointer;
+    color: rgb(29, 133, 15);
+    background-color: rgb(232, 255, 230);
+  } 
+
+  #tasks .list-of-tasks-content .task .unfinished a div:hover > i:nth-of-type(1){
+    display: none;
+  }
+
+  #tasks .list-of-tasks-content .task .unfinished a div:hover > i:nth-of-type(2){
+    display: block;
+  }
+
+  #tasks .list-of-tasks-content .task .unfinished{
     width: 100%;
     height: 100%;
-    border-radius: 5px;
-    background-color: #fff;
+  }
+
+  #tasks .list-of-tasks-content .task .task-name{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.1rem;
+    transition: .2s;
+  }
+
+  #tasks .list-of-tasks-content .task .done{
+    color: #b6b6b6;
+    text-decoration: line-through;
+  }
+
+
+  #tasks .list-of-tasks-content .task .task-name label{
+    user-select: none;
+    pointer-events: none;
+    margin-left: 20px;
+  }
+
+  #tasks .list-of-tasks-content .task .task-name i{
+    font-size: 1.1rem;
+  }
+
+  #tasks .list-of-tasks-content .task .task-name .done{
+    color: rgb(175, 175, 175);
+    text-decoration: strike-through;
+  }
+
+  #tasks .list-of-tasks-content .task .task-name i:nth-of-type(2){
+    display: none;
+  }
+
+  #tasks .list-of-tasks-content .task .task-status-unfinished{
+    height: 100%;
+    width: 10%;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #tasks .list-of-tasks-content .task .task-status-done{
+    height: 100%;
+    width: 10%;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #tasks .list-side{
@@ -1918,18 +2051,68 @@
   #tasks .list-side-upper .task-info div{
     height: 100%;
     border-radius: 5px;
-    background-color: #d8e3e7;
+    background-color: #ffffff;
   }
+
+  #tasks .list-side-upper .task-info .task-info-title{
+    height: 15%;
+    display: flex;
+    justify-content: left;
+    border-radius: 0;
+    border-bottom: 1px solid #ebebeb;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-title p{
+    margin: auto 20px;
+    color: #919191;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-title span{
+    margin: auto 10px;
+    font-weight: 700;
+    color: #202020;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-body{
+    height: 65%;
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-body div{
+    height: 50px;
+    color: #929292;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-body div span{
+    font-weight: 600;
+    color: #202020;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-footer{
+    height: 20%;
+    border-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+
+
+
+
+
+
+
 
   #tasks .list-side-upper .list-status div{
     height: 100%;
     border-radius: 5px;
     color: #47b2e4;
-    background-color: #132c33;
   }
 
   #tasks .list-side .new-task div{
     height: 100%;
     border-radius: 5px;
-    background-color: #51c4d3;
   }

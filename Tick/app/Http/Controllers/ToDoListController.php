@@ -99,7 +99,6 @@ class ToDoListController extends Controller
         $finTask->date_finished = Carbon::now();
 
         $finTask->save();
-        $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
 
         $earnedPoints = ($finTask->task_points * ((Carbon::now()->floatdiffInHours($date, false))/24));
 
@@ -217,7 +216,9 @@ class ToDoListController extends Controller
     }
 
 
-    public function showListContent(){
-        return view('todolist-tasks');
+    public function showListContent($id){
+        $list = Todolist::where('list_id', $id)->get();
+        $tasks = Task::where('task_id', $id)->get();
+        return view('todolist-tasks', ['list'=>$list,'tasks'=>$tasks]);
     }
 }

@@ -91,11 +91,15 @@
                     </div>
 
                     <div class="listCard-body">
-                        <a href="{{route('todolist-tasks')}}" class="open-list">
-                            <div class="open-task-floating">
-                                <div class="shadow"><i class="bi bi-view-list"></i></div>
-                            </div>
-                        </a>
+                        
+                        <form action="{{route('todolist-tasks',$list->list_id)}}" method="get">
+                            @csrf
+                            <a onclick="this.parentNode.submit();" class="open-list">
+                                <div class="open-task-floating">
+                                    <div class="shadow"><i class="bi bi-view-list"></i></div>
+                                </div>
+                            </a>
+                        </form>
                         <button class="add-task"   data-toggle="modal" data-target="#{{$list->list_name}}{{$list->task_id}}">
                             <div class="add-task-floating">
                                 <div class="shadow"><i class="bi bi-plus"></i></div>
