@@ -67,6 +67,7 @@
                         
                         @foreach ($tasks as $task)
                             <div class="task" onclick="test('task-info-{{$task->tasks_id}}')">
+
                                 
                                 @if ($task->status == "done")
                                     <div class="task-name done">
@@ -84,11 +85,14 @@
                                         <form action="">
                                             @csrf
                                             <a  onclick="this.parentNode.submit();"><i class="bi bi-trash2-fill"></i></a>
+
                                         </form>
                                     </div>
                                 @else
                                     <div class="task-name unfinished">
+
                                         <form action="{{route('todolist-markAsDone',$task->tasks_id)}}" method="post">
+
                                             @csrf
                                             <a onclick="this.parentNode.submit();">
                                                 <div>
@@ -103,12 +107,16 @@
                                         <div>
                                             <form action="">
                                                 @csrf
+
                                                 <a onclick="this.parentNode.submit();"><i class="bi bi-trash2-fill"></i></a>
+
                                             </form>
                                         </div>
                                     </div>
                                 @endif
                                 
+
+
                             </div>
                         @endforeach
                         
@@ -117,6 +125,7 @@
             </div>
             <div class="list-side">
                 <div class="list-side-upper">
+
                     <div class="list-status">
                         <div class="shadow">
                             list status
@@ -165,6 +174,7 @@
                         </div>
 
                     @endforeach
+
 
                 </div>
                 <div class="new-task">
