@@ -1,0 +1,2140 @@
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    background-color: #202020;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  a {
+    color: #47b2e4;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #73c5eb;
+    text-decoration: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Jost", sans-serif;
+  }
+
+  
+  
+  /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+  .back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #202020;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid white;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+    font-size: 24px;
+    color:white;
+    line-height: 0;
+  }
+  
+  .back-to-top:hover {
+    background: white;
+    color: rgb(24, 24, 24);
+  }
+  
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+  #header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    background-color: rgb(26, 26, 26);
+    height: 70px;
+  }
+  
+  #header.header-scrolled, #header.header-inner-pages {
+    background: rgba(20, 20, 20, 0.9);
+  }
+  
+  #header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+    /*--------------------------------------------------------------
+  # Login Signup Modal
+  --------------------------------------------------------------*/
+  
+  #loginModal,#signupModal{
+    background-color: rgb(26, 26, 26, 0.9);
+  }
+
+  #loginModal .modal-content{
+    border: 1px solid rgb(61, 61, 61);
+  }
+
+  #loginModal .modal-header,#signupModal .modal-header{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    font-weight: 800;
+    border-bottom: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  #loginModal .modal-header button,#signupModal .modal-header button{
+     background-color: rgb(26, 26, 26);
+     border: 0;
+  }
+
+  #loginModal .modal-header button i,#signupModal .modal-header button i{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    font-size: 1.3rem;
+  }
+
+  #loginModal .modal-header button i:hover,#signupModal .modal-header button i:hover{
+    color: rgb(238, 62, 62);
+  }
+
+  #loginModal .modal-body,#signupModal .modal-body{
+    background-color: #202020;
+    color: #fff;
+  }
+
+  #loginModal .modal-footer,#signupModal .modal-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    border-top: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #loginModal .modal-footer,#signupModal .modal-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    border-top: 0;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .instead-btn{
+    background-color: rgb(26, 26, 26);
+    color: rgb(155, 155, 155);
+    font-size: .8rem;
+    border: 0;
+    transition: .3s;
+  }
+
+  .instead-btn:hover{
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+  }
+
+  .confirm-btn{
+    background-color: #47b2e4;
+    color: #fff;
+    font-size: .8rem;
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+  }
+
+  .confirm-btn:hover{
+    background-color: #1e79a3;
+    color: #fff;
+  }
+
+  #loginModal form .form-group,#signupModal form .form-group{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #47b2e4;
+  }
+
+  #loginModal form .form-group input,#signupModal form .form-group input{
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    width: 100%;
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+  }
+
+    /*--------------------------------------------------------------
+  # Signup Page
+  --------------------------------------------------------------*/
+  
+  #signup-page{
+    height: calc(100vh - 70px);
+    background-color: #202020;
+    padding-top: 1%;
+    margin-top: 70px;
+  }
+
+  #signup-page .row{
+    height: 100%;
+  }
+
+  #signup-page .col-9{
+    padding: 2% 5%;
+  }
+
+  .signup-credentials{
+    border: 1px solid rgb(61, 61, 61);
+  }
+  
+  .signup-credentials .card-header{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 20px;
+    font-size:1.2rem;
+    font-weight: 600;
+  }
+
+  .signup-credentials .card-body{
+    background-color: #1d1d1d;
+    color: #47b2e4;
+    padding: 0;
+    margin: 0;
+  }
+
+  .signup-credentials-form{
+    padding: 20px
+  }
+
+  .signup-credentials-form label{
+    margin-left: 50px;
+  }
+
+  .signup-credentials-form .form-group{
+    margin: 20px 0;
+  }
+
+  .signup-credentials .form-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 10px;
+  }
+
+  .signup-credentials input{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: #fff;
+  }
+
+  .signup-credentials .form-footer .footer-buttons{
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+    margin: 10px;
+  }
+  
+  .signup-credentials-instead-btn{
+    background-color: rgb(26, 26, 26);
+    color: rgb(155, 155, 155);
+    font-size: .8rem;
+    border: 0;
+    transition: .3s;
+  }
+
+  .signup-credentials-instead-btn:hover{
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+  }
+
+  .signup-credentials-confirm-btn{
+    background-color: #202020;
+    color: #fff;
+    font-size: .8rem;
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+  }
+
+  .signup-credentials-confirm-btn:hover{
+    background-color: #1e79a3;
+    color: #fff;
+  }
+
+  .signup-information{
+    border: 1px solid rgb(61, 61, 61);
+  }
+  
+  .signup-information .card-header{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 20px;
+    font-size:1.2rem;
+    font-weight: 600;
+  }
+
+  .signup-information .card-body{
+    background-color: #1d1d1d;
+    color: #47b2e4;
+    padding: 0;
+    margin: 0;
+  }
+
+  .signup-information-form{
+    padding: 20px
+  }
+
+  .signup-information-form label{
+    margin-left: 50px;
+  }
+
+  .signup-information-form .form-group{
+    margin: 15px 0;
+  }
+
+  .signup-information .form-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 10px;
+  }
+
+  .signup-information input[type=date],.signup-information input[type=file]{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: rgb(133, 133, 133);
+  }
+
+
+  .signup-information input{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: #fff;
+  }
+  
+  .signup-information select{
+    border: 1.5px solid #202020;
+    border-radius: 50px;
+    background-color: #47b2e4;
+    color: #000;
+  }
+
+  .signup-information select option{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: #fff;
+  }
+
+  .signup-information .form-footer .footer-buttons{
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    margin: 10px;
+  }
+
+  .signup-information-confirm-btn{
+    background-color: #47b2e4;
+    color: #fff;
+    font-size: .8rem;
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+    width: 100px;
+  }
+
+  .signup-information-confirm-btn:hover{
+    background-color: #1e79a3;
+    color: #fff;
+  }
+
+  #signup-page .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+  
+  @-webkit-keyframes up-down {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(-40px);
+    }
+  }
+  
+  @keyframes up-down {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(-40px);
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # Login Page
+  --------------------------------------------------------------*/
+  
+  #login-page{
+    height: calc(100vh - 70px);
+    background-color: #202020;
+    padding-top: 1%;
+    margin-top: 70px;
+  }
+
+  #login-page .row{
+    height: 100%;
+  }
+
+  #login-page .col-9{
+    padding: 2% 5%;
+  }
+
+  .login-credentials{
+    border: 1px solid rgb(61, 61, 61);
+  }
+  
+  .login-credentials .card-header{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 20px;
+    font-size:1.2rem;
+    font-weight: 600;
+  }
+
+  .login-credentials .card-body{
+    background-color: #1d1d1d;
+    color: #47b2e4;
+    padding: 0;
+    margin: 0;
+  }
+
+  .login-credentials-form{
+    padding: 20px
+  }
+
+  .login-credentials-form label{
+    margin-left: 50px;
+  }
+
+  .login-credentials-form .form-group{
+    margin: 20px 0;
+  }
+
+  .login-credentials .form-footer{
+    background-color: rgb(26, 26, 26);
+    color: #47b2e4;
+    padding: 10px;
+  }
+
+  .login-credentials input{
+    border: 1.5px solid #47b2e4;
+    border-radius: 50px;
+    background-color: #202020;
+    color: #fff;
+  }
+
+  .login-credentials .form-footer .footer-buttons{
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+    margin: 10px;
+  }
+  
+  .login-credentials-instead-btn{
+    background-color: rgb(26, 26, 26);
+    color: rgb(155, 155, 155);
+    font-size: .8rem;
+    border: 0;
+    transition: .3s;
+  }
+
+  .login-credentials-instead-btn:hover{
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+  }
+
+  .login-credentials-confirm-btn{
+    background-color: #47b2e4;
+    color: #fff;
+    font-size: .8rem;
+    border: 1px solid #47b2e4;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+  }
+
+  .login-credentials-confirm-btn:hover{
+    background-color: #1c6e94;
+    color: #fff;
+  }
+
+  #login-page .col-5 img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+
+  #login-page .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+  
+  @-webkit-keyframes up-down {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(-40px);
+    }
+  }
+  
+  @keyframes up-down {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(-40px);
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .navbar button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  
+  .navbar button:hover, .navbar .active, .navbar li:hover > a {
+    color: #47b2e4;
+  }
+
+  .navbar .login {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    border: 0;
+    font-weight: 600;
+  }
+  
+  .navbar .signup-nav {
+    padding: 8px 20px;
+    margin-left: 10px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    border: 2px solid #47b2e4;
+    font-weight: 600;
+  }
+  
+  .navbar .signup-nav:hover {
+    color: #fff;
+    background: #31a9e1;
+  }
+  
+  /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: #202020;
+  }
+  
+  #hero .container {
+    padding-top: 72px;
+  }
+  
+  #hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+  }
+  
+  #hero h2 {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
+  
+  #hero .signup {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px 11px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0 0 0;
+    color: #fff;
+    background: #47b2e4;
+  }
+  
+  #hero .signup:hover {
+    background: #209dd8;
+  }
+  
+  #hero .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+  
+  @-webkit-keyframes up-down {
+    0% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes up-down {
+    0% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+  section {
+    padding: 120px 0;
+    overflow: hidden;
+    width: 100vw;
+  }
+  
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .section-title h2::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+  }
+  
+  .section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    bottom: 0;
+    left: calc(50% - 20px);
+  }
+  
+  .section-title p {
+    margin-bottom: 0;
+  }
+  
+  /*--------------------------------------------------------------
+  # About Us
+  --------------------------------------------------------------*/
+
+  .about{
+    background-color: rgb(26, 26, 26);  
+    color: rgb(192, 192, 192);
+  }
+
+  .about .section-title{
+    color: #47b2e4;
+  }
+
+  .about .section-title h2::after{
+    background-color: #47b2e4;
+  }
+
+  .about .content h3 {
+    font-weight: 800;
+    font-size: 26px;  
+  }
+  
+  .about .content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Services
+  --------------------------------------------------------------*/
+
+  .services{
+    background-color: #202020;
+    color: #47b2e4;
+  }
+
+
+  .services .section-title h2::after{
+    background-color: #47b2e4;
+  }
+
+  .services .icon-box {
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 5%;
+    padding: 50px 30px;
+    transition: all ease-in-out 0.4s;
+    background: rgb(26, 26, 26);
+  }
+  
+  .services .icon-box .icon {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .services .icon-box .icon i {
+    color: #47b2e4;
+    font-size: 40px;
+    transition: 0.3s;
+  }
+  
+  .services .icon-box h4 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  .services .icon-box p {
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+    color: rgb(192, 192, 192);
+  }
+  
+  .services .icon-box:hover {
+    transform: translateY(-10px);
+  }
+  
+  .services .icon-box:hover h4 a {
+    color: #47b2e4;
+  }
+  
+  /*--------------------------------------------------------------
+  # Team
+  --------------------------------------------------------------*/
+
+  .team{
+    background-color: rgb(26, 26, 26);  
+  }
+
+  .team .section-title p{
+    color: rgb(192, 192, 192);;
+  }
+
+  .team .section-title h2{
+    color: #47b2e4;
+  }
+
+  .team .section-title h2::after{
+    background-color: #47b2e4;
+  }
+
+  .team .member {
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 5px;
+    background: #fff;
+    transition: 0.5s;
+  }
+  
+  .team .member .pic {
+    overflow: hidden;
+    width: 180px;
+    border-radius: 50%;
+  }
+  
+  .team .member .pic img {
+    transition: ease-in-out 0.3s;
+  }
+  
+  .team .member:hover {
+    transform: translateY(-10px);
+  }
+  
+  .team .member .member-info {
+    padding-left: 30px;
+  }
+  
+  .team .member h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #37517e;
+  }
+  
+  .team .member span {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+  }
+  
+  .team .member span::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #cbd6e9;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .team .member p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+  }
+  
+  .team .member .social {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .team .member .social a {
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: #eff2f8;
+  }
+  
+  .team .member .social a i {
+    color: #37517e;
+    font-size: 16px;
+    margin: 0 2px;
+  }
+  
+  .team .member .social a:hover {
+    background: #47b2e4;
+  }
+  
+  .team .member .social a:hover i {
+    color: #fff;
+  }
+  
+  .team .member .social a + a {
+    margin-left: 8px;
+  }
+
+  /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+  #footer {
+    font-size: 14px;
+    background: #000;
+  }
+  
+  #footer .footer-bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+  }
+  
+  #footer .copyright {
+    float: left;
+  }
+  
+  #footer .credits {
+    float: right;
+    font-size: 13px;
+  }
+  
+  #footer .credits a {
+    transition: 0.3s;
+  }
+  
+
+  /*--------------------------------------------------------------
+  # Dashboard
+  --------------------------------------------------------------*/
+
+  #dashboard{
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  #side{
+    height: 100vh;
+    width: 40px;
+    background-color: rgb(26, 26, 26);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  #side div{
+    height: 40px;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  #side div a{
+    height: 100%;
+    width: 100%;
+  }
+  
+  #side div p{
+    font-size: 1.4rem;
+  }
+
+  #side .to-profile a{
+    color: lightgreen;
+  }
+
+  #side .logout a:hover{
+    color: rgb(206, 56, 56);
+    transition: .5s;
+  }
+
+  #side .logout a{
+    color: rgb(255, 83, 83);
+  }
+
+  #side .to-profile a:hover{
+    color: rgb(103, 173, 103);
+    transition: .5s;
+  }
+
+  #dashboard main{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+  }
+
+  #sidebar{
+    height: 100vh;
+    width: 270px;
+    background-color: #202020;
+  }
+
+  #sidebar-level{
+    background-color: rgb(255, 255, 255);
+    width: 250px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+
+  #sidebar-level .level{
+    height: 100px
+  }
+
+  #sidebar-level .level:first-of-type{
+    width: 100px;
+    align-content: center;
+    justify-content: center;
+    background-color: #202020;
+  }
+
+  #sidebar-level .level:first-of-type .level-num{
+    color: #686868;
+    font-weight: 800;
+  }
+
+  #sidebar-level .level:first-of-type .level-num div{
+    width: 100%;
+    text-align: center;
+    color: #47b2e4;
+  }
+
+  #sidebar-tabs .sidebar-tab{
+    padding: 10px;
+    color: #686868;
+  }
+
+  #sidebar-tabs .sidebar-tab p{
+    font-weight: 600;
+  }
+
+  #sidebar-tabs .sidebar-tab .tab{
+    width:250px;
+    height: 50px;
+    display: flex;
+    margin: 3px 0;
+  }
+
+  #sidebar-tabs .sidebar-tab .tab .tab-color{
+    width:10px;
+    height: 50px;
+    background-color: #444444;
+    border-radius: 5px;
+  }
+
+  #sidebar-tabs .sidebar-tab .tab .tab-text{
+    width:240px;
+    height: 50px;
+    padding: 15px 20px;
+    color: #dadada;
+    font-size: .9rem;
+  }
+
+  #sidebar-tabs .sidebar-tab .tab .tab-text i{
+    margin-right: 8px;
+  }
+
+  #sidebar-tabs .sidebar-tab .tab:hover{
+    background-color: #1a1a1a;
+    transition: .3s;
+  }
+
+  #sidebar-tabs .sidebar-tab .tab:hover > .tab-color{
+    background-color: #5dbae6;
+    width: 20px;
+    transition: .3s;
+  }
+
+  #sidebar-tabs .sidebar-tab .tab:hover > .tab-text{
+    color: #5dbae6;
+    width: 230px;
+    transition: .3s;
+  }
+
+  #sidebar-tabs .sidebar-tab .active{
+    pointer-events: none;
+    background-color: #1a1a1a;
+  }
+
+  #sidebar-tabs .sidebar-tab .active .tab-color{
+    background-color: #0e8fca;
+    width: 20px;
+    transition: .3s;
+  }
+
+  #sidebar-tabs .sidebar-tab .active .tab-text{
+    color: #0e8fca;
+    width: 230px;
+    transition: .3s;
+  }
+
+  #main{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: #dadada;
+    width: calc(100vw - 310px);
+  }
+
+  
+    /*--------------------------------------------------------------
+  # Home
+  --------------------------------------------------------------*/
+
+
+  #main-title{
+    height: 70px;
+    margin: auto;
+  }
+
+  #main-title h3{
+    padding: 5px;
+    padding-top: 18px;
+    padding-left: 20px;
+    margin: auto;
+  }
+
+  #main-content{
+    width: calc(100vw - 310px);
+    height: calc(100vh - 70px);;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+  }
+
+  .main-content-list{
+    width: 60%;
+    height: 100%;
+    padding: 8px 0 8px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: left;
+    overflow: auto;
+  }
+
+  .main-content-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-content-list .listCard{
+    width:290px;
+    height: 230px;
+    background-color: #fff;
+    margin: 10px;
+    padding: 0;
+    border-radius: 8px;
+    transition: .3s;
+  }
+
+  .main-content-list .listCard:hover{
+    transform: scale(1.03);
+    transition: .3s;
+  }
+
+  .main-content-list .listCard:hover > .preview{
+    height: 180px;
+  }
+
+  .main-content-list .listCard:hover > .preview a:nth-of-type(1){
+    bottom: 25%;
+  }
+
+  .main-content-list .listCard:hover > .preview a:nth-of-type(2){
+    bottom: 25%;
+  }
+
+  .main-content-list .listCard:hover > .preview a .preview-view{
+    color: #fff;
+    background-color: rgb(26, 26, 26);
+    opacity: .9;
+  }
+
+  .main-content-list .listCard:hover > .preview a .preview-open{
+    color: #fff;
+    background-color: #47b2e4;
+    opacity: .9;
+  }
+
+  .main-content-list .listCard:hover > .preview-title{
+    height: 50px;
+    padding: 12px;
+  }
+
+  .main-content-list .listCard:hover > .preview-title p{
+    font-size: 1rem;
+    position: absolute;
+  }
+
+  .main-content-list .listCard:hover > .preview-title .preview-title-icon{
+    display: block;
+  }
+
+  .main-content-list .listCard .preview{
+    width:100%;
+    height: 160px;
+    background-color: rgb(253, 253, 253);
+    padding: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: .3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+  }
+  .main-content-list .listCard .preview{
+    width:100%;
+    height: 160px;
+    background-color: rgb(248, 248, 248);
+    padding: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: .3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+  }
+
+  .main-content-list .listCard .preview a{
+    position: absolute;
+    text-align: center;
+    overflow-y: hidden;
+  }
+
+  .main-content-list .listCard .preview a:nth-of-type(1){
+    bottom: 0;
+    opacity: 1;
+    right: 55%;
+    transition: .2s;
+  }
+
+  .main-content-list .listCard .preview a:nth-of-type(1) div:hover{
+    background-color: rgb(0, 0, 0);
+  }
+
+  .main-content-list .listCard .preview a:nth-of-type(2){
+    bottom: 0;
+    opacity: 1;
+    left: 55%;
+    transition: .3s;
+  }
+
+  .main-content-list .listCard .preview a:nth-of-type(2) div:hover{
+    background-color: #026897;
+  }
+
+  .main-content-list .listCard .preview a div{
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
+    padding-top: 30px;
+    color: rgb(248, 248, 248);
+    background-color: rgb(248, 248, 248);
+    opacity: .1;
+    font-weight: 500;
+    transition: .3s;
+    font-size: .9rem;
+  }
+
+  .main-content-list .listCard .preview-title{
+    width:100%;
+    height: 70px;
+    background-color: #fff;
+    padding: 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: .3s;
+    font-size: 1.2rem;
+    text-align: left;
+    position: relative;
+  }
+
+  .main-content-list .listCard .preview-title p{
+    position: absolute;
+    transition: .3s;
+    font-size: 1.2rem;
+  }
+
+  .main-content-list .listCard .preview-title-icon{
+    position: absolute;
+    color: rgb(26, 26, 26);
+    bottom: 8px;
+    right: 15px;
+    display: none;
+    transition: .3s;
+  }
+
+  .main-content-planner{
+    padding: 18px 18px 18px 0;
+    width:40%;
+    height: 100%;
+  }
+
+  .main-content-planner .content-planner{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+    /*--------------------------------------------------------------
+  # To Do List
+  --------------------------------------------------------------*/
+  #todolist-title{
+    height: 70px;
+    margin: auto;
+    user-select: none;
+  }
+
+  #todolist-title h3{
+    padding: 5px;
+    padding-top: 18px;
+    padding-left: 20px;
+    margin: auto;
+  }
+
+  #todolist-content{
+    width: calc(100vw - 310px);
+    height: calc(100vh - 70px);;
+    padding: 15px;
+    background-color: rgb(241, 241, 241);
+    user-select: none;
+  }
+
+  #todolist-content .add-floating{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    border-radius: 50px;
+    bottom:40px;
+    right:40px;
+    background-color: rgb(86, 202, 86);
+    transition: .3s;
+  }
+  
+  #todolist-content .add-floating:hover > button{
+    transform:scale(1.05);
+    background-color: rgb(3, 180, 3);
+  }
+
+  #todolist-content .add-floating:hover > button i{
+    transform: rotateZ(180deg);
+  }
+
+  #todolist-content .add-floating button{
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    background-color: rgb(0, 206, 0);
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+  }
+
+  #todolist-content .add-floating button i{
+    font-size: 3rem;
+    transition: .3s;
+  }
+  #add-list-modal .modal-header{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+  }
+  #add-list-modal .modal-body{
+    background-color: #202020;
+    color: #fff;
+    padding: 5px;
+  }
+
+  #add-list-modal .modal-body .add-list-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 15px;
+  }
+
+  #add-list-modal .modal-body .add-list-form label{
+    width: 20%;
+  }
+
+  #add-list-modal .modal-body .add-list-form input{
+    width: 80%;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  #add-list-modal .modal-footer{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+    padding: 15px;
+  }
+
+  #add-list-modal .modal-footer button{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+    color: #fff;
+  }
+  
+  #add-list-modal .modal-footer div input{
+    background-color: rgb(27, 180, 40);
+    border: 0;
+    border-radius: 50px;
+    color: #fff;
+  }
+
+  #add-list-modal .modal-footer div input:hover{
+    background-color: rgb(22, 146, 32);
+    transform: scale(1.05);
+  }
+
+  .add-task-modal .modal-header{
+    background-color: rgb(26, 26, 26);
+    color: #b6b6b6;
+    padding: 20px;
+    border: 0;
+  }
+  .add-task-modal .modal-body{
+    background-color: #202020;
+    color: #fff;
+    padding: 20px;
+  }
+
+  .add-task-modal .modal-body .add-task-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .add-task-modal .modal-body .add-task-form label{
+    width: 20%;
+  }
+
+  .add-task-modal .modal-body .add-task-form input{
+    width: 70%;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .add-task-modal .modal-body .add-task-form div{
+    width: 70%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .add-task-modal .modal-body .add-task-form div input{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    color: aqua;
+    cursor: pointer;
+  }
+
+  .add-task-modal .modal-body .add-task-form div input:checked{
+    background-color: rgb(39, 212, 212);
+    color: rgb(39, 212, 212);
+  }
+
+  .add-task-modal .modal-body .add-task-form div label{
+    padding: 2px 10px;
+    user-select: none;
+    cursor:default;
+  }
+  
+  .add-task-modal .modal-footer{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+    padding: 15px;
+  }
+
+  .add-task-modal .modal-footer button{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+    color: #fff;
+  }
+  
+  .add-task-modal .modal-footer div input{
+    background-color: #47b2e4;
+    width: 80px;
+    border: 0;
+    border-radius: 50px;
+    color: #fff;
+  }
+
+  .add-task-modal .modal-footer div input:hover{
+    background-color: #429fca;
+    transform: scale(1.05);
+  }
+
+
+  #no-task{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(150, 150, 150);
+  }
+
+  #todolist-page{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: left;
+  }
+
+  #todolist-page::-webkit-scrollbar{
+    display: none;
+  }
+
+  #todolist-page .listCard{
+    height: 600px;
+    width: 300px;
+    border-radius: 10px;
+    margin: 10px;
+    padding:0;
+    transition: .3s;
+    position: relative;
+  }
+
+  #todolist-page .listCard:hover{
+    transform: scale(1.02);
+  }
+
+  #todolist-page .listCard .listCard-heading{
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #todolist-page .listCard .listCard-heading h5{
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+  #todolist-page .listCard .listCard-heading a{
+    margin-right: 15px;
+  }
+
+  #todolist-page .listCard .listCard-heading a i{
+    color: rgb(24, 24, 24);
+  }
+
+  #todolist-page .listCard .listCard-body{
+    height: calc(100% - 50px);
+    width: 100%;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow-y: auto;
+    cursor: pointer;
+  }
+
+  #todolist-page .listCard .listCard-body::-webkit-scrollbar{
+    display:none;
+  }
+
+  #todolist-page .listCard .listCard-body{
+    height: calc(100% - 50px);
+    width: 100%;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  #todolist-page .listCard .listCard-body .open-list{
+    position: absolute;
+    bottom: 0px;
+    right: 75px;
+    opacity: 0;
+  }
+
+  #todolist-page .listCard .listCard-body .add-task{
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    opacity: 0;
+    background-color: #fff;
+    border: 0;
+    padding: 0;
+  }
+
+  #todolist-page .listCard:hover > .listCard-body a{
+    bottom: 15px;
+    transition: .4s;
+    opacity: 1;
+  }
+
+  #todolist-page .listCard:hover > .listCard-body button{
+    bottom: 15px;
+    transition: .4s;
+    opacity: 1;
+  }
+
+  #todolist-page .listCard .listCard-body .add-task-floating div{
+    height: 50px;
+    width: 50px;
+    background-color: #47b2e4;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #todolist-page .listCard .listCard-body .open-task-floating div{
+    height: 50px;
+    width: 50px;
+    background-color: #fcfcfc;
+    color: rgb(37, 37, 37);
+    font-size: 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  #todolist-page .listCard .listCard-body .add-task-floating div:hover > i{
+    transform: rotateZ(180deg);
+    transition: .3s;
+  }
+
+  #todolist-page .listCard .listCard-body .open-task-floating div:hover > i{
+    transform: rotateZ(180deg);
+    transition: .3s;
+  }
+
+  #tasklist{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    user-select: none;
+  }
+
+  #tasklist .task{
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 1.1rem;
+    color: rgb(87, 87, 87);
+    transition: .1s;
+  }
+
+  #tasklist .task:hover{
+    background-color: rgb(215, 255, 233);
+    color: rgb(41, 146, 67);
+    display: flex;
+    cursor: pointer;
+  }
+
+  #tasklist .task:hover > i,label{
+    cursor: pointer;
+  }
+
+  #tasklist .task:hover > i:nth-of-type(1){
+    display: none;
+  }
+
+  #tasklist .task:hover > i:nth-of-type(2){
+    margin-right: 4.5px;
+    display: block;
+  }
+
+  #tasklist .task label{
+    margin-left: 8px;
+  }
+
+  #tasklist .task i{
+    margin-left: 10px;
+  }
+
+  #tasklist .task i:nth-of-type(2){
+    display: none;
+  }
+
+
+  #tasklist .task-overdue{
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 1.1rem;
+    color: rgb(245, 28, 28);
+    transition: .1s;
+  }
+
+  #tasklist .task-overdue:hover{
+    background-color: rgb(215, 255, 233);
+    color: rgb(41, 146, 67);
+    display: flex;
+    cursor: pointer;
+  }
+
+  #tasklist .task-overdue:hover > i,label{
+    cursor: pointer;
+  }
+
+  #tasklist .task-overdue:hover > i:nth-of-type(1){
+    display: none;
+  }
+
+  #tasklist .task-overdue:hover > i:nth-of-type(2){
+    margin-right: 4.5px;
+    display: block;
+  }
+
+  #tasklist .task-overdue label{
+    margin-left: 8px;
+  }
+
+  #tasklist .task-overdue i{
+    margin-left: 10px;
+  }
+
+  #tasklist .task-overdue i:nth-of-type(2){
+    display: none;
+  }
+
+
+
+  #tasklist .tasklist-footer{
+    height: 70px;
+    width: 100%;
+  }
+
+  #tasklist .task-done{
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 1.1rem;
+    color: rgb(161, 161, 161);
+    transition: .1s;
+  }
+
+  #tasklist .task-done label{
+    margin-left: 8px;
+    text-decoration: line-through;
+  }
+
+  #tasklist .task-done i{
+    margin-left: 10px;
+  }
+
+  
+  /*--------------------------------------------------------------
+  # To Do List - Specific List
+  --------------------------------------------------------------*/
+  #todolist-tasks-title{
+    height: 70px;
+    padding: 5px;
+    margin: auto;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #todolist-tasks-title p{
+    margin: 0 15px;
+    font-size: 1.2rem;
+    color: #888888;
+  }
+
+  #todolist-tasks-title span{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #202020;
+  }
+
+  #todolist-tasks-title a{
+    margin: 0 15px;
+    padding: 0;
+  }
+
+  #todolist-tasks-title a .back-btn{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 3px solid #b6b6b6;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #todolist-tasks-title a .back-btn i:nth-of-type(1){
+    color: #444444;
+    font-size: 1.5rem;
+  }
+
+  #todolist-tasks-title a .back-btn i:nth-of-type(2){
+    color: #fff;
+    font-size: 1.5rem;
+    display: none;
+  }
+
+  #todolist-tasks-title a div:hover{
+    width: 80px;
+    background-color: #444;
+  }
+
+  #todolist-tasks-title a div:hover{
+    width: 80px;
+    border: 0;
+  }
+
+  #todolist-tasks-title a div:hover > i:nth-of-type(1){
+    display: none;
+  }
+
+  #todolist-tasks-title a div:hover > i:nth-of-type(2){
+    display: block;
+  }
+
+  #todolist-tasks-content{
+    width: calc(100vw - 310px);
+    height: calc(100vh - 70px);;
+    padding: 15px;
+    background-color: rgb(241, 241, 241);
+    user-select: none;
+  }
+
+  #todolist-tasks-content .add-floating{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    border-radius: 50px;
+    bottom:40px;
+    right:40px;
+    background-color: rgb(86, 202, 86);
+    transition: .3s;
+  }
+  
+  #todolist-tasks-content .add-floating:hover{
+    background-color: rgb(70, 185, 70);
+  }
+
+  #todolist-tasks-content .add-floating:hover > div i{
+    transition: .3s;
+    transform: rotateZ(180deg);
+  }
+
+  #todolist-tasks-content .add-floating div{
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #todolist-tasks-content .add-floating div i{
+    font-size: 3rem;
+  }
+
+  #tasks{
+    height: 100%;
+    display: flex;
+  }
+
+  #tasks .list-tasks{
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+  }
+
+  #tasks .list-tasks .list-of-tasks{
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    margin: auto;
+    background-color: #fff;
+    padding: 5px;
+  }
+
+  #tasks .list-of-tasks-title{
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #d6d6d6;
+  }
+
+  #tasks .list-of-tasks-title p{
+    margin-top: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #888888;
+  }
+
+  #tasks .list-of-tasks-content{
+    height: calc(100% - 50px);
+    width: 100%;
+    padding-top: 10px;
+  }
+
+
+  #tasks .list-of-tasks-content .task{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: .3s;
+    border: 1px 0;
+    padding: 0;
+  }
+
+  #tasks .list-of-tasks-content .task:hover{
+    border-color: #b6b6b6;
+  }
+
+  #tasks .list-of-tasks-content .task:hover > .unfinished{
+    cursor: pointer;
+    color: rgb(29, 133, 15);
+    background-color: rgb(232, 255, 230);
+    font-weight: 700;
+  }
+
+  #tasks .list-of-tasks-content .task:hover > .task-status-unfinished{
+    cursor: pointer;
+    color: rgb(29, 133, 15);
+    background-color: rgb(232, 255, 230);
+  } 
+
+  #tasks .list-of-tasks-content .task .unfinished a div:hover > i:nth-of-type(1){
+    display: none;
+  }
+
+  #tasks .list-of-tasks-content .task .unfinished a div:hover > i:nth-of-type(2){
+    display: block;
+  }
+
+  #tasks .list-of-tasks-content .task .unfinished{
+    width: 100%;
+    height: 100%;
+  }
+
+  #tasks .list-of-tasks-content .task .task-name{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.1rem;
+    transition: .2s;
+  }
+
+  #tasks .list-of-tasks-content .task .done{
+    color: #b6b6b6;
+    text-decoration: line-through;
+  }
+
+
+  #tasks .list-of-tasks-content .task .task-name label{
+    user-select: none;
+    pointer-events: none;
+    margin-left: 20px;
+  }
+
+  #tasks .list-of-tasks-content .task .task-name i{
+    font-size: 1.1rem;
+  }
+
+  #tasks .list-of-tasks-content .task .task-name .done{
+    color: rgb(175, 175, 175);
+    text-decoration: strike-through;
+  }
+
+  #tasks .list-of-tasks-content .task .task-name i:nth-of-type(2){
+    display: none;
+  }
+
+  #tasks .list-of-tasks-content .task .task-status-unfinished{
+    height: 100%;
+    width: 10%;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #tasks .list-of-tasks-content .task .task-status-done{
+    height: 100%;
+    width: 10%;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #tasks .list-side{
+    width: 60%;
+    padding-left: .7%;
+  }
+
+  #tasks .list-side-upper{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  #tasks .list-side-upper .task-info{
+    width: 60%;
+    height: 100%;
+    padding: 5px;
+    display: none;
+  }
+
+  #tasks .list-side-upper .list-status{
+    width: 40%;
+    height: 100%;
+    padding: 5px;
+  }
+
+  #tasks .list-side .new-task{
+    width: 100%;
+    height: 60%;
+    padding: 5px;
+  }
+
+  #tasks .list-side-upper .task-info div{
+    height: 100%;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-title{
+    height: 15%;
+    display: flex;
+    justify-content: left;
+    border-radius: 0;
+    border-bottom: 1px solid #ebebeb;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-title p{
+    margin: auto 20px;
+    color: #919191;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-title span{
+    margin: auto 10px;
+    font-weight: 700;
+    color: #202020;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-body{
+    height: 65%;
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-body div{
+    height: 50px;
+    color: #929292;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-body div span{
+    font-weight: 600;
+    color: #202020;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-footer{
+    height: 20%;
+    border-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 10px;
+    border-top: 1px solid #ebebeb;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-footer div{
+    display: flex;
+    align-items: center;
+    margin: auto 5px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 50px;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-footer div:nth-of-type(1){
+    border: 1px solid #202020;
+    color: #202020;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-footer div a{
+    color: #202020;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+
+
+
+  #tasks .list-side-upper .list-status div{
+    height: 100%;
+    border-radius: 5px;
+    color: #47b2e4;
+  }
+
+  #tasks .list-side .new-task div{
+    height: 100%;
+    border-radius: 5px;
+  }
