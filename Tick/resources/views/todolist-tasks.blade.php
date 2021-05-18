@@ -83,7 +83,11 @@
                                     <div class="task-status-done">
                                         <form action="">
                                             @csrf
+<<<<<<< Updated upstream
                                             <a  onclick="this.parentNode.submit();><i class="bi bi-trash2-fill"></i></a>
+=======
+                                            <a  onclick="this.parentNode.submit();"><i class="bi bi-trash2-fill"></i></a>
+>>>>>>> Stashed changes
                                         </form>
                                     </div>
                                 @else
@@ -103,7 +107,13 @@
                                         <div>
                                             <form action="">
                                                 @csrf
+<<<<<<< Updated upstream
                                                 <a onclick="this.parentNode.submit();><i class="bi bi-trash2-fill"></i></a>
+=======
+
+                                                <a onclick="this.parentNode.submit();"><i class="bi bi-trash2-fill"></i></a>
+
+>>>>>>> Stashed changes
                                             </form>
                                         </div>
                                     </div>
