@@ -33,7 +33,7 @@ class ProfileController extends Controller
         ->where('accounts.account_id', $id)
         ->get();
 
-        $level = Level::find(Auth::user()->account);
+        $level = Level::find(Auth::user()->account->level_id);
         $account = Account::find(Auth::user()->account_id);
 
         return view('profile')->with('profile',$profile)->with('interface',$interface)->with('level', $level)->with('account', $account);
