@@ -53,4 +53,4 @@ Route::post('profile/edit', [App\Http\Controllers\ProfileController::class, 'upd
 
 //Dummy Routes - Change to connect back-end to front-end
 
-Route::get('todolist/{list_id}', [App\Http\Controllers\ToDoListController::class, 'showListContent'])->name('todolist-tasks');
+Route::get('todolist/sampleToDoListName', [App\Http\Controllers\ToDoListController::class, 'showListContent'])->name('todolist-tasks');

@@ -46,7 +46,7 @@ class ToDoListController extends Controller
 
     public function showaddTask($id){
 
-        $task_id = $id; 
+        $task_id = $id;
         return view ('todolist-add-task', compact('task_id'));
     }
     public function createTask(Request $request){
@@ -65,7 +65,7 @@ class ToDoListController extends Controller
         $task->save();
 
         $tasks = Task::all();
-        return redirect('/todolist');
+        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
     }
 
     public function getPoints($string){
@@ -94,11 +94,17 @@ class ToDoListController extends Controller
         $finTask = Task::find($id);
         $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
 
-        
+        // checks if task is overdue. give no points if overdue
+        if(Carbon::now()->floatdiffInHours($date, false) < 0){
+            $finTask->status = "overdue";
+            $finTask->save();
+            return $this->index();
+        }
         $finTask->status = "done";
         $finTask->date_finished = Carbon::now();
 
         $finTask->save();
+        $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
 
         $earnedPoints = ($finTask->task_points * ((Carbon::now()->floatdiffInHours($date, false))/24));
 
@@ -216,9 +222,7 @@ class ToDoListController extends Controller
     }
 
 
-    public function showListContent($id){
-        $list = Todolist::where('list_id', $id)->get();
-        $tasks = Task::where('task_id', $id)->get();
-        return view('todolist-tasks', ['list'=>$list,'tasks'=>$tasks]);
+    public function showListContent(){
+        return view('todolist-tasks');
     }
 }
