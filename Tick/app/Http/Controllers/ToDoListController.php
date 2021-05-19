@@ -221,6 +221,31 @@ class ToDoListController extends Controller
         //
     }
 
+    public function markAsDone($id){
+        $finTask = Task::find($id);
+        $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
+
+        
+        $finTask->status = "done";
+        $finTask->date_finished = Carbon::now();
+
+        $finTask->save();
+
+        $earnedPoints = ($finTask->task_points * ((Carbon::now()->floatdiffInHours($date, false))/24));
+
+        $account = Auth::user()->account;
+        $account->points_earned = $account->points_earned + $earnedPoints;
+        $account->save();
+
+        $account = Auth::user()->account;
+        $account->experience = $account->experience + $earnedPoints;
+        $account->save();
+
+        // check if user will be able to level up code here
+        $levelup = $this->canLevelUp($account->account_id);
+
+        return $this->showListContent($finTask->task_id);
+    }
 
     public function showListContent(){
         return view('todolist-tasks');

@@ -253,5 +253,9 @@
       mirror: false
     });
   });
-
 })()
+
+function test(name) {
+  document.querySelector("."+name).style.display = "block";
+}
+

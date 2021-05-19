@@ -96,13 +96,14 @@
                                         <div>
                                             <form action="">
                                                 @csrf
+
                                                 <a onclick="this.parentNode.submit();"><i class="bi bi-trash2-fill"></i></a>
+
                                             </form>
                                         </div>
                                     </div>
                                 @endif
                                 
- 
 
                             </div>
                         @endforeach

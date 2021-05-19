@@ -22,6 +22,8 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('css/style2.css')}}" rel="stylesheet">
+  <script src="{{asset('js/main.js')}}"></script>
+
 
 </head>
 
