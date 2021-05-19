@@ -18,7 +18,6 @@
                 $account->experience = $excess_experience;
                 $account->save();
                 $level = Level::where('level_id',$account->level_id)->get();
-                dd($level);
                 $level->save();
             }
         }
