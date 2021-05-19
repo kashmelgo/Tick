@@ -46,7 +46,7 @@ class ToDoListController extends Controller
 
     public function showaddTask($id){
 
-        $task_id = $id; 
+        $task_id = $id;
         return view ('todolist-add-task', compact('task_id'));
     }
     public function createTask(Request $request){
@@ -94,14 +94,16 @@ class ToDoListController extends Controller
         $finTask = Task::find($id);
         $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
 
-        
+
         $finTask->status = "done";
         $finTask->date_finished = Carbon::now();
-
         $finTask->save();
 
-        $earnedPoints = ($finTask->task_points * ((Carbon::now()->floatdiffInHours($date, false))/24));
-
+        if(Carbon::now()->floatdiffInHours($date, false) <= 0){
+            $earnedPoints = $finTask->task_points;
+        }else{
+            $earnedPoints = ($finTask->task_points * ((Carbon::now()->floatdiffInHours($date, false))/24));
+        }
         $account = Auth::user()->account;
         $account->points_earned = $account->points_earned + $earnedPoints;
         $account->save();
@@ -219,7 +221,7 @@ class ToDoListController extends Controller
         $finTask = Task::find($id);
         $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
 
-        
+
         $finTask->status = "done";
         $finTask->date_finished = Carbon::now();
 

@@ -47,7 +47,7 @@ class UserController extends Controller
         $details->address_id = $id;
         $details->fname = $request->fname;
         $details->lname = $request->lname;
-        $details->image = $request->profile;
+        $details->image = $request->profile->store('images/profilepic', 'public');
         $details->contact_num = $request->contact;
         $details->birthdate = $request->birthdate;
         $details->gender = $request->gender;
@@ -92,7 +92,7 @@ class UserController extends Controller
     {
         //
     }
-        
+
     /**
      * Show the form for editing the specified resource.
      *
