@@ -84,9 +84,7 @@
                                     <div class="task-status-done">
                                         <form action="">
                                             @csrf
-
                                             <a  onclick="this.parentNode.submit();><i class="bi bi-trash2-fill"></i></a>
-
                                         </form>
                                     </div>
                                 @else
@@ -108,9 +106,7 @@
                                         <div>
                                             <form action="">
                                                 @csrf
-
                                                 <a onclick="this.parentNode.submit();><i class="bi bi-trash2-fill"></i></a>
-
                                             </form>
                                         </div>
                                     </div>
