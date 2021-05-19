@@ -44,7 +44,17 @@
 
 @section('pageContent')
     <div id="todolist-tasks-title">
-        <h3>List Name</h3>
+
+        @foreach ($list as $list)
+        <p>List Name : <span>{{$list->list_name}}</span></p>
+        @endforeach
+        
+        <a href="javascript:history.back()">
+            <div class="back-btn">
+                <i class="bi bi-backspace-fill"></i>
+                <i class="bi bi-backspace"></i>
+            </div>
+        </a>
     </div>
     <div id="todolist-tasks-content">
         <div id="tasks">
@@ -104,6 +114,7 @@
                                     </div>
                                 @endif
                                 
+
 
                             </div>
                         @endforeach
@@ -171,8 +182,6 @@
                     </div>
                 </div>
             </div>
-        </a>
-        Content added here
         </div>
     </div>
 @endsection
