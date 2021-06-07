@@ -2089,7 +2089,6 @@
   }
 
   #tasks .list-side-upper .task-info .task-info-body div span{
-    font-weight: 600;
     color: #202020;
   }
 
@@ -2106,34 +2105,233 @@
 
   #tasks .list-side-upper .task-info .task-info-footer div{
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
-    margin: auto 5px;
+    margin-top: auto;
+    margin-bottom: auto;
     height: 30px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50px;
   }
 
-  #tasks .list-side-upper .task-info .task-info-footer div:nth-of-type(1){
-    border: 1px solid #202020;
+  #tasks .list-side-upper .task-info .task-info-footer div button{
+    border: 0;
+    padding: 8px 10px;
+    border-radius: 5px;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-footer div form .task-delete{
+    background-color:#fff;
+    color: #ff3c3c;
+    font-weight: 600;
+  }
+
+  #tasks .list-side-upper .task-info .task-info-footer div .task-update{
+    background-color: rgb(255, 251, 0);
+    color: #202020;
+    font-weight: 600;
+  }
+
+  .update-task-modal{
+    display: none;
+  }
+
+  .update-task-modal .modal-header{
+    background-color: rgb(26, 26, 26);
+    color: #b6b6b6;
+    padding: 20px;
+    border: 0;
+  }
+  .update-task-modal .modal-body{
+    background-color: #202020;
+    color: #fff;
+    padding: 20px;
+  }
+
+  .update-task-modal .modal-body .add-task-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .update-task-modal .modal-body .add-task-form label{
+    width: 20%;
+  }
+
+  .update-task-modal .modal-body .add-task-form input{
+    width: 70%;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .update-task-modal .modal-body .add-task-form div{
+    width: 70%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .update-task-modal .modal-body .add-task-form div input{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    color: aqua;
+    cursor: pointer;
+  }
+
+  .update-task-modal .modal-body .add-task-form div input:checked{
+    background-color: rgb(39, 212, 212);
+    color: rgb(39, 212, 212);
+  }
+
+  .update-task-modal .modal-body .add-task-form div label{
+    padding: 2px 10px;
+    user-select: none;
+    cursor:default;
+  }
+  
+  .update-task-modal .modal-footer{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+    padding: 15px;
+  }
+
+  .update-task-modal .modal-footer button{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+    color: #fff;
+  }
+  
+  .update-task-modal .modal-footer div input{
+    background-color: rgb(255, 251, 0);
+    width: 80px;
+    border: 0;
+    border-radius: 50px;
     color: #202020;
   }
 
-  #tasks .list-side-upper .task-info .task-info-footer div a{
-    color: #202020;
+  .update-task-modal .modal-footer div input:hover{
+    background-color: rgb(255, 253, 145);
+    transform: scale(1.05);
   }
 
   .hidden{
     display: none;
   }
 
+  #tasks .list-side-upper .list-status .list-status-content{
+    height: 100%;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: #202020;
+  }
 
+  #tasks .list-side-upper .list-status .status-bar{
+    height: 60%;
+    padding: 20px;
+    background-color: #292929;
+  }
 
+  #tasks .list-side-upper .list-status .status-bar-content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-  #tasks .list-side-upper .list-status div{
+  #tasks .list-side-upper .list-status .status-header{
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #tasks .list-side-upper .list-status .status-progress{
+    height: 20%;
+    border-radius: 5px;
+    width: 100%;
+    background-color: rgb(90, 90, 90);
+  }
+
+  #tasks .list-side-upper .list-status .progress-indicator{
+    font-size: .8rem;
+    margin-top: 5px;
+    color: rgb(209, 209, 209);
+  }
+
+  #tasks .list-side-upper .list-status .progress{
     height: 100%;
     border-radius: 5px;
-    color: #47b2e4;
+    background-color: rgb(247, 225, 29);
   }
+
+  #tasks .list-side-upper .list-status .status-num{
+    height: 40%;
+    display: flex;
+    background-color: #202020;
+  }
+
+  #tasks .list-side-upper .list-status .overall-progress{
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #202020;
+    padding: 5px;
+  }
+
+  #tasks .list-side-upper .list-status .overall-progress label{
+    font-size: .7rem;
+    color: rgb(209, 209, 209);
+  }
+
+  #tasks .list-side-upper .list-status .overall-progress-done p{
+    color: greenyellow;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  #tasks .list-side-upper .list-status .overall-progress-unfinished p{
+    color: rgb(255, 29, 29);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  #tasks .list-side-upper .list-status .task-type-progress{
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #202020;
+    padding: 5px;
+  }
+
+  #tasks .list-side-upper .list-status .task-type-progress label{
+    font-size: .7rem;
+    color: rgb(209, 209, 209);
+  }
+
+  #tasks .list-side-upper .list-status .task-type-progress p{
+    font-size: .7rem;
+    color: rgb(209, 209, 209);
+    margin-bottom: 12px;
+  }
+
+
+
+
+
+
+
+
+
 
   #tasks .list-side .new-task div{
     height: 100%;

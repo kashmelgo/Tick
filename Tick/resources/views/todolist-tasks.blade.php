@@ -81,13 +81,6 @@
                                         </form>
                                         <label for="">{{$task->task}}</label>
                                     </div>
-                                    <div class="task-status-done">
-                                        <form action="">
-                                            @csrf
-                                            <a  onclick="this.parentNode.submit();"><i class="bi bi-trash2-fill"></i></a>
-
-                                        </form>
-                                    </div>
                                 @else
                                     <div class="task-name unfinished">
 
@@ -103,16 +96,6 @@
                                         </form>
                                         <label for="">{{$task->task}}</label>
                                     </div>
-                                    <div class="task-status-unfinished">
-                                        <div>
-                                            <form action="">
-                                                @csrf
-
-                                                <a onclick="this.parentNode.submit();"><i class="bi bi-trash2-fill"></i></a>
-
-                                            </form>
-                                        </div>
-                                    </div>
                                 @endif
                                 
 
@@ -127,8 +110,85 @@
                 <div class="list-side-upper">
 
                     <div class="list-status">
-                        <div class="shadow">
-                            list status
+                        <?php
+                            $taskCount = 0;
+                            $doneCount = 0;
+                            $unfinishedCount = 0;
+
+                            $projectCount = 0;
+                            $assignmentCount = 0;
+                            $projectDoneCount = 0;
+                            $assignmentDoneCount = 0;
+                            $projectUnfinishedCount = 0;
+                            $assignmentUnfinishedCount = 0;
+
+                            foreach ($tasks as $task) {
+                                $taskCount++;
+                                if ($task->task_type == "Project") {
+                                    $projectCount++;
+                                    if ($task->status == "done") {
+                                        $doneCount++;
+                                        $projectDoneCount++;
+                                    } else {
+                                        $unfinishedCount++;
+                                        $projectUnfinishedCount++;
+                                    }
+                                }
+                                if ($task->task_type == "Assignment") {
+                                    $assignmentCount++;
+                                    if ($task->status == "done") {
+                                        $doneCount++;
+                                        $assignmentDoneCount++;
+                                    } else {
+                                        $unfinishedCount++;
+                                        $assignmentUnfinishedCount++;
+                                    }
+                                }
+                            }
+
+                            $progress = round(($doneCount/$taskCount)*100,2);
+                            $projectProgress = round(($projectDoneCount/$projectCount)*100,2);
+                            $assignmentProgress = round(($assignmentDoneCount/$assignmentCount)*100,2);
+
+                        ?>
+                        <div class="shadow list-status-content">
+                            <div class="status-bar">
+                                <div class="status-bar-content">
+                                    <div class="status-header">
+                                        <p>My Progress</p>
+                                    </div>
+                                    <div class="status-progress">
+                                        <div class="progress" style="width: {{$progress}}%"></div>
+                                    </div>
+                                    @if ($progress<100)
+                                        <p class="progress-indicator">{{$progress}} %</p>
+                                    @else
+                                        <p class="progress-indicator">Completed</p>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="status-num">
+                                <div class="overall-progress">
+                                    <div class="overall-progress-done">
+                                        <label>Finished Tasks</label>
+                                        <p>{{$doneCount}}</p>
+                                    </div>
+                                    <div class="overall-progress-unfinished">
+                                        <label>To Do Tasks</label>
+                                        <p>{{$unfinishedCount}}</p>
+                                    </div>
+                                </div>
+                                <div class="task-type-progress">
+                                    <div class="project-progress">
+                                        <label>Project Progress</label>
+                                        <p>{{$projectDoneCount}} - {{$projectUnfinishedCount}}</p>
+                                    </div>
+                                    <div class="assignment-progress">
+                                        <label>Assignment Progress</label>
+                                        <p>{{$assignmentDoneCount}} - {{$assignmentUnfinishedCount}}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -154,18 +214,15 @@
                                     </div>
                                 </div>
                                 <div class="task-info-footer">
+                                    @if ($task->status == "unfinished")
+                                        <div>
+                                            <button class="task-update" data-toggle="modal" data-target="#{{$task->tasks_id}}{{$task->updated_at}}">Update</button>
+                                        </div>
+                                    @endif
                                     <div>
                                         <form action="">
-                                            <a href="">
-                                                <i class="bi bi-journal-arrow-up"></i> Update
-                                            </a>
-                                        </form>
-                                    </div>
-                                    <div>
-                                        <form action="">
-                                            <a href="">
-                                                <i class="bi bi-file-earmark-x"></i> Delete
-                                            </a>
+                                            <input type="hidden" name="id" value="{{$task->tasks_id}}">
+                                            <button class="task-delete" type="submit">Delete</button>
                                         </form>
                                     </div>
                                     
@@ -175,13 +232,83 @@
 
                     @endforeach
 
-
                 </div>
+
                 <div class="new-task">
                     <div class="shadow">
                         add task
                     </div>
                 </div>
+
+
+                @foreach ($tasks as $task)
+                    <div class="modal fade update-task-modal" id="{{$task->tasks_id}}{{$task->updated_at}}" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6>Update "{{$task->task}}"</h6>
+                                </div>
+                
+                                    <form action="{{ route('todolist-add-task.updateTask') }}" method="POST" role="form">
+                                        @csrf
+                
+                                        <div class="modal-body">
+                                            <div class="add-task-form">
+                                                <label for="task">Task Name</label>
+                                                <input type="text" name="task" placeholder="e.g. TodoList" value="{{$task->task}}">
+                                            </div>
+                                            <div class="add-task-form">
+                                                <label for="subject">Subject</label>
+                                                <input type="text" name="subject" placeholder="e.g. Programming" value="{{$task->subject}}">
+                                            </div>
+                                            <div class="add-task-form">
+                                                <label for="due_date">Due Date</label>
+                                                <input type="date" name="due_date" placeholder="e.g. TodoList" value="{{$task->due_date}}">
+                                            </div>
+                                            <div class="add-task-form">
+                                                <label for="time">Time</label>
+                                                <input type="time" name="time" placeholder="e.g. TodoList" value="{{$task->time}}">
+                                            </div>
+                                            <div class="add-task-form">
+                                                <label for="list_name">Task Type  :</label>
+                                                <div>
+                                                    @if ($task->task_type == "Project")
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="task_type" id="radioOne{{$task->tasks_id}}" value="Assignment">
+                                                            <label class="form-check-label" for="inlineRadio1"> Assignment</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="task_type" id="radioTwo{{$task->tasks_id}}" value="Project" checked>
+                                                            <label class="form-check-label" for="inlineRadio2"> Project</label>
+                                                        </div>
+                                                    @elseif($task->task_type == "Assignment")
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="task_type" id="radioOne{{$task->tasks_id}}" value="Assignment" checked>
+                                                            <label class="form-check-label" for="inlineRadio1"> Assignment</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="task_type" id="radioTwo{{$task->tasks_id}}" value="Project">
+                                                            <label class="form-check-label" for="inlineRadio2"> Project</label>
+                                                        </div>
+                                                    @endif
+                                                    
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="task_id" value="{{$task->tasks_id}}">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <div class="add-task-submit">
+                                                <input class="btn" type="submit" value="Update">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
             </div>
         </div>
     </div>

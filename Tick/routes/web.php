@@ -43,7 +43,7 @@ Route::post('/todolist-add',[App\Http\Controllers\ToDoListController::class, 'cr
 Route::get('/todolist-add-task/{task_id}', [App\Http\Controllers\ToDoListController::class, 'showaddTask'])->name('showaddTask');
 
 Route::post('/todolist-add-task', [App\Http\Controllers\ToDoListController::class, 'createTask'])->name('todolist-add-task.createTask');
-Route::post('/todolist-add-task', [App\Http\Controllers\ToDoListController::class, 'createTask'])->name('todolist-add-task.createTask');
+Route::post('/todolist-update-task', [App\Http\Controllers\ToDoListController::class, 'updateTask'])->name('todolist-add-task.updateTask');
 
 Route::post('/todolist', [App\Http\Controllers\ToDoListController::class, 'deleteTask'])->name('todolist-deleteTask');
 Route::post('finishTask/{task_id}', [App\Http\Controllers\ToDoListController::class, 'finishTask'])->name('todolist-finishTask');

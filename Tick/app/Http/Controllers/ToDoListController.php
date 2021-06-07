@@ -30,14 +30,6 @@ class ToDoListController extends Controller
         return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
 
     }
-    public function weekly()
-    {
-        return view('todolist-weekly');
-    }
-    public function monthly()
-    {
-        return view('todolist-monthly');
-    }
 
     public function showaddList(){
 
@@ -77,8 +69,6 @@ class ToDoListController extends Controller
 
     public function seeTask(Request $request){
         $editTask = Task::find($request->tasks_id);
-
-
     }
 
     public function deleteTask(Request $request){
@@ -248,4 +238,9 @@ class ToDoListController extends Controller
         $tasks = Task::where('task_id', $id)->get();
         return view('todolist-tasks', ['list'=>$list,'tasks'=>$tasks]);
     }
+
+    public function updateTask(Request $request){
+        return "update task in TodolistController on updateTask()";
+    }
+
 }

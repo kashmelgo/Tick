@@ -256,6 +256,10 @@
 })()
 
 function test(name) {
+  var nodisplay = document.querySelectorAll(".list-side-upper .task-info");
+  for (let i = 0; i < nodisplay.length; i++) {
+    nodisplay[i].style.display = "none";
+  }
   document.querySelector("."+name).style.display = "block";
 }
 
