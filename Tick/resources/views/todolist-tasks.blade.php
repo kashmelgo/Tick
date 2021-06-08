@@ -122,9 +122,19 @@
                             $projectUnfinishedCount = 0;
                             $assignmentUnfinishedCount = 0;
 
+                            $isEmpty = true;
+                            $projectIsEmpty = true;
+                            $assignmentIsEmpty = true;
+
+                            $progress = 0;
+                            $projectProgress = 0;
+                            $assignmentProgress = 0;
+
                             foreach ($tasks as $task) {
                                 $taskCount++;
+                                $isEmpty = false;
                                 if ($task->task_type == "Project") {
+                                    $projectIsEmpty = false;
                                     $projectCount++;
                                     if ($task->status == "done") {
                                         $doneCount++;
@@ -135,6 +145,7 @@
                                     }
                                 }
                                 if ($task->task_type == "Assignment") {
+                                    $assignmentIsEmpty = false;
                                     $assignmentCount++;
                                     if ($task->status == "done") {
                                         $doneCount++;
@@ -146,9 +157,15 @@
                                 }
                             }
 
-                            $progress = round(($doneCount/$taskCount)*100,2);
-                            $projectProgress = round(($projectDoneCount/$projectCount)*100,2);
-                            $assignmentProgress = round(($assignmentDoneCount/$assignmentCount)*100,2);
+                            if ($isEmpty == false) {
+                                $progress = round(($doneCount/$taskCount)*100,2);
+                                if ($projectIsEmpty == false) {
+                                    $projectProgress = round(($projectDoneCount/$projectCount)*100,2);
+                                }
+                                if ($assignmentIsEmpty == false) {
+                                    $assignmentProgress = round(($assignmentDoneCount/$assignmentCount)*100,2);
+                                }
+                            }
 
                         ?>
                         <div class="shadow list-status-content">
@@ -160,7 +177,9 @@
                                     <div class="status-progress">
                                         <div class="progress" style="width: {{$progress}}%"></div>
                                     </div>
-                                    @if ($progress<100)
+                                    @if($isEmpty)
+                                        <p class="progress-indicator">--</p>
+                                    @elseif ($progress<100)
                                         <p class="progress-indicator">{{$progress}} %</p>
                                     @else
                                         <p class="progress-indicator">Completed</p>
@@ -181,11 +200,19 @@
                                 <div class="task-type-progress">
                                     <div class="project-progress">
                                         <label>Project Progress</label>
-                                        <p>{{$projectDoneCount}} - {{$projectUnfinishedCount}}</p>
+                                        @if ($projectIsEmpty)
+                                            <p>--</p>
+                                        @else
+                                            <p>{{$projectProgress}} %</p>
+                                        @endif
                                     </div>
                                     <div class="assignment-progress">
                                         <label>Assignment Progress</label>
-                                        <p>{{$assignmentDoneCount}} - {{$assignmentUnfinishedCount}}</p>
+                                        @if ($assignmentIsEmpty)
+                                            <p>--</p>
+                                        @else
+                                            <p>{{$assignmentProgress}} %</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -235,8 +262,53 @@
                 </div>
 
                 <div class="new-task">
-                    <div class="shadow">
-                        add task
+                    <div class="new-task-content shadow">
+                            <div class="new-task-header">
+                                <p>Create new tasks for "{{$list->list_name}}"</p>
+                            </div>
+                            <form action="{{ route('todolist-add-task.createTask') }}" method="POST" role="form">
+                                @csrf
+                                <div class="new-task-body">
+                                    <div class="new-name-content">
+                                        <div class="new-task-name">
+                                            <label>Task Name</label>
+                                            <input type="text" class="new-task-class" name="task" placeholder="e.g. TodoList">
+                                        </div>
+                                        <div class="new-task-subject">
+                                            <label>Subject</label>
+                                            <input type="text" class="new-task-class" name="subject" placeholder="e.g. Programming">
+                                        </div>
+                                        <div class="new-task-date">
+                                            <label>Due Date</label>
+                                            <input type="date" class="new-task-class" name="due_date">
+                                        </div>
+                                        <div class="new-task-time">
+                                            <label>Time</label>
+                                            <input type="time" class="new-task-class" name="due_date">
+                                        </div>
+                                        <div class="new-task-type">
+                                            <label>Task Type :</label>
+                                            <div class="new-task-type-content">
+                                                <div class="project-type">
+                                                    <input type="radio"  class="new-task-class-radio1" name="task_type" id="project-type" value="Project">
+                                                    <label for="">Project</label>
+                                                </div>
+                                                <div class="assignment-type">
+                                                    <input type="radio"  class="new-task-class-radio2" name="task_type" id="assignment-type" value="Assignment">
+                                                    <label for="">Assignment</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-task-footer">
+                                    <div class="new-task-footer-content">
+                                        <input type="hidden" name="task_id" value="{{$list->task_id}}">
+                                        <div onclick="clearTask()">Clear</div>
+                                        <button type="submit">Add Task</button>
+                                    </div>
+                                </div>
+                           </form>
                     </div>
                 </div>
 

@@ -263,3 +263,12 @@ function test(name) {
   document.querySelector("."+name).style.display = "block";
 }
 
+function clearTask() {
+  var innerRemove = document.querySelectorAll(".new-task-class");
+  document.querySelector(".new-task-class-radio1").checked = false;
+  document.querySelector(".new-task-class-radio2").checked = false;
+  for (let i = 0; i < innerRemove.length; i++) {
+    innerRemove[i].value = "";
+  }
+}
+

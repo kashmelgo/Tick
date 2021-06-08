@@ -34,7 +34,9 @@
                         </div>
                     </div>
                     <div class="experience">
-                        <p>Experience Here</p>
+                        <div class="experience-progress">
+                        
+                        </div>
                     </div>
                 </div>
                 <hr>

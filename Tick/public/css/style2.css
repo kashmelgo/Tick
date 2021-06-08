@@ -993,13 +993,14 @@
   }
 
   #sidebar-level{
-    background-color: rgb(255, 255, 255);
+    background-color: #202020;
     width: 250px;
     height: 100px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     margin: 10px;
+    padding: 10px;
   }
 
   #sidebar-level .level{
@@ -1022,6 +1023,19 @@
     width: 100%;
     text-align: center;
     color: #47b2e4;
+  }
+
+  #sidebar-level .experience{
+    height: 25%;
+    width: 100%;
+    border-radius: 50px;
+    background-color: #464646;
+  }
+  #sidebar-level .experience-progress{
+    height: 100%;
+    width: 50%;
+    border-radius: 50px;
+    background-color: rgb(204, 255, 128);
   }
 
   #sidebar-tabs .sidebar-tab{
@@ -2324,16 +2338,156 @@
     margin-bottom: 12px;
   }
 
-
-
-
-
-
-
-
-
-
-  #tasks .list-side .new-task div{
+  #tasks .list-side .new-task .new-task-content{
     height: 100%;
+    width: 100%;
     border-radius: 5px;
+    background-color: #202020;
+    border-radius: 10px;
+  }
+
+  #tasks .list-side .new-task .new-task-header{
+    width: 100%;
+    height: 15%;
+    background-color: #202020;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: rgb(156, 156, 156);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  #tasks .list-side .new-task .new-task-header p{
+    margin: 0 30px 0;
+  }
+
+  #tasks .list-side .new-task .new-task-body{
+    width: 100%;
+    height: 70%;
+    background-color: #292929;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #tasks .list-side .new-task .new-task-body label{
+    width: 20%;
+  }
+
+  #tasks .list-side .new-task .new-task-body input{
+    width: 70%;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #tasks .list-side .new-task .new-task-body .new-name-content{
+    width: 60%;
+    padding: 3%;
+    color: #d1d1d1;
+  }
+
+  #tasks .list-side .new-task .new-task-name{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  #tasks .list-side .new-task .new-task-subject{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  #tasks .list-side .new-task .new-task-date{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  #tasks .list-side .new-task .new-task-time{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  #tasks .list-side .new-task .new-task-type{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #tasks .list-side .new-task .new-task-type-content{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-right: 30px;
+  }
+
+  #tasks .list-side .new-task .new-task-type-content input{
+    width: 25px;
+    margin-right: 10px;
+  }
+
+  #tasks .list-side .new-task .new-task-type-content .project-type{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #tasks .list-side .new-task .new-task-type-content .assignment-type{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #tasks .list-side .new-task .new-task-footer{
+    width: 100%;
+    height: 120px;
+    background-color: #202020;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #tasks .list-side .new-task .new-task-footer-content{
+    width: 25%;
+    height: 80%;
+    background-color: #202020;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #tasks .list-side .new-task .new-task-footer-content button{
+    width: 40%;
+    height: 50%;
+    border: 0;
+    background-color: #0bff79;
+    color: #202020;
+    border-radius: 2px;
+    font-weight: 600;
+  }
+
+  #tasks .list-side .new-task .new-task-footer-content div{
+    background-color: #202020;
+    color: rgb(255, 51, 51);
+    margin-right: 20px;
   }
