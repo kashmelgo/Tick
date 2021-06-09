@@ -1052,6 +1052,7 @@
     height: 50px;
     display: flex;
     margin: 3px 0;
+    cursor: pointer;
   }
 
   #sidebar-tabs .sidebar-tab .tab .tab-color{
@@ -1105,6 +1106,58 @@
     color: #0e8fca;
     width: 230px;
     transition: .3s;
+  }
+
+  #add-list-modal-home .modal-header{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+  }
+  #add-list-modal-home .modal-body{
+    background-color: #202020;
+    color: #fff;
+    padding: 5px;
+  }
+
+  #add-list-modal-home .modal-body .add-list-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 15px;
+  }
+
+  #add-list-modal-home .modal-body .add-list-form label{
+    width: 20%;
+  }
+
+  #add-list-modal-home .modal-body .add-list-form input{
+    width: 80%;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  #add-list-modal-home .modal-footer{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+    padding: 15px;
+  }
+
+  #add-list-modal-home .modal-footer button{
+    background-color: rgb(26, 26, 26);
+    border: 0;
+    color: #fff;
+  }
+  
+  #add-list-modal-home .modal-footer div input{
+    background-color: rgb(27, 180, 40);
+    border: 0;
+    border-radius: 50px;
+    color: #fff;
+  }
+
+  #add-list-modal-home .modal-footer div input:hover{
+    background-color: rgb(22, 146, 32);
+    transform: scale(1.05);
   }
 
   #main{
@@ -1224,6 +1277,7 @@
     justify-content: center;
     text-align: left;
     position: relative;
+    cursor: pointer;
   }
   .main-content-list .listCard .preview{
     width:100%;
@@ -1307,6 +1361,55 @@
     right: 15px;
     display: none;
     transition: .3s;
+  }
+
+  .main-content-list .modal-header{
+    background-color: #202020;
+    display: flex;
+    align-items: center;
+  }
+
+  .main-content-list .modal-header .previewTask-name{
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .main-content-list .modal-header .previewTask-name p{
+    margin-bottom: 0;
+  }
+
+  .main-content-list .modal-header .previewTask-control-buttons button:nth-of-type(1){
+    color: rgb(255, 13, 13);
+    border: 0;
+    background-color: #202020;
+    margin-right: 5px;
+  }
+
+  .main-content-list .modal-header .previewTask-control-buttons button:nth-of-type(2){
+    color: #fff;
+    width: 70px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #429fca;
+    margin-right: 5px;
+  }
+
+  .main-content-list .modal-body{
+    padding:  15px 5px;
+    height: 50vh;
+    overflow-y: auto;
+  }
+
+  .main-content-list .modal-body{
+    padding:  20px 10px;
+    height: 50vh;
+    overflow-y: auto;
+  }
+
+  .main-content-list .modal-body li{
+    margin: 10px 0;
   }
 
   .main-content-planner{
@@ -2342,7 +2445,7 @@
     height: 100%;
     width: 100%;
     border-radius: 5px;
-    background-color: #202020;
+    background-color: #292929;
     border-radius: 10px;
   }
 
@@ -2458,19 +2561,15 @@
 
   #tasks .list-side .new-task .new-task-footer{
     width: 100%;
-    height: 120px;
-    background-color: #202020;
+    height: 100%;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
   }
 
   #tasks .list-side .new-task .new-task-footer-content{
     width: 25%;
     height: 80%;
-    background-color: #202020;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2480,6 +2579,7 @@
     width: 40%;
     height: 50%;
     border: 0;
+    padding: 5px;
     background-color: #0bff79;
     color: #202020;
     border-radius: 2px;
@@ -2487,7 +2587,6 @@
   }
 
   #tasks .list-side .new-task .new-task-footer-content div{
-    background-color: #202020;
     color: rgb(255, 51, 51);
     margin-right: 20px;
   }

@@ -28,7 +28,7 @@
     <div class="sidebar-tab">
         <p>Planner</p>
         <a href="{{ route('planner') }}">
-            <div class="tab active">
+            <div class="tab">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
             </div>
@@ -43,7 +43,7 @@
     <div class="sidebar-tab">
         <p>Shop</p>
         <a href="{{ route('themes') }}">
-            <div class="tab">
+            <div class="tab active">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-brush"></i> Theme</div>
             </div>
@@ -79,6 +79,6 @@
 
 @section('pageContent')
     <div class="container-fluid p-5 text-center">
-        <p>Planner</p>
+        <p>Theme Shop</p>
     </div>
 @endsection

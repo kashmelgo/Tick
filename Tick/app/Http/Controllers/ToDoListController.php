@@ -143,6 +143,21 @@ class ToDoListController extends Controller
     return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
     }
 
+    public function createListHome(Request $request){
+
+        $id = Auth::user()->id;
+    
+        $list = new Todolist;
+        $list->list_name = $request->list_name;
+        $list->student_id = $id;
+        $value= DB::table('to_do_lists')->get()->count();
+        $list->task_id=$value+1;
+        $list->list_id = $list->task_id;
+        $list->save();
+        
+        return redirect('/home');
+        }
+
     public function editList(Request $request){
         dd($request);
         $list = ToDoList::find();
@@ -153,6 +168,14 @@ class ToDoListController extends Controller
     }
 
     public function deleteList($id){
+        $list = Todolist::find($id);
+
+        $list->delete();
+
+        return $this->index();
+    }
+
+    public function deleteListHome($id){
         $list = Todolist::find($id);
 
         $list->delete();
