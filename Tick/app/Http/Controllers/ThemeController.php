@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Theme;
+use App\Models\Account;
 
 class ThemeController extends Controller
 {
@@ -13,7 +16,8 @@ class ThemeController extends Controller
      */
     public function index()
     {
-        return view('themes');
+        $account = Account::where('account_id', Auth::user()->id)->get();
+        return view('themes', ['account'=>$account]);
     }
 
     /**

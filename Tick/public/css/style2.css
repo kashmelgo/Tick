@@ -1160,6 +1160,16 @@
     transform: scale(1.05);
   }
 
+  .dropdown-content {
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+  }
+
   #main{
     width: 100vw;
     margin: 0;
@@ -2590,3 +2600,119 @@
     color: rgb(255, 51, 51);
     margin-right: 20px;
   }
+
+
+    /*--------------------------------------------------------------
+  # Planner
+  --------------------------------------------------------------*/
+  
+  #planner-title{
+    height: 70px;
+    margin: auto;
+  }
+
+  #planner-title h3{
+    padding: 5px;
+    padding-top: 18px;
+    padding-left: 20px;
+    margin: auto;
+  }
+
+  #planner-content{
+    width: calc(100vw - 310px);
+    height: calc(100vh - 70px);;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #planner-content .calendar-area{
+    width: 75%;
+    padding: 15px;
+    padding-right: 5px;
+  }
+
+  #planner-content .calendar-content{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border-radius: 1px solid rgba(255, 255, 255, 0.822);
+    background-color: #fff;
+  }
+
+  #planner-content .calendar-events-area{
+    width: 25%;
+    padding: 15px;
+  }
+
+  #planner-content .calendar-events-content{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border-radius: 1px solid rgba(255, 255, 255, 0.822);
+    background-color: #fff;
+  }
+
+  #themes{
+    height: 100%;
+  }
+
+  #themes .theme-nav{
+    height: 15%;
+    display: flex;
+    position: sticky;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+  }
+
+  #themes .theme-nav .points-section{
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(68, 68, 68);
+    border-radius: 50px;
+    width: 12%;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 119);
+  }
+
+  #themes .theme-content{
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 224, 224);
+  }
+
+  #themes .theme-list{
+    height: 90%;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+  }
+
+  #themes .theme-list::-webkit-scrollbar{
+    display: none;
+  }
+
+  #themes .theme-items{
+    height: 45%;
+    width: 45%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin: 10px;
+    transition: .2s;
+  }
+
+  #themes .theme-items:hover{
+    transform: scale(1.05);
+  }
+
+  

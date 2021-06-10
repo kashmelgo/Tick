@@ -78,7 +78,36 @@
 @endsection
 
 @section('pageContent')
-    <div class="container-fluid p-5 text-center">
-        <p>Theme Shop</p>
+    <div id="themes">
+        <div class="theme-nav shadow-sm">
+            <h1>Theme Shop</h1>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div class="points-section">
+                <i class="bi bi-star-fill"> <span>
+                    @foreach ($account as $account)
+                        {{$account->points_earned}}
+                    @endforeach    
+                </span></i>
+            </div>
+        </div>
+        <div class="theme-content">
+            <div class="theme-list">
+                <div class="theme-items shadow">
+                    
+                </div>
+                <div class="theme-items shadow">
+                    
+                </div>
+                <div class="theme-items shadow">
+                    
+                </div>
+                <div class="theme-items shadow">
+                    
+                </div>
+                
+            </div>
+        </div>
     </div>
 @endsection

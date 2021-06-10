@@ -78,7 +78,19 @@
 @endsection
 
 @section('pageContent')
-    <div class="container-fluid p-5 text-center">
-        <p>Planner</p>
+    <div id="planner-title">
+        <h3>Your Scheduler</h3>
+    </div>
+    <div id="planner-content">
+        <div class="calendar-area">
+            <div class="calendar-content shadow ">
+                
+            </div>
+        </div>
+        <div class="calendar-events-area">
+            <div class="calendar-events-content shadow">
+                
+            </div>
+        </div>
     </div>
 @endsection

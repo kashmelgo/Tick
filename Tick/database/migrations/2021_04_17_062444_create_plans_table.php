@@ -17,8 +17,8 @@ class CreatePlansTable extends Migration
             $table->id('plans_id');
             $table->integer('plan_id');
             $table->string('event');
-            $table->time('time');
-            $table->date('date');
+            $table->dateTime('start');
+            $table->dateTime('end');
             $table->enum('event_type',['Presentation','Lecture','Asynchronous','Other']);
             $table->string('subject');
             $table->timestamps();

@@ -79,7 +79,7 @@
 
 @section('pageContent')
     <div id="todolist-title">
-        <h3>Your Lists</h3>
+        <h3>My Lists</h3>
     </div>
     <div id="todolist-content">
 
