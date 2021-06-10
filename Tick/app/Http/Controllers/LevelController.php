@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class LevelController extends Controller
 {
+
     public function canLevelUp(Account $account){
         dd($account);
     }

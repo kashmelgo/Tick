@@ -21,6 +21,19 @@ class CreateLevelsTable extends Migration
             $table->string('background_color');
             $table->timestamps();
         });
+
+        //Insert some stuff
+        for($x=0, $y=200; $x<50; $x++, $y+=150){
+            DB::table('levels')->insert(
+                array(
+                    'level' => $x+1,
+                    'experience_needed' => $y,
+                    'foreground_color' => 'black',
+                    'background_color' => 'white',
+                )
+                );
+        }
+
     }
 
     /**
