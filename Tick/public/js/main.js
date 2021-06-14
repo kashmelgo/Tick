@@ -272,3 +272,40 @@ function clearTask() {
   }
 }
 
+function showUpdateInfo(num) {
+  var p = document.querySelectorAll('.user-details-info p');
+  var form = document.querySelectorAll('.user-details-info form');
+  var input = document.querySelectorAll('.user-details-info form input');
+  var editbtn = document.querySelectorAll('.editBtn');
+  var buttons = document.querySelectorAll('.user-details-edit-onhover');
+  
+  for (let i = 0; i < editbtn.length; i++) {
+    p[i].style.display = "block";
+    form[i].style.display = "none";
+    editbtn[i].style.display = "block";
+    buttons[i].style.display = "none";
+    if(i==num){
+      p[num].style.display = "none";
+      form[num].style.display = "block";
+      input[num].value = "";
+      editbtn[num].style.display = "none";
+      buttons[num].style.display = "block";
+    }
+  }
+}
+
+function closeUpdateInfo() {
+  var p = document.querySelectorAll('.user-details-info p');
+  var form = document.querySelectorAll('.user-details-info form');
+  var input = document.querySelectorAll('.user-details-info form input');
+  var editbtn = document.querySelectorAll('.editBtn');
+  var buttons = document.querySelectorAll('.user-details-edit-onhover');
+  
+  for (let i = 0; i < editbtn.length; i++) {
+    p[i].style.display = "block";
+    form[i].style.display = "none";
+    editbtn[i].style.display = "block";
+    buttons[i].style.display = "none";
+  }
+}
+

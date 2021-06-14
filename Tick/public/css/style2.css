@@ -2715,4 +2715,169 @@
     transform: scale(1.05);
   }
 
-  
+    /*--------------------------------------------------------------
+    # Dashboard
+    --------------------------------------------------------------*/
+
+  #profile{
+    height: 100%;
+    width: 100%;
+    padding: 2% 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+  }
+
+  #profile .profile-main{
+    height: 100%;
+    width: 70%;
+  }
+
+  #profile .profile-content{
+    height: 70%;
+    width: 100%;
+    padding: 2%;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+  }
+
+  #profile .profile-picture{
+    height: 35vh;
+    width:  35vh;
+    margin: auto;
+    border-radius: 50%;
+    background-color: #292929;
+  }
+
+  #profile .profile-details{
+    height: 25vh;
+    width:  35vh;
+    margin: auto;
+    padding: 1%;
+  }
+
+  #profile .profile-details .username{
+    height: 30%;
+    width:  100%;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    text-transform: uppercase;
+  }
+
+  #profile .profile-details .user-details{
+    width:  100%;
+    padding: 2%;
+    margin: 5% auto 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid#bdbdbd;
+  }
+
+  #profile .profile-details .user-details-item{
+    margin: 5px;
+    font-size: 1rem;
+    text-align: left;
+    color: #7a7a7a;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    justify-content: space-between;
+  }
+
+  #profile .profile-details .user-details-item:hover > .user-details-edit{
+    display: block;
+  }
+
+  #profile .profile-details .user-details-item svg{
+    margin-right: 10px;
+  }
+
+  #profile .profile-details .user-details-info{
+    display: flex;
+    align-items: center;
+  }
+
+  #profile .profile-details .user-details-info form{
+    display: none;
+  }
+
+  #profile .profile-details .user-details-info form input{
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 10px;
+    padding: 2px;
+    text-align: center;
+  }
+
+  #profile .profile-details .user-details-info p{
+    margin: 0;
+  }
+
+  #profile .profile-details .user-details-info i{
+    margin-right: 10px;
+  }
+
+  #profile .profile-details .user-details-edit{
+    display: flex;
+    align-items: center;
+    display: none;
+  }
+
+  #profile .profile-details .user-details-edit i{
+    font-size: .8rem;
+    color: #949494;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  #profile .profile-details .user-details-edit-onhover{
+    display: none;
+    
+  }
+
+  #profile .profile-details .user-details-edit-onhover i{
+    font-size: 1.5rem;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  #profile .profile-details .user-details-edit-onhover .update-info{
+    color: rgb(101, 255, 71);
+  }
+
+  #profile .profile-details .user-details-edit-onhover .update-info:hover{
+    color: rgb(62, 255, 23);
+  }
+
+  #profile .profile-details .user-details-edit-onhover .cancel-info{
+    color: rgb(255, 73, 49);
+  }
+
+  #profile .profile-details .user-details-edit-onhover .cancel-info:hover{
+    color: rgb(255, 50, 23);
+  }
+
+  #profile .stats-content{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    background-color: #303030;
+  }
+
+  #profile .stats-content-level{
+    width: 30%;
+    background-color: darkgoldenrod;
+  }
+
+  #profile .stats-content-task{
+    width: 70%;
+    background-color: rgb(226, 197, 123);
+  }
+

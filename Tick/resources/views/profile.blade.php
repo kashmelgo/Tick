@@ -18,10 +18,10 @@
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
             </div>
         </a>
-        <a href="{{ route('todolist-add') }}">
+        <a>
             <div class="tab">
                 <div class="tab-color"></div>
-                <div class="tab-text"><i class="bi bi-plus-circle"></i> New List</div>
+                <div class="tab-text" data-toggle="modal" data-target="#add-list-modal-home"><i class="bi bi-plus-circle"></i> New List</div>
             </div>
         </a>
     </div>
@@ -40,219 +40,117 @@
             </div>
         </a>
     </div>
+    <div class="sidebar-tab">
+        <p>Shop</p>
+        <a href="{{ route('themes') }}">
+            <div class="tab">
+                <div class="tab-color"></div>
+                <div class="tab-text"><i class="bi bi-brush"></i> Theme</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="modal fade" id="add-list-modal-home" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header"></div>
+
+                <form action="{{route('todolist-add.createListHome')}}" method="POST" role="form">
+                    @csrf
+
+                    <div class="modal-body">
+                        <div class="add-list-form">
+                            <label for="list_name">New List:</label>
+                            <input type="text" name="list_name" placeholder="e.g. TodoList">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div class="add-list-submit">
+                            <input class="btn" type="submit" value="Create">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('pageContent')
-    <div class="container-fluid p-5 h-100">
-        @foreach ($profile as $profile)
-            <div class="container-fluid profile-head m-0 p-0">
-                <div class="row mx-5 mb-3">
-
-                <div class="col-3 text-center">
-                        <i class="fas fa-user-circle  profile-picture text-secondary"></i>
-                    </div>
-                    <div class="col-9 p-0 m-0">
-                        <div class="container m-0 p-0">
-                            <p class="profile-name  text-capitalize">{{$profile->fname}} {{$profile->lname}}</p>
+    <div id="profile">
+        <div class="profile-main shadow">
+            <div class="profile-content">
+                <div class="profile-picture"></div>
+                <div class="profile-details">
+                    @foreach ($profile as $profile)
+                        <div class="username">
+                            <p>{{$profile->fname}} {{$profile->lname}}</p>
                         </div>
-                        <hr>
-                        <div class="container m-0 p-0 text-secondary profile-info">
-                            <div class="d-flex flex-row">
-                                <p class="mr-5 my-0"><i class="fas fa-calendar-day mr-3"></i>{{$profile->birthdate}}</p>
-                                <p class="mr-5 my-0"><i class="fas fa-venus-mars mr-3"></i>{{$profile->gender}}</p>
-                                <p class="mr-5 my-0"><i class="fas fa-graduation-cap mr-3"></i>{{$profile->educational_attainment}}</p>
-                            </div>
-                            <p class="m-0"><i class="fas fa-map-marker-alt mr-3 text-capitalize"></i> {{$profile->street}} {{$profile->barangay}} {{$profile->town}}, {{$profile->province}} {{$profile->postal_code}}</p>
-                            <p class="m-0"><i class="fas fa-mobile-alt mr-3"></i> {{$profile->contact_num}}</p>
-                            <p class="m-0"><i class="fas fa-at mr-3"></i>{{$profile->email}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container d-flex justify-content-center mt-2 mb-3">
-                    <button class="btn btn btn-outline-dark rounded" data-toggle="modal" data-target="#editprofile">Edit Profile</button>
-                </div>
-                <div class="modal fade" id="editprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Profile</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <form action="/profile/edit" method="post"  enctype="multipart/form-data">
-                                @csrf
-                                <div class="modal-body">
-                                    <div class="form-group row">
-                                        <label for="fname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
-
-                                        <div class="col-md-6">
-                                            <input id="fname" type="text" class="form-control text-capitalize" value="{{$profile->fname}}"  name="fname" required autocomplete="fname" autofocus>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="lname" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
-
-                                        <div class="col-md-6">
-                                            <input id="lname" type="text" class="form-control text-capitalize"  value="{{$profile->lname}}" name="lname" required autocomplete="lname" autofocus>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="birthdate" class="col-md-4 col-form-label text-md-right">{{ __('Birthdate') }}</label>
-
-                                        <div class="col-md-6 ">
-                                            <input id="birthdate" type="date" value="{{$profile->birthdate}}" class="form-control" name="birthdate">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
-
-                                        <div class="col-md-6 ">
-                                            <select id="gender" class="form-control" name="gender" required>
-                                                @if ($profile->gender=="Male")
-                                                    <option value="Male" selected>Male</option>
-                                                    <option value="Female">Female</option>
-                                                @else
-                                                    <option value="Male">Male</option>
-                                                    <option value="Female" selected>Female</option>
-                                                @endif
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="attainment" class="col-md-4 col-form-label text-md-right">{{ __('Educational Attainment') }}</label>
-
-                                        <div class="col-md-6 ">
-                                            <select id="attainment" class="form-control" name="attainment" required>
-                                                @if ($profile->educational_attainment=="Highschool")
-                                                    <option value="Highschool" selected>Highschool</option>
-                                                    <option value="College">College</option>
-                                                @else
-                                                <option value="Highschool">Highschool</option>
-                                                <option value="College" selected>College</option>
-                                                @endif
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="contact" class="col-md-4 col-form-label text-md-right">{{ __('Contact Number') }}</label>
-
-                                        <div class="col-md-6">
-                                            <input id="contact" type="number" class="form-control" name="contact" value="{{$profile->contact_num}}" required>
-                                        </div>
-                                    </div>
-
-                                    <hr>
-
-                                    <div class="form-group">
-                                        <div class="container px-5">
-                                            <label class="col-form-label text-md-right">{{ __('Complete Address :') }}</label>
-                                        </div>
-
-                                        <div class="row my-2">
-                                            <label class="col-md-4 col-form-label text-md-right">{{ __('Street') }}</label>
-
-                                            <div class="col-md-6">
-                                                <input id="street" type="text" class="form-control text-capitalize" name="street" value="{{$profile->street}}"  required autofocus>
-                                            </div>
-                                        </div>
-
-                                        <div class="row my-2">
-                                            <label class="col-md-4 col-form-label text-md-right">{{ __('Barangay') }}</label>
-
-                                            <div class="col-md-6">
-                                                <input id="barangay" type="text" class="form-control text-capitalize" name="barangay" value="{{$profile->barangay}}" required autofocus>
-                                            </div>
-                                        </div>
-
-                                        <div class="row my-2">
-                                            <label class="col-md-4 col-form-label text-md-right">{{ __('Town/City') }}</label>
-
-                                            <div class="col-md-6">
-                                                <input id="town" type="text" class="form-control text-capitalize" name="town" value="{{$profile->town}}" required autofocus>
-                                            </div>
-                                        </div>
-
-                                        <div class="row my-2">
-                                            <label class="col-md-4 col-form-label text-md-right">{{ __('Province') }}</label>
-
-                                            <div class="col-md-6">
-                                                <input id="province" type="text" class="form-control text-capitalize" name="province" value="{{$profile->province}}" required autofocus>
-                                            </div>
-                                        </div>
-
-                                        <div class="row my-2">
-                                            <label class="col-md-4 col-form-label text-md-right">{{ __('Postal Code') }}</label>
-
-                                            <div class="col-md-6">
-                                                <input id="postal" type="number" class="form-control w-50" name="postal" value="{{$profile->postal_code}}" required autofocus>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="user-details">
+                            <div class="user-details-item">
+                                <div class="user-details-info">
+                                    @if ($profile->gender == "Male")
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-male" viewBox="0 0 16 16" style="color: rgb(0, 132, 255)">
+                                            <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2H9.5zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+                                        </svg> {{$profile->gender}}
+                                    @else
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-female" viewBox="0 0 16 16" style="color: rgb(240, 51, 83)">
+                                            <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z"/>
+                                        </svg> {{$profile->gender}}
+                                    @endif
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success">Save changes</button>
+                            </div>
+                            <div class="user-details-item">
+                                <div class="user-details-info">
+                                    <i class="bi bi-envelope" style="color: rgb(0, 211, 46)"></i>
+                                    <p>{{$profile->email}}</p>
+                                    <form action="" method="post">
+                                        <input type="email" name="update-email">
+                                    </form>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            <div class="row mx-5 mb-3 profile-bottom d-flex justify-content-between">
-                <div class="col-4 p-1">
-                    <div class="container bg-light h-100 card p-2 text-light text-center shadow">
-                        <div class="container bg-light shadow card mb-2 h-50 p-3 text-dark text-center">
-                            Task Statistics
-                        </div>
-                        <div class="container bg-light shadow card p-3 h-50 text-dark text-center">
-                            Planner records
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 mt-1">
-                    <div class="level container-fluid bg-light card-top card mb-3 p-3 text-dark shadow text-center">
-                        <h5> Level and Experience </h5>
-                        <div class="progress w-100 position-relative flex">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{($account->experience / $level->experience_needed) * 100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($account->experience / $level->experience_needed) * 100}}%">
-                                <span> <p class="justify-content-center position-absolute w-100">{{($account->experience / $level->experience_needed) * 100}} %</p> </span>
+                                <div class="user-details-edit">
+                                    <i class="bi bi-pencil-square editBtn" onclick="showUpdateInfo(0)"> Edit</i>
+                                </div>
+                                <div class="user-details-edit-onhover">
+                                    <i class="bi bi-check-square-fill update-info"></i>
+                                    <i class="bi bi-x-square-fill cancel-info" onclick="closeUpdateInfo()"></i>
+                                </div>
                             </div>
 
-                        </div>
-                        <h6></span>Level {{$account->level_id}}</span></h6>
-                        {{-- <div class="box justify-content-center">
-                            <div class="percent">
-                                <svg>
-                                    <circle cx="70" cy="70" r="70"></circle>
-                                    <circle cx="70" cy="70" r="70"></circle>
-                                </svg>
-                                <div class="level number">
-                                    <h2>insert<span>%</span></h2>
+                            <div class="user-details-item">
+                                <div class="user-details-info">
+                                    <i class="bi bi-envelope" style="color: rgb(207, 207, 0)"></i>
+                                    <p>{{$profile->contact_num}}</p>
+                                    <form action="" method="post">
+                                        <input type="number" name="update-contact">
+                                    </form>
                                 </div>
-                                <h1 class="level progress">Level 1</h1>
+                                <div class="user-details-edit">
+                                    <i class="bi bi-pencil-square editBtn" onclick="showUpdateInfo(1)"> Edit</i>
+                                </div>
+                                <div class="user-details-edit-onhover">
+                                    <i class="bi bi-check-square-fill update-info"></i>
+                                    <i class="bi bi-x-square-fill cancel-info" onclick="closeUpdateInfo()"></i>
+                                </div>
                             </div>
-                        </div> --}}
-                    </div>
-                    <div class="container bg-light shadow card-bottom card p-2 text-light text-center">
-                            <div class="container bg-light card mb-2 h-75 p-3 text-dark shadow text-center">
-                                Theme Used
+                            <div class="user-details-item">
+                                <div class="user-details-info">
+                                    <i class="bi bi-calendar-event" style="color: red"></i> {{$profile->birthdate}}
+                                </div>
                             </div>
-                            <div class="container bg-light shadow p-0 card h-25 text-dark text-center">
-                                <button class="btn btn-light shadow w-100 h-100">Theme Shop</button>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-4 p-1">
-                    <div class="container bg-dark shadow h-100 card p-3 text-light text-center">
-                        User Settings
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        @endforeach
+            <div class="stats-content">
+                <div class="stats-content-level">
+                    
+                </div>
+                <div class="stats-content-task">
+                    
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
