@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThemesTable extends Migration
+class OwnedThemes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateThemesTable extends Migration
      */
     public function up()
     {
-        Schema::create('themes', function (Blueprint $table) {
-            $table->id('theme_id');
-            $table->string('theme_name');
-            $table->integer('cost');
+        Schema::create('owned_themes', function (Blueprint $table) {
+            $table->id('owned_theme_id');
+            $table->integer('theme_id');
+            $table->integer('student_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateThemesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('themes');
+        //
     }
 }

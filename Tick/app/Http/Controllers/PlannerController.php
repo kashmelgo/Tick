@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Account;
+use App\Models\Level;
 
 class PlannerController extends Controller
 {
@@ -13,7 +16,14 @@ class PlannerController extends Controller
      */
     public function index()
     {
-        return view('planner');
+        $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+        foreach ($sidebaraccount as $sidebaraccount) {
+            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+            $sidebarexperience = $sidebaraccount->experience;
+        }
+
+        
+        return view('planner', ['sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel] );
     }
 
     /**

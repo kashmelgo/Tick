@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Theme;
 use App\Models\Account;
+use App\Models\Level;
 
 class ThemeController extends Controller
 {
@@ -15,9 +16,14 @@ class ThemeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+        foreach ($sidebaraccount as $sidebaraccount) {
+            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+            $sidebarexperience = $sidebaraccount->experience;
+        }
         $account = Account::where('account_id', Auth::user()->id)->get();
-        return view('themes', ['account'=>$account]);
+        return view('themes', ['account'=>$account, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
     }
 
     /**

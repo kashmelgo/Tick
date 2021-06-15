@@ -27,7 +27,13 @@ class ToDoListController extends Controller
     {
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
         $tasks = Task::all();
-        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+        $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+        foreach ($sidebaraccount as $sidebaraccount) {
+            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+            $sidebarexperience = $sidebaraccount->experience;
+        }
+
+        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
 
     }
 
@@ -77,7 +83,12 @@ class ToDoListController extends Controller
 
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
         $tasks = Task::all();
-        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+        $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+        foreach ($sidebaraccount as $sidebaraccount) {
+            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+            $sidebarexperience = $sidebaraccount->experience;
+        }
+        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
     }
 
     public function finishTask($id){
@@ -122,7 +133,12 @@ class ToDoListController extends Controller
 
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
         $tasks = Task::all();
-        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+        $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+        foreach ($sidebaraccount as $sidebaraccount) {
+            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+            $sidebarexperience = $sidebaraccount->experience;
+        }
+        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
     }
 
     public function createList(Request $request){
@@ -140,7 +156,12 @@ class ToDoListController extends Controller
 
     $lists = Todolist::where('student_id', Auth::user()->id)->get();
     $tasks = Task::all();
-    return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks]);
+    $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+        foreach ($sidebaraccount as $sidebaraccount) {
+            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+            $sidebarexperience = $sidebaraccount->experience;
+        }
+    return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
     }
 
     public function createListHome(Request $request){
@@ -259,7 +280,12 @@ class ToDoListController extends Controller
     public function showListContent($id){
         $list = Todolist::where('list_id', $id)->get();
         $tasks = Task::where('task_id', $id)->get();
-        return view('todolist-tasks', ['list'=>$list,'tasks'=>$tasks]);
+        $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+        foreach ($sidebaraccount as $sidebaraccount) {
+            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+            $sidebarexperience = $sidebaraccount->experience;
+        }
+        return view('todolist-tasks', ['list'=>$list,'tasks'=>$tasks,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
     }
 
     public function updateTask(Request $request){

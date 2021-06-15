@@ -25,19 +25,28 @@
         <main>
             <div id="sidebar" class="shadow rounded-right">
                 <div id="sidebar-level">
-                    <div class="level">
-                        <div class="level-num">
-                            <p>Level:</p>
-                            <div>
-                                <h2>1</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience">
-                        <div class="experience-progress">
-                        
-                        </div>
-                    </div>
+                    <?php
+                            $exp = $sidebarexperience;
+                            foreach ($sidebarlevel as $level) {
+                                $exp_needed = $level->experience_needed;
+                                $mylevel = $level->level -1;
+                            }
+
+                            $expbar = ($exp/$exp_needed)*100;
+                            echo "
+                                <div class='level'>
+                                    <div class='level-num'>
+                                        <p>Level:</p>
+                                        <div>
+                                            <h2>$mylevel</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='experience'>
+                                    <div class='experience-progress' style='width:$expbar%'></div>
+                                </div>
+                            ";  
+                        ?>
                 </div>
                 <hr>
                 <div id="sidebar-tabs">

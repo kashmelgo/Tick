@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Todolist;
 use App\Models\Task;
+use App\Models\Account;
+use App\Models\Level;
 
 
 class HomeController extends Controller
@@ -29,6 +31,13 @@ class HomeController extends Controller
     {
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
         $tasks = Task::all();
-        return view('home', ['lists'=>$lists, 'tasks'=>$tasks]);
+        $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+        foreach ($sidebaraccount as $sidebaraccount) {
+            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+            $sidebarexperience = $sidebaraccount->experience;
+        }
+
+        
+        return view('home', ['lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel] );
     }
 }

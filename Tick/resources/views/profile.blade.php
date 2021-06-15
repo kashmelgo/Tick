@@ -79,8 +79,8 @@
 
 @section('pageContent')
     <div id="profile">
-        <div class="profile-main shadow">
-            <div class="profile-content">
+        <div class="profile-main">
+            <div class="profile-content shadow-sm">
                 <div class="profile-picture"></div>
                 <div class="profile-details">
                     @foreach ($profile as $profile)
@@ -144,11 +144,75 @@
                 </div>
             </div>
             <div class="stats-content">
-                <div class="stats-content-level">
-                    
+                <div class="stats-content-level shadow">
+                    <?php
+                    $exp = $sidebarexperience;
+                    foreach ($sidebarlevel as $level) {
+                        $exp_needed = $level->experience_needed;
+                        $mylevel = $level->level -1;
+                    }
+
+                    $expbar = ($exp/$exp_needed)*100;
+                    echo "
+                        <div class='content-level'>
+                            <p>Your Level</p>
+                            <div class='level-container shadow'>
+                                <p>$mylevel</p>
+                            </div>
+                        </div>
+                        <div class='content-experience'>
+                            <div class='experience-container shadow'>
+                                <div class='experience-container-progress' style='width: $expbar%''></div>
+                            </div>
+                        </div>
+                    "; 
+
+                    $taskDoneRatio = ($taskDone/$taskCount)*100;
+                    $taskNotDoneRatio = 100 - $taskDoneRatio;
+                ?>
                 </div>
-                <div class="stats-content-task">
-                    
+                <div class="stats-content-task shadow">
+                    <div class="overall-task">
+                        <div class="content-level">
+                            <p>Overall Completed Task(s)</p>
+                            <div class="level-container shadow">
+                                <p>{{$taskDoneRatio}}%</p>
+                            </div>
+                        </div>
+                        <div class="content-experience">
+                            <div class="experience-container shadow">
+                                <div class="experience-container-progress-done" style="width: {{$taskDoneRatio}}%"></div>
+                                <div class="experience-container-progress-unfinish" style="width: {{$taskNotDoneRatio}}%"></div>
+                            </div>
+                        </div>
+                        <div class="content-experience-legend">
+                            <ul>
+                                <li>Done - {{$taskDone}}</li>
+                                <li>Not yet done - {{$taskNotDone}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overall-task-stats">
+                        <div class="overall-list-stats">
+                            <div class="content-level">
+                                <p>Active List(s)</p>
+                                <div class="level-container shadow">
+                                    @php
+                                        echo "<p>$listnum</p>"
+                                    @endphp
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overall-plan-stats">
+                            <div class="content-level">
+                                <p>Planned Event(s)</p>
+                                <div class="level-container shadow">
+                                    <p>--</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

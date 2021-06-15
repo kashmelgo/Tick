@@ -23,10 +23,10 @@ class CreateLevelsTable extends Migration
         });
 
         //Insert some stuff
-        for($x=0, $y=200; $x<50; $x++, $y+=150){
+        for($x=1, $y=0; $x<=50; $x++, $y+=150){
             DB::table('levels')->insert(
                 array(
-                    'level' => $x+1,
+                    'level' => $x,
                     'experience_needed' => $y,
                     'foreground_color' => 'black',
                     'background_color' => 'white',

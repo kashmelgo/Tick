@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Level;
 use App\Models\Account;
+use App\Models\ToDolist;
+use App\Models\Task;
 
 class ProfileController extends Controller
 {
@@ -35,8 +37,31 @@ class ProfileController extends Controller
 
         $level = Level::find(Auth::user()->account->level_id);
         $account = Account::find(Auth::user()->account_id);
+        $listnum = ToDolist::where('student_id', Auth::user()->id)->count();
 
-        return view('profile')->with('profile',$profile)->with('interface',$interface)->with('level', $level)->with('account', $account);
+        $taskCount = 0;
+        $taskDone = 0;
+        $taskNotDone = 0;
+        $lists = ToDolist::where('student_id', Auth::user()->id)->get();
+        foreach ($lists as $list) {
+            $tasks = Task::where('task_id', $list->task_id)->get();
+            foreach ($tasks as $task) {
+                $taskCount++;
+                if ($task->status == "done") {
+                    $taskDone++;
+                } else {
+                    $taskNotDone++;
+                }
+                
+            }
+        }
+
+        $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+        foreach ($sidebaraccount as $sidebaraccount) {
+            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+            $sidebarexperience = $sidebaraccount->experience;
+        }
+        return view('profile',['taskCount'=>$taskCount,'taskDone'=>$taskDone,'taskNotDone'=>$taskNotDone,'listnum'=>$listnum,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel])->with('profile',$profile)->with('interface',$interface)->with('level', $level)->with('account', $account);
     }
 
     /**

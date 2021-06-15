@@ -21,7 +21,7 @@
         <a>
             <div class="tab">
                 <div class="tab-color"></div>
-                <div class="tab-text" data-toggle="modal" data-target="#add-list-modal"><i class="bi bi-plus-circle"></i> New List</div>
+                <div class="tab-text" data-toggle="modal" data-target="#add-list-modal-home"><i class="bi bi-plus-circle"></i> New List</div>
             </div>
         </a>
     </div>
@@ -52,7 +52,7 @@
 
     <div class="modal fade" id="add-list-modal-home" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+        <div class="modal-content">
             <div class="modal-header"></div>
 
                 <form action="{{route('todolist-add.createListHome')}}" method="POST" role="form">
