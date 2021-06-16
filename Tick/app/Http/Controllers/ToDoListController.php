@@ -23,8 +23,10 @@ class ToDoListController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+
+
+
+    public function index(){
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
         $tasks = Task::all();
         $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
@@ -32,26 +34,21 @@ class ToDoListController extends Controller
             $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
             $sidebarexperience = $sidebaraccount->experience;
         }
-
         return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
-
     }
 
     public function showaddList(){
-
         return view ('todolist-add');
     }
 
     public function showaddTask($id){
-
         $task_id = $id;
         return view ('todolist-add-task', compact('task_id'));
     }
+
     public function createTask(Request $request){
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
-
         $task = new Task;
-
         $task->task_id = $request->task_id;
         $task->task = $request->task;
         $task->due_date = $request->due_date;
@@ -61,9 +58,24 @@ class ToDoListController extends Controller
         $task->date_finished = null;
         $task->task_points = $this->getPoints($task->task_type);
         $task->save();
-
         $tasks = Task::all();
         return redirect('/todolist');
+    }
+
+    public function createTaskInsideList(Request $request){
+        $lists = Todolist::where('student_id', Auth::user()->id)->get();
+        $task = new Task;
+        $task->task_id = $request->task_id;
+        $task->task = $request->task;
+        $task->due_date = $request->due_date;
+        $task->time = $request->time;
+        $task->task_type = $request->task_type;
+        $task->subject = $request->subject;
+        $task->date_finished = null;
+        $task->task_points = $this->getPoints($task->task_type);
+        $task->save();
+        $tasks = Task::all();
+        return $this->showListContent($request->task_id);
     }
 
     public function getPoints($string){
@@ -80,7 +92,6 @@ class ToDoListController extends Controller
     public function deleteTask(Request $request){
         $task = Task::where('tasks_id', $request->tasks_id);
         $task->delete();
-
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
         $tasks = Task::all();
         $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
@@ -94,12 +105,9 @@ class ToDoListController extends Controller
     public function finishTask($id){
         $finTask = Task::find($id);
         $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
-
-
         $finTask->status = "done";
         $finTask->date_finished = Carbon::now();
         $finTask->save();
-
         if(Carbon::now()->floatdiffInHours($date, false) <= 0){
             $earnedPoints = $finTask->task_points;
         }else{
@@ -112,25 +120,20 @@ class ToDoListController extends Controller
         $account = Auth::user()->account;
         $account->experience = $account->experience + $earnedPoints;
         $account->save();
-
         // check if user will be able to level up code here
         $levelup = $this->canLevelUp($account->account_id);
         return $this->index();
     }
 
     public function editTask(Request $request){
-
         dd($request);
-
         $task = Task::find($request->tasks_id);
-
         $task->task = $request->task;
         $task->subject = $request->subject;
         $task->due_date = $request->due_date;
         $task->time = $request->time;
         $task->task_type = $request->task_type;
         $task->save();
-
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
         $tasks = Task::all();
         $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
@@ -142,32 +145,7 @@ class ToDoListController extends Controller
     }
 
     public function createList(Request $request){
-
-
-    $id = Auth::user()->id;
-
-    $list = new Todolist;
-    $list->list_name = $request->list_name;
-    $list->student_id = $id;
-    $value= DB::table('to_do_lists')->get()->count();
-    $list->task_id=$value+1;
-    $list->list_id = $list->task_id;
-    $list->save();
-
-    $lists = Todolist::where('student_id', Auth::user()->id)->get();
-    $tasks = Task::all();
-    $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
-        foreach ($sidebaraccount as $sidebaraccount) {
-            $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
-            $sidebarexperience = $sidebaraccount->experience;
-        }
-    return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
-    }
-
-    public function createListHome(Request $request){
-
         $id = Auth::user()->id;
-    
         $list = new Todolist;
         $list->list_name = $request->list_name;
         $list->student_id = $id;
@@ -175,105 +153,67 @@ class ToDoListController extends Controller
         $list->task_id=$value+1;
         $list->list_id = $list->task_id;
         $list->save();
-        
+        $lists = Todolist::where('student_id', Auth::user()->id)->get();
+        $tasks = Task::all();
+        $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
+            foreach ($sidebaraccount as $sidebaraccount) {
+                $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
+                $sidebarexperience = $sidebaraccount->experience;
+            }
+        return view('todolist', ['lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
+    }
+
+    public function createListHome(Request $request){
+        $id = Auth::user()->id;
+        $list = new Todolist;
+        $list->list_name = $request->list_name;
+        $list->student_id = $id;
+        $value= DB::table('to_do_lists')->get()->count();
+        $list->task_id=$value+1;
+        $list->list_id = $list->task_id;
+        $list->save();
         return redirect('/home');
         }
 
     public function editList(Request $request){
         dd($request);
         $list = ToDoList::find();
-
         $list->list_name = $request->list_name;
-
         return $this->index;
     }
 
     public function deleteList($id){
         $list = Todolist::find($id);
-
         $list->delete();
-
         return $this->index();
     }
 
     public function deleteListHome($id){
         $list = Todolist::find($id);
-
         $list->delete();
-
         return $this->index();
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function showList($id)
-    {
+
+    public function showList($id){
         $list = Todolist::where('student_id', $id)->get();
-
         return view('todolist', compact ('list'));
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 
     public function markAsDone($id){
         $finTask = Task::find($id);
-        $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
-
-
+        $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore'); 
         $finTask->status = "done";
         $finTask->date_finished = Carbon::now();
-
         $finTask->save();
-
         $earnedPoints = ($finTask->task_points * ((Carbon::now()->floatdiffInHours($date, false))/24));
-
         $account = Auth::user()->account;
         $account->points_earned = $account->points_earned + $earnedPoints;
         $account->save();
-
         $account = Auth::user()->account;
         $account->experience = $account->experience + $earnedPoints;
         $account->save();
-
         // check if user will be able to level up code here
         $levelup = $this->canLevelUp($account->account_id);
-
         return $this->showListContent($finTask->task_id);
     }
 

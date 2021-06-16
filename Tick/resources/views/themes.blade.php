@@ -94,19 +94,32 @@
         </div>
         <div class="theme-content">
             <div class="theme-list">
-                <div class="theme-items shadow">
-                    
-                </div>
-                <div class="theme-items shadow">
-                    
-                </div>
-                <div class="theme-items shadow">
-                    
-                </div>
-                <div class="theme-items shadow">
-                    
-                </div>
-                
+                @foreach ($allthemes as $alltheme)
+                    <div class="theme-items shadow">
+                        <div class="theme-items-preview">
+                            <div class="theme-items-preview-name">
+                                <p>{{$alltheme->theme_name}}</p>
+                            </div>
+                                        {{-- <div class="theme-items-preview-equipped">
+                                            <button><i class="bi bi-check2-all"></i> Equipped</button>
+                                        </div>
+                                        <div class="theme-items-preview-notequipped">
+                                            <button><i class="bi bi-palette-fill"></i> Equip</button>
+                                        </div> --}}
+                            <div class="theme-items-preview-buy">
+                                <form action="/themes/buy" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="theme_id" value="{{$alltheme->theme_id}}">
+                                    <button  style='cursor: not-allowed;pointer-events: none '><i class='bi bi-star-fill'></i> {{$alltheme->cost}}</button>
+                                    <p class="points-not-enough">Need more points!</p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="theme-items-pallete">
+                            
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

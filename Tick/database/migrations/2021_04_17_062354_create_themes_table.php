@@ -19,6 +19,31 @@ class CreateThemesTable extends Migration
             $table->integer('cost');
             $table->timestamps();
         });
+
+
+        DB::table('themes')->insert(
+            array(
+                'theme_name' => 'White',
+                'cost' => '0',
+            ));
+
+        DB::table('themes')->insert(
+            array(
+                'theme_name' => 'Dark',
+                'cost' => '1000',
+            ));
+
+        DB::table('themes')->insert(
+            array(
+                'theme_name' => 'Blue',
+                'cost' => '5000',
+            ));
+
+        DB::table('themes')->insert(
+            array(
+                'theme_name' => 'Purple',
+                'cost' => '8500',
+            ));
     }
 
     /**

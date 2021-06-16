@@ -29,6 +29,8 @@ Route::post('/register/personal-information', [App\Http\Controllers\UserControll
 Route::get('/planner', [App\Http\Controllers\PlannerController::class, 'index'])->name('planner');
 
 Route::get('/themes', [App\Http\Controllers\ThemeController::class, 'index'])->name('themes');
+Route::post('/themes/buy', [App\Http\Controllers\ThemeController::class, 'buytheme'])->name('buytheme');
+Route::get('/themes/equip', [App\Http\Controllers\ThemeController::class, 'equiptheme'])->name('equiptheme');
 
 
 Route::get('/todolist', [App\Http\Controllers\ToDoListController::class, 'index'])->name('todolist');
@@ -45,6 +47,7 @@ Route::get('/todolist-add-task/{task_id}', [App\Http\Controllers\ToDoListControl
 Route::post('/todolist-add-home',[App\Http\Controllers\ToDoListController::class, 'createListHome'])->name('todolist-add.createListHome');
 
 Route::post('/todolist-add-task', [App\Http\Controllers\ToDoListController::class, 'createTask'])->name('todolist-add-task.createTask');
+Route::post('/todolist-add-task-insidelist', [App\Http\Controllers\ToDoListController::class, 'createTaskInsideList'])->name('todolist-add-task-insidelist.createTaskInsideList');
 Route::post('/todolist-update-task', [App\Http\Controllers\ToDoListController::class, 'updateTask'])->name('todolist-add-task.updateTask');
 
 Route::post('/todolist', [App\Http\Controllers\ToDoListController::class, 'deleteTask'])->name('todolist-deleteTask');

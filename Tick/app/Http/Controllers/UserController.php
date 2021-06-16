@@ -10,6 +10,7 @@ use App\Models\Address;
 use App\Models\Account;
 use App\Models\Planner;
 use App\Models\ToDoList;
+use App\Models\OwnedTheme;
 
 class UserController extends Controller
 {
@@ -75,6 +76,12 @@ class UserController extends Controller
         $list->student_id = $id;
         $list->list_name = "To Do List: ";
         $list->save();
+
+        $ownedtheme = new OwnedTheme;
+        $ownedtheme->theme_id = 1;
+        $ownedtheme->student_id = $id;
+        $ownedtheme->status = 'equipped';
+        $ownedtheme->save();
 
         $timestamp = DB::table('user_details')->where('user_detail_id', $id)->value('created_at');
         DB::update('update users set user_detail_id = ?, account_id = ?, created_at = ?, updated_at = ? where id = ?', [$id,$id,$timestamp,$timestamp,$id]);

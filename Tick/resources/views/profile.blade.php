@@ -166,8 +166,13 @@
                             </div>
                         </div>
                     "; 
-
-                    $taskDoneRatio = ($taskDone/$taskCount)*100;
+                        
+                    if ($taskCount == 0) {
+                        $taskDoneRatio = 0;
+                    } else {
+                        $taskDoneRatio = round(($taskDone/$taskCount)*100);
+                    }
+                    
                     $taskNotDoneRatio = 100 - $taskDoneRatio;
                 ?>
                 </div>
@@ -188,7 +193,7 @@
                         <div class="content-experience-legend">
                             <ul>
                                 <li>Done - {{$taskDone}}</li>
-                                <li>Not yet done - {{$taskNotDone}}</li>
+                                <li>Total Task - {{$taskCount}}</li>
                             </ul>
                         </div>
                     </div>

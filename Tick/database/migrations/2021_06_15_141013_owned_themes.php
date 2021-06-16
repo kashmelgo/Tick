@@ -17,6 +17,7 @@ class OwnedThemes extends Migration
             $table->id('owned_theme_id');
             $table->integer('theme_id');
             $table->integer('student_id');
+            $table->enum('status',['equipped','notequipped']);
             $table->timestamps();
         });
     }

@@ -301,25 +301,25 @@
                             <div class="new-task-header">
                                 <p>Create new tasks for "{{$list->list_name}}"</p>
                             </div>
-                            <form action="{{ route('todolist-add-task.createTask') }}" method="POST" role="form">
+                            <form action="{{ route('todolist-add-task-insidelist.createTaskInsideList') }}" method="POST" role="form">
                                 @csrf
                                 <div class="new-task-body">
                                     <div class="new-name-content">
                                         <div class="new-task-name">
-                                            <label>Task Name</label>
-                                            <input type="text" class="new-task-class" name="task" placeholder="e.g. TodoList">
+                                            <label for="task">Task Name</label>
+                                            <input type="text" name="task" placeholder="e.g. TodoList">
                                         </div>
                                         <div class="new-task-subject">
-                                            <label>Subject</label>
-                                            <input type="text" class="new-task-class" name="subject" placeholder="e.g. Programming">
+                                            <label for="subject">Subject</label>
+                                            <input type="text" name="subject" placeholder="e.g. Programming">
                                         </div>
                                         <div class="new-task-date">
-                                            <label>Due Date</label>
-                                            <input type="date" class="new-task-class" name="due_date">
+                                            <label for="due_date">Due Date</label>
+                                            <input type="date" name="due_date">
                                         </div>
                                         <div class="new-task-time">
-                                            <label>Time</label>
-                                            <input type="time" class="new-task-class" name="due_date">
+                                            <label for="time">Time</label>
+                                            <input type="time" name="time">
                                         </div>
                                         <div class="new-task-type">
                                             <label>Task Type :</label>
@@ -344,9 +344,9 @@
                                     </div>
                                 </div>
                            </form>
+                        </div>
                     </div>
                 </div>
-
 
                 @foreach ($tasks as $task)
                     <div class="modal fade update-task-modal" id="{{$task->tasks_id}}{{$task->updated_at}}" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">

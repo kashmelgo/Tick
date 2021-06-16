@@ -17,8 +17,6 @@ class CreateLevelsTable extends Migration
             $table->id('level_id');
             $table->integer('level');
             $table->integer('experience_needed');
-            $table->string('foreground_color');
-            $table->string('background_color');
             $table->timestamps();
         });
 
@@ -28,8 +26,6 @@ class CreateLevelsTable extends Migration
                 array(
                     'level' => $x,
                     'experience_needed' => $y,
-                    'foreground_color' => 'black',
-                    'background_color' => 'white',
                 )
                 );
         }
