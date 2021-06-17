@@ -9,11 +9,18 @@ use App\Models\Level;
 
 class PlannerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public $sources = [
+        [
+            'model'      => '\App\Models\Plan',
+            'date_start' => 'date_start',
+            'date_end' => 'date_end',
+            'field'      => 'plan_name',
+            'prefix'     => '',
+            'suffix'     => '',
+            'route'      => 'admin.bookings.edit',
+        ],
+    ];
+
     public function index()
     {
         $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
@@ -22,8 +29,25 @@ class PlannerController extends Controller
             $sidebarexperience = $sidebaraccount->experience;
         }
 
-        
-        return view('planner', ['sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel] );
+        $plans = [];
+        foreach ($this->sources as $source) {
+            foreach ($source['model']::all() as $model) {
+                $start = $model->getAttributes()[$source['date_start']];
+                $end = $model->getAttributes()[$source['date_end']];
+                if (!$start || !$end) {
+                    continue;
+                }
+
+                $events[] = [
+                    'title' => trim($source['prefix'] . ' ' . $model->{$source['field']} . ' ' . $source['suffix']),
+                    'start' => $start,
+                    'end' => $end,
+                    'url'   => route($source['route'], $model->id),
+                ];
+            }
+        }
+
+        return view('planner', ['sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel, 'plans'=>$plans] );
     }
 
     /**
