@@ -27,7 +27,7 @@
     </div>
     <div class="sidebar-tab">
         <p>Planner</p>
-        <a href="{{ route('planner') }}">
+        <a href="{{ route('planner.index') }}">
             <div class="tab">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
@@ -165,14 +165,14 @@
                                 <div class='experience-container-progress' style='width: $expbar%''></div>
                             </div>
                         </div>
-                    "; 
-                        
+                    ";
+
                     if ($taskCount == 0) {
                         $taskDoneRatio = 0;
                     } else {
                         $taskDoneRatio = round(($taskDone/$taskCount)*100);
                     }
-                    
+
                     $taskNotDoneRatio = 100 - $taskDoneRatio;
                 ?>
                 </div>
@@ -205,7 +205,7 @@
                                     @php
                                         echo "<p>$listnum</p>"
                                     @endphp
-                                    
+
                                 </div>
                             </div>
                         </div>

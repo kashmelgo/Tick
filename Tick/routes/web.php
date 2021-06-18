@@ -26,7 +26,7 @@ Route::get('/test', [App\Http\Controllers\HomeController::class, 'test'])->name(
 Route::get('/register/personal-information', [App\Http\Controllers\UserController::class, 'index'])->name('form');
 Route::post('/register/personal-information', [App\Http\Controllers\UserController::class, 'store'])->name('form');
 
-Route::get('/planner', [App\Http\Controllers\PlannerController::class, 'index'])->name('planner');
+ Route::resource('planner', 'App\Http\Controllers\PlannerController');
 
 Route::get('/themes', [App\Http\Controllers\ThemeController::class, 'index'])->name('themes');
 Route::post('/themes/buy', [App\Http\Controllers\ThemeController::class, 'buytheme'])->name('buytheme');

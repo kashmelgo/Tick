@@ -27,7 +27,7 @@
     </div>
     <div class="sidebar-tab">
         <p>Planner</p>
-        <a href="{{ route('planner') }}">
+        <a href="{{ route('planner.index') }}">
             <div class="tab">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
@@ -83,12 +83,12 @@
     </div>
     <div id="main-content">
         <div class="main-content-list">
-            
+
             @foreach ($lists as $list)
                 <div class="listCard shadow">
                     <div class="preview">
                         <div class="preview-list-task">
-                            
+
                         </div>
                         <a>
                             <div class="preview-view shadow-sm" data-toggle="modal" data-target="#previewList-{{$list->list_id}}">Preview</div>

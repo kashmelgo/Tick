@@ -27,7 +27,7 @@
     </div>
     <div class="sidebar-tab">
         <p>Planner</p>
-        <a href="{{ route('planner') }}">
+        <a href="{{ route('planner.index') }}">
             <div class="tab">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
@@ -88,7 +88,7 @@
                 <i class="bi bi-star-fill"> <span>
                     @foreach ($account as $account)
                         {{$account->points_earned}}
-                    @endforeach    
+                    @endforeach
                 </span></i>
             </div>
         </div>
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                         <div class="theme-items-pallete">
-                            
+
                         </div>
                     </div>
                 @endforeach

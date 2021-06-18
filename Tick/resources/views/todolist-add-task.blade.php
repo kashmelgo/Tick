@@ -27,7 +27,7 @@
     </div>
     <div class="sidebar-tab">
         <p>Planner</p>
-        <a href="{{ route('planner') }}">
+        <a href="{{ route('planner.index') }}">
             <div class="tab">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>

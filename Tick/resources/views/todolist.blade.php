@@ -27,7 +27,7 @@
     </div>
     <div class="sidebar-tab">
         <p>Planner</p>
-        <a href="{{ route('planner') }}">
+        <a href="{{ route('planner.index') }}">
             <div class="tab">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
@@ -126,7 +126,7 @@
                     </div>
 
                     <div class="listCard-body">
-                        
+
                         <form action="{{route('todolist-tasks',$list->list_id)}}" method="get">
                             @csrf
                             <a onclick="this.parentNode.submit();" class="open-list">
@@ -160,9 +160,9 @@
                                 }
                             @endphp
 
-                            
+
                             @foreach ($tasks as $task)
-                                
+
                                 @if ($task->task_id === $list->task_id)
                                     @if ($task->status === "done")
                                     <form action="{{ route('todolist-finishTask', $task->tasks_id)}}" method="POST">
@@ -204,10 +204,10 @@
                         <div class="modal-header">
                             <h6>Add Task in "{{$list->list_name}}"</h6>
                         </div>
-        
+
                             <form action="{{ route('todolist-add-task.createTask') }}" method="POST" role="form">
                                 @csrf
-        
+
                                 <div class="modal-body">
                                     <div class="add-task-form">
                                         <label for="task">Task Name</label>

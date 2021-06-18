@@ -17,7 +17,7 @@ class PlannerController extends Controller
             'field'      => 'plan_name',
             'prefix'     => '',
             'suffix'     => '',
-            'route'      => 'admin.bookings.edit',
+            'route'      => 'planner.edit',
         ],
     ];
 

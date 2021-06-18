@@ -27,7 +27,7 @@
     </div>
     <div class="sidebar-tab">
         <p>Planner</p>
-        <a href="{{ route('planner') }}">
+        <a href="{{ route('planner.index') }}">
             <div class="tab">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
@@ -83,7 +83,7 @@
         @foreach ($list as $list)
         <p>List Name : <span>{{$list->list_name}}</span></p>
         @endforeach
-        
+
         <a href="javascript:history.back()">
             <div class="back-btn">
                 <i class="bi bi-backspace-fill"></i>
@@ -99,11 +99,11 @@
                         <p>Tasks</p>
                     </div>
                     <div class="list-of-tasks-content">
-                        
+
                         @foreach ($tasks as $task)
                             <div class="task" onclick="test('task-info-{{$task->tasks_id}}')">
 
-                                
+
                                 @if ($task->status == "done")
                                     <div class="task-name done">
                                         <form action="" method="post">
@@ -132,12 +132,12 @@
                                         <label for="">{{$task->task}}</label>
                                     </div>
                                 @endif
-                                
+
 
 
                             </div>
                         @endforeach
-                        
+
                     </div>
                 </div>
             </div>
@@ -253,7 +253,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     @foreach ($tasks as $task)
 
                         <div class="task-info task-info-{{$task->tasks_id}}">
@@ -287,7 +287,7 @@
                                             <button class="task-delete" type="submit">Delete</button>
                                         </form>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -355,10 +355,10 @@
                                 <div class="modal-header">
                                     <h6>Update "{{$task->task}}"</h6>
                                 </div>
-                
+
                                     <form action="{{ route('todolist-add-task.updateTask') }}" method="POST" role="form">
                                         @csrf
-                
+
                                         <div class="modal-body">
                                             <div class="add-task-form">
                                                 <label for="task">Task Name</label>
@@ -398,7 +398,7 @@
                                                             <label class="form-check-label" for="inlineRadio2"> Project</label>
                                                         </div>
                                                     @endif
-                                                    
+
                                                 </div>
                                             </div>
                                             <input type="hidden" name="task_id" value="{{$task->tasks_id}}">

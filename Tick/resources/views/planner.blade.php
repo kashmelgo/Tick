@@ -27,7 +27,7 @@
     </div>
     <div class="sidebar-tab">
         <p>Planner</p>
-        <a href="{{ route('planner') }}">
+        <a href="{{ route('planner.index') }}">
             <div class="tab active">
                 <div class="tab-color"></div>
                 <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
@@ -84,12 +84,40 @@
     <div id="planner-content">
         <div class="calendar-area">
             <div class="calendar-content shadow ">
-                
+                <h3 class="page-title">{{ trans('global.systemCalendar') }}</h3>
+            <div class="card">
+                <div class="card-header">
+                    {{ trans('global.systemCalendar') }}
+                </div>
+
+                <div class="card-body">
+                    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+
+                    <div id='calendar'></div>
+                </div>
+            </div>
+
             </div>
         </div>
+        @parent
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
+        <script>
+            $(document).ready(function () {
+                    // page is now ready, initialize the calendar...
+                    events={!! json_encode($events) !!};
+                    $('#calendar').fullCalendar({
+                        // put your options and callbacks here
+                        events: events,
+
+
+                    })
+                });
+        </script>
+        @stop
         <div class="calendar-events-area">
             <div class="calendar-events-content shadow">
-                
+
             </div>
         </div>
     </div>
