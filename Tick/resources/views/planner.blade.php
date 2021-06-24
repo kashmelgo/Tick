@@ -57,7 +57,6 @@
 
                 <form action="{{route('todolist-add.createListHome')}}" method="POST" role="form">
                     @csrf
-
                     <div class="modal-body">
                         <div class="add-list-form">
                             <label for="list_name">New List:</label>
@@ -81,44 +80,32 @@
     <div id="planner-title">
         <h3>Your Scheduler</h3>
     </div>
-    <div id="planner-content">
-        <div class="calendar-area">
-            <div class="calendar-content shadow ">
-                <h3 class="page-title">{{ trans('global.systemCalendar') }}</h3>
-            <div class="card">
-                <div class="card-header">
-                    {{ trans('global.systemCalendar') }}
-                </div>
+    <div id="planner-content" class="overflow-auto">
+        <div class="bg-gray-800 pt-3">
+            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+          </div>
 
-                <div class="card-body">
-                    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+          <div class="p-2">
 
-                    <div id='calendar'></div>
-                </div>
-            </div>
+              <div class="card-body p-4">
 
-            </div>
-        </div>
-        @parent
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
-        <script>
-            $(document).ready(function () {
-                    // page is now ready, initialize the calendar...
-                    events={!! json_encode($events) !!};
-                    $('#calendar').fullCalendar({
-                        // put your options and callbacks here
-                        events: events,
+                  <div id='calendar' class="overflow-auto" ></div>
+              </div>
+          </div>
 
-
-                    })
-                });
-        </script>
-        @stop
-        <div class="calendar-events-area">
-            <div class="calendar-events-content shadow">
-
-            </div>
-        </div>
     </div>
-@endsection
+    <script>
+        $(document).ready(function () {
+                // page is now ready, initialize the calendar...
+                events={!! json_encode($plans) !!};
+                $('#calendar').fullCalendar({
+                    // put your options and callbacks here
+                    events: events,
+
+
+                })
+            });
+    </script>
+
+    @endsection
+

@@ -14,4 +14,8 @@ class Planner extends Model
     {
         return $this->hasMany('App\Models\Plan', 'plan_id', 'plan_id');
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

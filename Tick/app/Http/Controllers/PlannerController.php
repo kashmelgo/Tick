@@ -17,8 +17,11 @@ class PlannerController extends Controller
             'field'      => 'plan_name',
             'prefix'     => '',
             'suffix'     => '',
-            'route'      => 'planner.edit',
+            'route'      => 'planner.show',
+
+            'model2' => '\App\Models\Task'
         ],
+
     ];
 
     public function index()
@@ -31,18 +34,18 @@ class PlannerController extends Controller
 
         $plans = [];
         foreach ($this->sources as $source) {
-            foreach ($source['model']::all() as $model) {
+            foreach ($source['model']::where() as $model) {
                 $start = $model->getAttributes()[$source['date_start']];
                 $end = $model->getAttributes()[$source['date_end']];
                 if (!$start || !$end) {
                     continue;
                 }
 
-                $events[] = [
+                $plans[] = [
                     'title' => trim($source['prefix'] . ' ' . $model->{$source['field']} . ' ' . $source['suffix']),
                     'start' => $start,
                     'end' => $end,
-                    'url'   => route($source['route'], $model->id),
+                    // 'url'   => route($source['route'], $model->id),
                 ];
             }
         }
