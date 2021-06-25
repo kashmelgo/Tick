@@ -29,19 +29,19 @@ class CreateThemesTable extends Migration
 
         DB::table('themes')->insert(
             array(
-                'theme_name' => 'Dark',
+                'theme_name' => 'Black',
                 'cost' => '1000',
             ));
 
         DB::table('themes')->insert(
             array(
-                'theme_name' => 'Blue',
+                'theme_name' => 'lightblue',
                 'cost' => '5000',
             ));
 
         DB::table('themes')->insert(
             array(
-                'theme_name' => 'Purple',
+                'theme_name' => 'Lightpink',
                 'cost' => '8500',
             ));
     }

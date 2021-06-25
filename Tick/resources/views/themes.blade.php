@@ -85,41 +85,54 @@
             <p></p>
             <p></p>
             <div class="points-section">
-                <i class="bi bi-star-fill"> <span>
-                    @foreach ($account as $account)
-                        {{$account->points_earned}}
-                    @endforeach
-                </span></i>
+                <i class="bi bi-star-fill"> <span>{{$points}}</span></i>
             </div>
         </div>
         <div class="theme-content">
             <div class="theme-list">
-                @foreach ($allthemes as $alltheme)
+                @for ($i = 0; $i <= 3; $i++)
                     <div class="theme-items shadow">
                         <div class="theme-items-preview">
                             <div class="theme-items-preview-name">
-                                <p>{{$alltheme->theme_name}}</p>
+                                <p>{{$themes[$i]['theme_name']}}</p>
                             </div>
-                                        {{-- <div class="theme-items-preview-equipped">
-                                            <button><i class="bi bi-check2-all"></i> Equipped</button>
-                                        </div>
-                                        <div class="theme-items-preview-notequipped">
-                                            <button><i class="bi bi-palette-fill"></i> Equip</button>
-                                        </div> --}}
-                            <div class="theme-items-preview-buy">
-                                <form action="/themes/buy" method="POST">
+                            @if ($themes[$i]['theme_status'] == "equipped")
+                                <div class="theme-items-preview-equipped">
+                                    <button><i class="bi bi-check2-all"></i> Equipped</button>
+                                </div>
+                            @endif
+                            @if ($themes[$i]['theme_status'] == "notequipped")
+                                <div class="theme-items-preview-notequipped">
+                                    <button onclick="event.preventDefault();
+                                    document.getElementById('equip-{{$themes[$i]['theme_id']}}').submit();"><i class="bi bi-palette-fill"></i> Equip</button>
+                                </div>
+                                <form id="equip-{{$themes[$i]['theme_id']}}" action="{{route('equiptheme')}}" method="get" class="d-none">
                                     @csrf
-                                    <input type="hidden" name="theme_id" value="{{$alltheme->theme_id}}">
-                                    <button  style='cursor: not-allowed;pointer-events: none '><i class='bi bi-star-fill'></i> {{$alltheme->cost}}</button>
-                                    <p class="points-not-enough">Need more points!</p>
+                                    <input type="hidden" name="theme_id" value="{{$themes[$i]['theme_id']}}">
                                 </form>
-                            </div>
+                            @endif
+                            @if ($themes[$i]['theme_status'] == null)
+                                <div class="theme-items-preview-buy">
+                                    <form action="/themes/buy" method="POST">
+                                        @csrf
+                                            <input type="hidden" name="theme_cost" value="{{$themes[$i]['theme_cost']}}">
+                                            <input type="hidden" name="theme_id" value="{{$themes[$i]['theme_id']}}">
+                                        @if ($points< $themes[$i]['theme_cost'])
+                                            <button  style='pointer-events: none;background-color:rgb(255, 60, 60)'><i class='bi bi-star-fill'></i> {{$themes[$i]['theme_cost']}}</button>
+                                            <p class="points-not-enough">Need more points!</p>
+                                        @else
+                                            <button type="submit" name="submit"><i class='bi bi-star-fill'></i> {{$themes[$i]['theme_cost']}}</button>
+                                        @endif
+                                    </form>
+                                </div>
+                            @endif
+                            
                         </div>
-                        <div class="theme-items-pallete">
+                        <div class="theme-items-pallete shadow-sm" style="opacity: .8;background-color: {{$themes[$i]['theme_name']}}">
 
                         </div>
                     </div>
-                @endforeach
+                @endfor
             </div>
         </div>
     </div>

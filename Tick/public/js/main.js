@@ -309,3 +309,8 @@ function closeUpdateInfo() {
   }
 }
 
+function equipTheme(num) {
+  alert('hi there');
+} 
+
+

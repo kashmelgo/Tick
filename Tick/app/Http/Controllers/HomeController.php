@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Todolist;
 use App\Models\Task;
@@ -36,8 +37,11 @@ class HomeController extends Controller
             $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
             $sidebarexperience = $sidebaraccount->experience;
         }
-
+        $accounttheme = DB::table('accounts')->where('accounts.account_id','=',Auth::user()->id)->get();
+        foreach ($accounttheme as $accounttheme) {
+            $theme = $accounttheme->theme_id;
+        }
         
-        return view('home', ['lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel] );
+        return view('home', ['theme'=>$theme,'lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel] );
     }
 }

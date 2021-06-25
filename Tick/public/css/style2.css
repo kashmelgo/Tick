@@ -1,3 +1,7 @@
+  :root{
+    --main-background-color: #fff;
+    --sub-background-color: rgb(235, 235, 235);
+  }
 
   body {
     font-family: "Open Sans", sans-serif;
@@ -1172,7 +1176,7 @@
     width: 100vw;
     margin: 0;
     padding: 0;
-    background-color: #dadada;
+    background-color: var(--main-background-color);
     width: calc(100vw - 310px);
   }
 
@@ -1197,7 +1201,7 @@
   #main-content{
     width: calc(100vw - 310px);
     height: calc(100vh - 70px);;
-    background-color: rgb(241, 241, 241);
+    background-color: var(--sub-background-color);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1222,7 +1226,6 @@
   .main-content-list .listCard{
     width:290px;
     height: 230px;
-    background-color: #fff;
     margin: 10px;
     padding: 0;
     border-radius: 8px;
@@ -1453,7 +1456,7 @@
     width: calc(100vw - 310px);
     height: calc(100vh - 70px);;
     padding: 15px;
-    background-color: rgb(241, 241, 241);
+    background-color: var(--sub-background-color);
     user-select: none;
   }
 
@@ -1963,7 +1966,7 @@
     width: calc(100vw - 310px);
     height: calc(100vh - 70px);;
     padding: 15px;
-    background-color: rgb(241, 241, 241);
+    background-color: var(--sub-background-color);
     user-select: none;
   }
 
@@ -2668,7 +2671,7 @@
     position: sticky;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(238, 238, 238);
+    background-color: var(--main-background-color);
   }
 
   #themes .theme-nav .points-section{
@@ -2688,7 +2691,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(224, 224, 224);
+    background-color: var(--sub-background-color);
   }
 
   #themes .theme-list{
@@ -2774,7 +2777,7 @@
     padding: 5px;
     margin: auto;
     border: 0;
-    background-color: #47b2e4;
+    background-color: #2ad833;
     color: #fff;
     border-radius: 5px;
     transition: .2s;
@@ -2789,7 +2792,7 @@
   }
 
   #themes .theme-items-preview-buy button:hover{
-    background-color: #43a3cf;
+    background-color: #2ad833;
   }
 
   #themes .theme-items-preview-notequipped{
@@ -2804,13 +2807,13 @@
     width: 100%;
     padding: 5px;
     border: 0;
-    background-color: #2ad833;
+    background-color: #43a3cf;
     color: #fff;
     border-radius: 5px;
   }
 
   #themes .theme-items-preview-notequipped button:hover{
-    background-color: #28bd30;
+    background-color: #3b90b8;
   }
 
   #themes .theme-items-preview-equipped{
@@ -2845,7 +2848,7 @@
     padding: 2% 0;
     display: flex;
     justify-content: center;
-    background-color: rgb(235, 235, 235);
+    background-color: var(--sub-background-color);
   }
 
   #profile .profile-main{
@@ -2857,7 +2860,7 @@
     height: 70%;
     width: 100%;
     padding: 2%;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--main-background-color);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
@@ -2992,7 +2995,7 @@
 
   #profile .stats-content-level{
     width: 30%;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--main-background-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3062,7 +3065,7 @@
 
   #profile .stats-content-task{
     width: 70%;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--main-background-color);
     display: flex;
     align-items: center;
     margin-top: 15px;
