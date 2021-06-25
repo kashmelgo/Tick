@@ -34,7 +34,7 @@ class PlannerController extends Controller
 
         $plans = [];
         foreach ($this->sources as $source) {
-            foreach ($source['model']::where() as $model) {
+            foreach ($source['model']::all() as $model) { /*change to where() */
                 $start = $model->getAttributes()[$source['date_start']];
                 $end = $model->getAttributes()[$source['date_end']];
                 if (!$start || !$end) {
