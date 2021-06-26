@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Account;
 use App\Models\Level;
@@ -50,7 +51,12 @@ class PlannerController extends Controller
             }
         }
 
-        return view('planner', ['sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel, 'plans'=>$plans] );
+        $accounttheme = DB::table('accounts')->where('accounts.account_id','=',Auth::user()->id)->get();
+        foreach ($accounttheme as $accounttheme) {
+            $theme = $accounttheme->theme_id;
+        }
+
+        return view('planner', ['theme'=>$theme, 'sidebarlevel'=>$sidebarlevel,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel, 'plans'=>$plans] );
     }
 
     /**

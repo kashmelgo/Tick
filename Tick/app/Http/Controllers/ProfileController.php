@@ -55,13 +55,17 @@ class ProfileController extends Controller
                 
             }
         }
+        $accounttheme = DB::table('accounts')->where('accounts.account_id','=',Auth::user()->id)->get();
+        foreach ($accounttheme as $accounttheme) {
+            $theme = $accounttheme->theme_id;
+        }
 
         $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
         foreach ($sidebaraccount as $sidebaraccount) {
             $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
             $sidebarexperience = $sidebaraccount->experience;
         }
-        return view('profile',['taskCount'=>$taskCount,'taskDone'=>$taskDone,'taskNotDone'=>$taskNotDone,'listnum'=>$listnum,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel])->with('profile',$profile)->with('interface',$interface)->with('level', $level)->with('account', $account);
+        return view('profile',['theme'=>$theme,'taskCount'=>$taskCount,'taskDone'=>$taskDone,'taskNotDone'=>$taskNotDone,'listnum'=>$listnum,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel])->with('profile',$profile)->with('interface',$interface)->with('level', $level)->with('account', $account);
     }
 
     /**

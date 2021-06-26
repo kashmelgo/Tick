@@ -78,6 +78,11 @@
 @endsection
 
 @section('pageContent')
+    @php
+        echo '<script type="text/javascript">
+              loadTheme('.$selectedtheme.');
+            </script>';  
+    @endphp
     <div id="themes">
         <div class="theme-nav shadow-sm">
             <h1>Theme Shop</h1>

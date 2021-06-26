@@ -309,8 +309,23 @@ function closeUpdateInfo() {
   }
 }
 
-function equipTheme(num) {
-  alert('hi there');
+function loadTheme(theme_id) {
+  if(theme_id == 1){
+    document.documentElement.style.setProperty('--main-background-color','#fff');
+    document.documentElement.style.setProperty('--sub-background-color','#ebebeb');
+  }
+  if(theme_id == 2){
+    document.documentElement.style.setProperty('--main-background-color','#202020');
+    document.documentElement.style.setProperty('--sub-background-color','#2c2c2c');
+  }
+  if(theme_id == 3){
+    document.documentElement.style.setProperty('--main-background-color','#7ac9e6');
+    document.documentElement.style.setProperty('--sub-background-color','#add8e6');
+  }
+  if(theme_id == 4){
+    document.documentElement.style.setProperty('--main-background-color','#ff98a7');
+    document.documentElement.style.setProperty('--sub-background-color','#FFB6C1');
+  }
 } 
 
 

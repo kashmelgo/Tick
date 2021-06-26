@@ -77,6 +77,11 @@
 @endsection
 
 @section('pageContent')
+    @php
+        echo '<script type="text/javascript">
+              loadTheme('.$theme.');
+            </script>';  
+    @endphp
     <div id="planner-title">
         <h3>Your Scheduler</h3>
     </div>

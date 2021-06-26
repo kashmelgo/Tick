@@ -78,6 +78,11 @@
 @endsection
 
 @section('pageContent')
+    @php
+        echo '<script type="text/javascript">
+              loadTheme('.$theme.');
+            </script>';  
+    @endphp
     <div id="main-title">
         <h3>Dashboard</h3>
     </div>

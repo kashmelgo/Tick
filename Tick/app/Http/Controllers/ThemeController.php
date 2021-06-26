@@ -44,7 +44,12 @@ class ThemeController extends Controller
         foreach ($account as $account) {
             $points = $account->points_earned;
         }
-        return view('themes', ['points'=>$points,'themes'=>$themes,'account'=>$account, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
+        $accounttheme = DB::table('accounts')->where('accounts.account_id','=',Auth::user()->id)->get();
+        foreach ($accounttheme as $accounttheme) {
+            $selectedtheme = $accounttheme->theme_id;
+        }
+
+        return view('themes', ['selectedtheme'=>$selectedtheme,'points'=>$points,'themes'=>$themes,'account'=>$account, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
     }
 
     public function buytheme(Request $request){

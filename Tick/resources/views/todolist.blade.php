@@ -78,6 +78,11 @@
 @endsection
 
 @section('pageContent')
+    @php
+        echo '<script type="text/javascript">
+              loadTheme('.$theme.');
+            </script>';  
+    @endphp
     <div id="todolist-title">
         <h3>My Lists</h3>
     </div>
