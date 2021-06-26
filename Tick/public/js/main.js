@@ -311,20 +311,64 @@ function closeUpdateInfo() {
 
 function loadTheme(theme_id) {
   if(theme_id == 1){
+    //background
+    document.documentElement.style.setProperty('--selected-tab-background-color','#47b2e4');
+    document.documentElement.style.setProperty('--unselected-tab-background-color','#9bdfff');
     document.documentElement.style.setProperty('--main-background-color','#fff');
     document.documentElement.style.setProperty('--sub-background-color','#ebebeb');
+    document.documentElement.style.setProperty('--tab-heading-background-color','#fff');
+    document.documentElement.style.setProperty('--tab-body-background-color','#f3f3f3');
+    document.documentElement.style.setProperty('--tab-button-background-color','#47b2e4');
+    document.documentElement.style.setProperty('--main-button-background-color','#47b2e4');
+    document.documentElement.style.setProperty('--sub-button-background-color','#fff');
+    
+    //text
+
   }
   if(theme_id == 2){
+    //background
+    document.documentElement.style.setProperty('--selected-tab-background-color','#47b2e4');
+    document.documentElement.style.setProperty('--unselected-tab-background-color','#9bdfff');
     document.documentElement.style.setProperty('--main-background-color','#202020');
     document.documentElement.style.setProperty('--sub-background-color','#2c2c2c');
+    document.documentElement.style.setProperty('--tab-heading-background-color','#181818');
+    document.documentElement.style.setProperty('--tab-body-background-color','#353535');
+    document.documentElement.style.setProperty('--tab-button-background-color','#ff405d');
+    document.documentElement.style.setProperty('--main-button-background-color','#47b2e4');
+    document.documentElement.style.setProperty('--sub-button-background-color','#5f5f5f');
+    
+    //text
+
   }
   if(theme_id == 3){
+    //background
+    document.documentElement.style.setProperty('--selected-tab-background-color','#7ac9e6');
+    document.documentElement.style.setProperty('--unselected-tab-background-color','#e6f8ff');
     document.documentElement.style.setProperty('--main-background-color','#7ac9e6');
     document.documentElement.style.setProperty('--sub-background-color','#add8e6');
+    document.documentElement.style.setProperty('--tab-heading-background-color','#54d1ff');
+    document.documentElement.style.setProperty('--tab-body-background-color','#cff3ff');
+    document.documentElement.style.setProperty('--tab-button-background-color','#47b2e4');
+    document.documentElement.style.setProperty('--main-button-background-color','#54d1ff');
+    document.documentElement.style.setProperty('--sub-button-background-color','#e0f7ff');
+    
+    //text
+
   }
   if(theme_id == 4){
+    //background
+    document.documentElement.style.setProperty('--selected-tab-background-color','#ff5972');
+    document.documentElement.style.setProperty('--unselected-tab-background-color','#ffd2d9');
     document.documentElement.style.setProperty('--main-background-color','#ff98a7');
     document.documentElement.style.setProperty('--sub-background-color','#FFB6C1');
+    document.documentElement.style.setProperty('--tab-heading-background-color','#ff5972');
+    document.documentElement.style.setProperty('--tab-body-background-color','#ffd2d9');
+    document.documentElement.style.setProperty('--tab-button-background-color','#ff405d');
+    document.documentElement.style.setProperty('--main-button-background-color','#ff5972');
+    document.documentElement.style.setProperty('--sub-button-background-color','#ffd2d9');
+    
+    //text
+
   }
 } 
 

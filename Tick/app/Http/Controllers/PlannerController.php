@@ -19,7 +19,6 @@ class PlannerController extends Controller
             'prefix'     => '',
             'suffix'     => '',
             'route'      => 'planner.show',
-
             'model2' => '\App\Models\Task'
         ],
 

@@ -1,6 +1,13 @@
   :root{
+    --selected-tab-background-color:#fff;
+    --unselected-tab-background-color:#fff;
     --main-background-color: #fff;
-    --sub-background-color: #ebebeb;
+    --sub-background-color: #7fd3fa;
+    --tab-heading-background-color: rgb(243, 243, 243);
+    --tab-body-background-color: #fff;
+    --tab-button-background-color: #fff;
+    --main-button-background-color: #fff;
+    --sub-button-background-color: rgb(95, 95, 95)535;
   }
 
   body {
@@ -1082,13 +1089,13 @@
   }
 
   #sidebar-tabs .sidebar-tab .tab:hover > .tab-color{
-    background-color: #5dbae6;
+    background-color: var(--unselected-tab-background-color);
     width: 20px;
     transition: .3s;
   }
 
   #sidebar-tabs .sidebar-tab .tab:hover > .tab-text{
-    color: #5dbae6;
+    color: var(--unselected-tab-background-color);
     width: 230px;
     transition: .3s;
   }
@@ -1099,23 +1106,23 @@
   }
 
   #sidebar-tabs .sidebar-tab .active .tab-color{
-    background-color: #0e8fca;
+    background-color: var(--selected-tab-background-color);
     width: 20px;
     transition: .3s;
   }
 
   #sidebar-tabs .sidebar-tab .active .tab-text{
-    color: #0e8fca;
+    color: var(--selected-tab-background-color);
     width: 230px;
     transition: .3s;
   }
 
   #add-list-modal-home .modal-header{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-body-background-color);
     border: 0;
   }
   #add-list-modal-home .modal-body{
-    background-color: #202020;
+    background-color: var(--tab-body-background-color);
     color: #fff;
     padding: 5px;
   }
@@ -1139,21 +1146,20 @@
   }
   
   #add-list-modal-home .modal-footer{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-heading-background-color);
     border: 0;
     padding: 15px;
   }
 
   #add-list-modal-home .modal-footer button{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-heading-background-color);
     border: 0;
     color: #fff;
   }
   
   #add-list-modal-home .modal-footer div input{
-    background-color: rgb(27, 180, 40);
+    background-color: var(--tab-button-background-color);
     border: 0;
-    border-radius: 50px;
     color: #fff;
   }
 
@@ -1251,13 +1257,14 @@
 
   .main-content-list .listCard:hover > .preview a .preview-view{
     color: #fff;
-    background-color: rgb(26, 26, 26);
+    background-color: var(--main-button-background-color);
+    cursor: pointer;
     opacity: .9;
   }
 
   .main-content-list .listCard:hover > .preview a .preview-open{
     color: #fff;
-    background-color: #47b2e4;
+    background-color: var(--main-button-background-color);
     opacity: .9;
   }
 
@@ -1278,22 +1285,7 @@
   .main-content-list .listCard .preview{
     width:100%;
     height: 160px;
-    background-color: rgb(253, 253, 253);
-    padding: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    transition: .3s;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: left;
-    position: relative;
-    cursor: pointer;
-  }
-  .main-content-list .listCard .preview{
-    width:100%;
-    height: 160px;
-    background-color: rgb(248, 248, 248);
+    background-color: var(--tab-body-background-color);
     padding: 0;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -1319,7 +1311,7 @@
   }
 
   .main-content-list .listCard .preview a:nth-of-type(1) div:hover{
-    background-color: rgb(0, 0, 0);
+    background-color: var(--main-button-background-color);
   }
 
   .main-content-list .listCard .preview a:nth-of-type(2){
@@ -1330,7 +1322,7 @@
   }
 
   .main-content-list .listCard .preview a:nth-of-type(2) div:hover{
-    background-color: #026897;
+    background-color: var(--main-button-background-color);
   }
 
   .main-content-list .listCard .preview a div{
@@ -1339,7 +1331,6 @@
     border-radius: 50px;
     padding-top: 30px;
     color: rgb(248, 248, 248);
-    background-color: rgb(248, 248, 248);
     opacity: .1;
     font-weight: 500;
     transition: .3s;
@@ -1349,7 +1340,7 @@
   .main-content-list .listCard .preview-title{
     width:100%;
     height: 70px;
-    background-color: #fff;
+    background-color: var(--tab-heading-background-color);
     padding: 20px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -1375,7 +1366,7 @@
   }
 
   .main-content-list .modal-header{
-    background-color: #202020;
+    background-color: var(--tab-heading-background-color);
     display: flex;
     align-items: center;
   }
@@ -1390,9 +1381,9 @@
   }
 
   .main-content-list .modal-header .previewTask-control-buttons button:nth-of-type(1){
-    color: rgb(255, 13, 13);
+    color: #fff;
     border: 0;
-    background-color: #202020;
+    background-color: var(--tab-heading-background-color);
     margin-right: 5px;
   }
 
@@ -1403,20 +1394,15 @@
     padding: 5px 10px;
     border-radius: 5px;
     border: 0;
-    background-color: #429fca;
+    background-color: var(--tab-button-background-color);
     margin-right: 5px;
-  }
-
-  .main-content-list .modal-body{
-    padding:  15px 5px;
-    height: 50vh;
-    overflow-y: auto;
   }
 
   .main-content-list .modal-body{
     padding:  20px 10px;
     height: 50vh;
     overflow-y: auto;
+    background-color: var(--tab-body-background-color);
   }
 
   .main-content-list .modal-body li{
@@ -1467,13 +1453,12 @@
     border-radius: 50px;
     bottom:40px;
     right:40px;
-    background-color: rgb(86, 202, 86);
     transition: .3s;
   }
   
   #todolist-content .add-floating:hover > button{
     transform:scale(1.05);
-    background-color: rgb(3, 180, 3);
+    background-color: var(--main-button-background-color);
   }
 
   #todolist-content .add-floating:hover > button i{
@@ -1484,7 +1469,7 @@
     height: 100%;
     width: 100%;
     border-radius: 50px;
-    background-color: rgb(0, 206, 0);
+    background-color: var(--main-button-background-color);
     color: #fff;
     display: flex;
     flex-direction: row;
@@ -1498,11 +1483,11 @@
     transition: .3s;
   }
   #add-list-modal .modal-header{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-body-background-color);
     border: 0;
   }
   #add-list-modal .modal-body{
-    background-color: #202020;
+    background-color: var(--tab-body-background-color);
     color: #fff;
     padding: 5px;
   }
@@ -1526,21 +1511,20 @@
   }
   
   #add-list-modal .modal-footer{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-heading-background-color);
     border: 0;
     padding: 15px;
   }
 
   #add-list-modal .modal-footer button{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-heading-background-color);
     border: 0;
     color: #fff;
   }
   
   #add-list-modal .modal-footer div input{
-    background-color: rgb(27, 180, 40);
+    background-color: var(--tab-button-background-color);
     border: 0;
-    border-radius: 50px;
     color: #fff;
   }
 
@@ -1670,7 +1654,7 @@
   #todolist-page .listCard .listCard-heading{
     height: 50px;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--tab-heading-background-color);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom: 1px solid #e7e7e7;
@@ -1694,7 +1678,6 @@
   #todolist-page .listCard .listCard-body{
     height: calc(100% - 50px);
     width: 100%;
-    background-color: #fff;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow-y: auto;
@@ -1708,7 +1691,7 @@
   #todolist-page .listCard .listCard-body{
     height: calc(100% - 50px);
     width: 100%;
-    background-color: #fff;
+    background-color: var(--tab-body-background-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -1742,10 +1725,14 @@
     opacity: 1;
   }
 
+  #todolist-page .listCard .listCard-body .add-task-floating{
+    background-color: var(--tab-body-background-color);
+  }
+
   #todolist-page .listCard .listCard-body .add-task-floating div{
     height: 50px;
     width: 50px;
-    background-color: #47b2e4;
+    background-color: var(--main-button-background-color);
     color: #fff;
     font-size: 2rem;
     border-radius: 50px;
@@ -1757,7 +1744,7 @@
   #todolist-page .listCard .listCard-body .open-task-floating div{
     height: 50px;
     width: 50px;
-    background-color: #fcfcfc;
+    background-color: var(--sub-button-background-color);
     color: rgb(37, 37, 37);
     font-size: 1.5rem;
     border-radius: 50px;
@@ -2023,7 +2010,7 @@
     width: 100%;
     border-radius: 8px;
     margin: auto;
-    background-color: #fff;
+    background-color: var(--tab-body-background-color);
     padding: 5px;
   }
 
@@ -2181,7 +2168,7 @@
   #tasks .list-side-upper .task-info div{
     height: 100%;
     border-radius: 5px;
-    background-color: #ffffff;
+    background-color: var(--tab-body-background-color);
   }
 
   #tasks .list-side-upper .task-info .task-info-title{
@@ -2189,7 +2176,6 @@
     display: flex;
     justify-content: left;
     border-radius: 0;
-    border-bottom: 1px solid #ebebeb;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -2228,7 +2214,6 @@
     display: flex;
     flex-direction: row-reverse;
     padding-right: 10px;
-    border-top: 1px solid #ebebeb;
   }
 
   #tasks .list-side-upper .task-info .task-info-footer div{
@@ -2249,7 +2234,7 @@
   }
 
   #tasks .list-side-upper .task-info .task-info-footer div form .task-delete{
-    background-color:#fff;
+    background-color:var(--main-button-background-color);
     color: #ff3c3c;
     font-weight: 600;
   }
@@ -2359,7 +2344,7 @@
   #tasks .list-side-upper .list-status .status-bar{
     height: 60%;
     padding: 20px;
-    background-color: #292929;
+    background-color: var(--main-background-color);
   }
 
   #tasks .list-side-upper .list-status .status-bar-content{
@@ -2409,7 +2394,7 @@
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #202020;
+    background-color: var(--tab-heading-background-color);
     padding: 5px;
   }
 
@@ -2437,7 +2422,7 @@
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #202020;
+    background-color: var(--tab-heading-background-color);
     padding: 5px;
   }
 
@@ -2456,14 +2441,14 @@
     height: 100%;
     width: 100%;
     border-radius: 5px;
-    background-color: #292929;
+    background-color: var(--tab-body-background-color);
     border-radius: 10px;
   }
 
   #tasks .list-side .new-task .new-task-header{
     width: 100%;
     height: 15%;
-    background-color: #202020;
+    background-color: var(--tab-heading-background-color);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     color: rgb(156, 156, 156);
@@ -2479,7 +2464,7 @@
   #tasks .list-side .new-task .new-task-body{
     width: 100%;
     height: 70%;
-    background-color: #292929;
+    background-color: var(--tab-body-background-color);
     display: flex;
     justify-content: center;
     align-items: center;
