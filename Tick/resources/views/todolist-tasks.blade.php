@@ -264,7 +264,7 @@
                         <div class="task-info task-info-{{$task->tasks_id}}">
                             <div class="shadow">
                                 <div class="task-info-title">
-                                    <p>Task Name: <span>{{$task->task}}</span></p>
+                                    <p><span>{{$task->task}}</span></p>
                                 </div>
                                 <div class="task-info-body">
                                     <div>

@@ -126,7 +126,10 @@
                     <div class="listCard-heading">
                         <h5>{{$list->list_name}}</h5>
                         <a href="">
-                            <i class="bi bi-three-dots-vertical"></i>
+                            <i class="bi bi-pen"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-trash2"></i>
                         </a>
                     </div>
 

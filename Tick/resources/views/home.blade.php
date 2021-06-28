@@ -109,9 +109,6 @@
                     </div>
                     <div class="preview-title">
                         <p>{{$list->list_name}}</p>
-                        <a href="" class="preview-title-icon">
-                            <i class="bi bi-three-dots"></i>
-                        </a>
                     </div>
                 </div>
 
@@ -138,7 +135,7 @@
                                                 </li>
                                             @else
                                                 <li>
-                                                    <p style="color:rgb(156,156,156)"><del>{{$task->task}}</del></p>
+                                                    <p class="finished-task"><del>{{$task->task}}</del></p>
                                                 </li>
                                             @endif
                                         @endif

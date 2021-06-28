@@ -321,9 +321,21 @@ function loadTheme(theme_id) {
     document.documentElement.style.setProperty('--tab-button-background-color','#47b2e4');
     document.documentElement.style.setProperty('--main-button-background-color','#47b2e4');
     document.documentElement.style.setProperty('--sub-button-background-color','#fff');
-    
+    document.documentElement.style.setProperty('--progress-background-color','#f3f3f3');
+    document.documentElement.style.setProperty('--experience-background-color','#47b2e4');
+    document.documentElement.style.setProperty('--button-hover-background-color','169bcc');
+    document.documentElement.style.setProperty('--side-background-color','#47b2e4');
     //text
-
+    document.documentElement.style.setProperty('--page-heading-text','#202020');
+    document.documentElement.style.setProperty('--tab-heading-text','#202020');
+    document.documentElement.style.setProperty('--tab-sub-heading-text','#202020');
+    document.documentElement.style.setProperty('--task-not-done-text','#626262');
+    document.documentElement.style.setProperty('--task-done-text','#9c9c9c');
+    document.documentElement.style.setProperty('--empty-text','#626262');
+    document.documentElement.style.setProperty('--form-input-text','#626262');
+    document.documentElement.style.setProperty('--form-label-text','#626262');
+    document.documentElement.style.setProperty('--hover-text','#202020');
+    document.documentElement.style.setProperty('--other-text','#202020');
   }
   if(theme_id == 2){
     //background
@@ -333,12 +345,24 @@ function loadTheme(theme_id) {
     document.documentElement.style.setProperty('--sub-background-color','#2c2c2c');
     document.documentElement.style.setProperty('--tab-heading-background-color','#181818');
     document.documentElement.style.setProperty('--tab-body-background-color','#353535');
-    document.documentElement.style.setProperty('--tab-button-background-color','#ff405d');
+    document.documentElement.style.setProperty('--tab-button-background-color','#47b2e4');
     document.documentElement.style.setProperty('--main-button-background-color','#47b2e4');
     document.documentElement.style.setProperty('--sub-button-background-color','#5f5f5f');
-    
+    document.documentElement.style.setProperty('--progress-background-color','#353535');
+    document.documentElement.style.setProperty('--experience-background-color','#47b2e4');
+    document.documentElement.style.setProperty('--button-hover-background-color','#169bcc');
+    document.documentElement.style.setProperty('--side-background-color','#3d3d3d');
     //text
-
+    document.documentElement.style.setProperty('--page-heading-text','#fff');
+    document.documentElement.style.setProperty('--tab-heading-text','#fff');
+    document.documentElement.style.setProperty('--tab-sub-heading-text','#626262');
+    document.documentElement.style.setProperty('--task-not-done-text','#f3f3f3');
+    document.documentElement.style.setProperty('--task-done-text','#9c9c9c');
+    document.documentElement.style.setProperty('--empty-text','#626262');
+    document.documentElement.style.setProperty('--form-input-text','#626262');
+    document.documentElement.style.setProperty('--form-label-text','#fff');
+    document.documentElement.style.setProperty('--hover-text','#666666');
+    document.documentElement.style.setProperty('--other-text','#fff');
   }
   if(theme_id == 3){
     //background
@@ -351,9 +375,21 @@ function loadTheme(theme_id) {
     document.documentElement.style.setProperty('--tab-button-background-color','#47b2e4');
     document.documentElement.style.setProperty('--main-button-background-color','#54d1ff');
     document.documentElement.style.setProperty('--sub-button-background-color','#e0f7ff');
-    
+    document.documentElement.style.setProperty('--progress-background-color','#9fe3fc');
+    document.documentElement.style.setProperty('--experience-background-color','#00baff');
+    document.documentElement.style.setProperty('--button-hover-background-color','#169bcc');
+    document.documentElement.style.setProperty('--side-background-color','#54d1ff');
     //text
-
+    document.documentElement.style.setProperty('--page-heading-text','#fff');
+    document.documentElement.style.setProperty('--tab-heading-text','#fff');
+    document.documentElement.style.setProperty('--tab-sub-heading-text','#626262');
+    document.documentElement.style.setProperty('--task-not-done-text','#626262');
+    document.documentElement.style.setProperty('--task-done-text','#9c9c9c');
+    document.documentElement.style.setProperty('--empty-text','#626262');
+    document.documentElement.style.setProperty('--form-input-text','#626262');
+    document.documentElement.style.setProperty('--form-label-text','#54d1ff');
+    document.documentElement.style.setProperty('--hover-text','#54d1ff');
+    document.documentElement.style.setProperty('--other-text','#54d1ff');
   }
   if(theme_id == 4){
     //background
@@ -366,9 +402,21 @@ function loadTheme(theme_id) {
     document.documentElement.style.setProperty('--tab-button-background-color','#ff405d');
     document.documentElement.style.setProperty('--main-button-background-color','#ff5972');
     document.documentElement.style.setProperty('--sub-button-background-color','#ffd2d9');
-    
+    document.documentElement.style.setProperty('--progress-background-color','#ffd2d9');
+    document.documentElement.style.setProperty('--experience-background-color','#ff5972');
+    document.documentElement.style.setProperty('--button-hover-background-color','#ff3855');
+    document.documentElement.style.setProperty('--side-background-color','#ff5972');
     //text
-
+    document.documentElement.style.setProperty('--page-heading-text','#fff');
+    document.documentElement.style.setProperty('--tab-heading-text','#fff');
+    document.documentElement.style.setProperty('--tab-sub-heading-text','#626262');
+    document.documentElement.style.setProperty('--task-not-done-text','#626262');
+    document.documentElement.style.setProperty('--task-done-text','#9c9c9c');
+    document.documentElement.style.setProperty('--empty-text','#626262');
+    document.documentElement.style.setProperty('--form-input-text','#626262');
+    document.documentElement.style.setProperty('--form-label-text','#ff405d');
+    document.documentElement.style.setProperty('--hover-text','#ff5972');
+    document.documentElement.style.setProperty('--other-text','#ff5972');
   }
 } 
 

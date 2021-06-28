@@ -8,6 +8,21 @@
     --tab-button-background-color: #fff;
     --main-button-background-color: #fff;
     --sub-button-background-color: rgb(95, 95, 95)535;
+    --progress-background-color: #fff;
+    --experience-background-color: #fff;
+    --button-hover-background-color:#fff;
+    --side-background-color: #fff;
+
+    --page-heading-text: #fff;
+    --tab-heading-text: #fff;
+    --tab-sub-heading-text: #fff;
+    --task-not-done-text: #fff;
+    --task-done-text: #fff;
+    --empty-text:#fff;
+    --form-input-text:#fff;
+    --form-label-text:#fff;
+    --hover-text: #fff;
+    --other-text: #fff;
   }
 
   body {
@@ -972,20 +987,20 @@
   }
 
   #side .to-profile a{
-    color: lightgreen;
+    color: var(--side-background-color);
   }
 
   #side .logout a:hover{
-    color: rgb(206, 56, 56);
+    color: var(--button-hover-background-color);
     transition: .5s;
   }
 
   #side .logout a{
-    color: rgb(255, 83, 83);
+    color: var(--side-background-color);
   }
 
   #side .to-profile a:hover{
-    color: rgb(103, 173, 103);
+    color: var(--button-hover-background-color);
     transition: .5s;
   }
 
@@ -1026,25 +1041,25 @@
   }
 
   #sidebar-level .level:first-of-type .level-num{
-    color: #686868;
+    color: var(--progress-background-color);
     font-weight: 800;
   }
 
   #sidebar-level .level:first-of-type .level-num div{
     width: 100%;
     text-align: center;
-    color: #47b2e4;
+    color: var(--experience-background-color);
   }
 
   #sidebar-level .experience{
     height: 25%;
     width: 100%;
-    background-color: #464646;
+    background-color: var(--progress-background-color);
   }
   #sidebar-level .experience-progress{
     height: 100%;
     width: 50%;
-    background-color: rgb(204, 255, 128);
+    background-color: var(--experience-background-color);
   }
 
   #sidebar-tabs .sidebar-tab{
@@ -1123,7 +1138,6 @@
   }
   #add-list-modal-home .modal-body{
     background-color: var(--tab-body-background-color);
-    color: #fff;
     padding: 5px;
   }
 
@@ -1137,11 +1151,14 @@
 
   #add-list-modal-home .modal-body .add-list-form label{
     width: 20%;
+    color: var(--form-label-text);
   }
 
   #add-list-modal-home .modal-body .add-list-form input{
     width: 80%;
     border-radius: 5px;
+    border: 0;
+    font-weight: 600;
     padding: 5px;
   }
   
@@ -1164,7 +1181,7 @@
   }
 
   #add-list-modal-home .modal-footer div input:hover{
-    background-color: rgb(22, 146, 32);
+    background-color: var(--button-hover-background-color);
     transform: scale(1.05);
   }
 
@@ -1202,6 +1219,7 @@
     padding-top: 18px;
     padding-left: 20px;
     margin: auto;
+    color: var(--page-heading-text);
   }
 
   #main-content{
@@ -1330,7 +1348,7 @@
     width: 80px;
     border-radius: 50px;
     padding-top: 30px;
-    color: rgb(248, 248, 248);
+    color: var(--tab-body-background-color);
     opacity: .1;
     font-weight: 500;
     transition: .3s;
@@ -1354,6 +1372,7 @@
     position: absolute;
     transition: .3s;
     font-size: 1.2rem;
+    color: var(--tab-heading-text);
   }
 
   .main-content-list .listCard .preview-title-icon{
@@ -1372,7 +1391,7 @@
   }
 
   .main-content-list .modal-header .previewTask-name{
-    color: #fff;
+    color: var(--tab-heading-text);
     font-weight: 700;
   }
 
@@ -1381,14 +1400,14 @@
   }
 
   .main-content-list .modal-header .previewTask-control-buttons button:nth-of-type(1){
-    color: #fff;
+    color: var(--tab-heading-text);
     border: 0;
     background-color: var(--tab-heading-background-color);
     margin-right: 5px;
   }
 
   .main-content-list .modal-header .previewTask-control-buttons button:nth-of-type(2){
-    color: #fff;
+    color: var(--tab-heading-text);
     width: 70px;
     font-weight: 600;
     padding: 5px 10px;
@@ -1407,6 +1426,11 @@
 
   .main-content-list .modal-body li{
     margin: 10px 0;
+    color: var(--task-not-done-text);
+  }
+
+  .main-content-list .modal-body .finished-task{
+    color: var(--task-done-text);
   }
 
   .main-content-planner{
@@ -1436,6 +1460,7 @@
     padding-top: 18px;
     padding-left: 20px;
     margin: auto;
+    color: var(--page-heading-text);
   }
 
   #todolist-content{
@@ -1502,12 +1527,15 @@
 
   #add-list-modal .modal-body .add-list-form label{
     width: 20%;
+    color: var(--form-label-text);
   }
 
   #add-list-modal .modal-body .add-list-form input{
     width: 80%;
     border-radius: 5px;
     padding: 5px;
+    border: 0;
+    color: var(--form-input-text);
   }
   
   #add-list-modal .modal-footer{
@@ -1529,18 +1557,22 @@
   }
 
   #add-list-modal .modal-footer div input:hover{
-    background-color: rgb(22, 146, 32);
+    background-color: var(--button-hover-background-color);
     transform: scale(1.05);
   }
 
   .add-task-modal .modal-header{
-    background-color: rgb(26, 26, 26);
-    color: #b6b6b6;
-    padding: 20px;
+    background-color: var(--tab-heading-background-color);
+    color: var(--tab-heading-text);
     border: 0;
   }
+
+  .add-task-modal .modal-header h6{
+    margin: 0;
+  }
+
   .add-task-modal .modal-body{
-    background-color: #202020;
+    background-color: var(--tab-body-background-color);
     color: #fff;
     padding: 20px;
   }
@@ -1555,12 +1587,15 @@
 
   .add-task-modal .modal-body .add-task-form label{
     width: 20%;
+    color: var(--form-label-text);
   }
 
   .add-task-modal .modal-body .add-task-form input{
     width: 70%;
     border-radius: 5px;
     padding: 5px;
+    border: 0;
+    color: var(--form-input-text);
   }
 
   .add-task-modal .modal-body .add-task-form div{
@@ -1590,27 +1625,27 @@
   }
   
   .add-task-modal .modal-footer{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-heading-background-color);
     border: 0;
     padding: 15px;
   }
 
   .add-task-modal .modal-footer button{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-heading-background-color);
     border: 0;
     color: #fff;
   }
   
   .add-task-modal .modal-footer div input{
-    background-color: #47b2e4;
+    background-color: var(--tab-button-background-color);
     width: 80px;
     border: 0;
-    border-radius: 50px;
+    border-radius: 5px;
     color: #fff;
   }
 
   .add-task-modal .modal-footer div input:hover{
-    background-color: #429fca;
+    background-color: var(--button-hover-background-color);
     transform: scale(1.05);
   }
 
@@ -1619,8 +1654,9 @@
     height: 400px;
     display: flex;
     align-items: center;
+    font-weight: 800;
     justify-content: center;
-    color: rgb(150, 150, 150);
+    color: var(--empty-text);
   }
 
   #todolist-page{
@@ -1655,9 +1691,9 @@
     height: 50px;
     width: 100%;
     background-color: var(--tab-heading-background-color);
+    color: var(--tab-heading-text);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid #e7e7e7;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1666,13 +1702,14 @@
   #todolist-page .listCard .listCard-heading h5{
     margin-top: 10px;
     margin-left: 15px;
+    width: 75%;
   }
   #todolist-page .listCard .listCard-heading a{
     margin-right: 15px;
   }
 
   #todolist-page .listCard .listCard-heading a i{
-    color: rgb(24, 24, 24);
+    color: var(--tab-heading-text);
   }
 
   #todolist-page .listCard .listCard-body{
@@ -1774,14 +1811,14 @@
   #tasklist .task{
     margin-top: 5px;
     padding: 5px;
+    font-weight: 700;
     font-size: 1.1rem;
-    color: rgb(87, 87, 87);
+    color: var(--task-not-done-text);
     transition: .1s;
   }
 
   #tasklist .task:hover{
-    background-color: rgb(215, 255, 233);
-    color: rgb(41, 146, 67);
+    color: var(--hover-text);
     display: flex;
     cursor: pointer;
   }
@@ -1811,22 +1848,6 @@
     display: none;
   }
 
-
-  #tasklist .task-overdue{
-    margin-top: 5px;
-    padding: 5px;
-    font-size: 1.1rem;
-    color: rgb(245, 28, 28);
-    transition: .1s;
-  }
-
-  #tasklist .task-overdue:hover{
-    background-color: rgb(215, 255, 233);
-    color: rgb(41, 146, 67);
-    display: flex;
-    cursor: pointer;
-  }
-
   #tasklist .task-overdue:hover > i,label{
     cursor: pointer;
   }
@@ -1852,8 +1873,6 @@
     display: none;
   }
 
-
-
   #tasklist .tasklist-footer{
     height: 70px;
     width: 100%;
@@ -1863,7 +1882,7 @@
     margin-top: 5px;
     padding: 5px;
     font-size: 1.1rem;
-    color: rgb(161, 161, 161);
+    color: var(--task-done-text);
     transition: .1s;
   }
 
@@ -1894,13 +1913,13 @@
   #todolist-tasks-title p{
     margin: 0 15px;
     font-size: 1.2rem;
-    color: #888888;
+    color: var(--tab-sub-heading-text);
   }
 
   #todolist-tasks-title span{
     font-size: 1.5rem;
     font-weight: 600;
-    color: #202020;
+    color: var(--tab-heading-text);
   }
 
   #todolist-tasks-title a{
@@ -1912,7 +1931,6 @@
     height: 50px;
     width: 50px;
     border-radius: 50px;
-    border: 3px solid #b6b6b6;
     transition: .3s;
     display: flex;
     justify-content: center;
@@ -1921,24 +1939,14 @@
   }
 
   #todolist-tasks-title a .back-btn i:nth-of-type(1){
-    color: #444444;
+    color: var(--main-button-background-color);
     font-size: 1.5rem;
   }
 
   #todolist-tasks-title a .back-btn i:nth-of-type(2){
-    color: #fff;
+    color: var(--page-heading-text);
     font-size: 1.5rem;
     display: none;
-  }
-
-  #todolist-tasks-title a div:hover{
-    width: 80px;
-    background-color: #444;
-  }
-
-  #todolist-tasks-title a div:hover{
-    width: 80px;
-    border: 0;
   }
 
   #todolist-tasks-title a div:hover > i:nth-of-type(1){
@@ -2021,14 +2029,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #d6d6d6;
   }
 
   #tasks .list-of-tasks-title p{
     margin-top: 12px;
     font-size: 1.3rem;
     font-weight: 600;
-    color: #888888;
+    color: var(--tab-heading-text);
   }
 
   #tasks .list-of-tasks-content{
@@ -2054,8 +2061,7 @@
 
   #tasks .list-of-tasks-content .task:hover > .unfinished{
     cursor: pointer;
-    color: rgb(29, 133, 15);
-    background-color: rgb(232, 255, 230);
+    color: var(--hover-text);
     font-weight: 700;
   }
 
@@ -2076,6 +2082,8 @@
   #tasks .list-of-tasks-content .task .unfinished{
     width: 100%;
     height: 100%;
+    font-weight: 700;
+    color: var(--task-not-done-text);
   }
 
   #tasks .list-of-tasks-content .task .task-name{
@@ -2176,19 +2184,20 @@
     display: flex;
     justify-content: left;
     border-radius: 0;
+    background-color: var(--tab-heading-background-color);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
 
   #tasks .list-side-upper .task-info .task-info-title p{
     margin: auto 20px;
-    color: #919191;
+    color: var(--tab-sub-heading-text);
   }
 
   #tasks .list-side-upper .task-info .task-info-title span{
     margin: auto 10px;
     font-weight: 700;
-    color: #202020;
+    color: var(--tab-heading-text);
   }
 
   #tasks .list-side-upper .task-info .task-info-body{
@@ -2199,11 +2208,13 @@
 
   #tasks .list-side-upper .task-info .task-info-body div{
     height: 50px;
-    color: #929292;
+    color: var(--tab-sub-heading-text);
   }
 
   #tasks .list-side-upper .task-info .task-info-body div span{
-    color: #202020;
+    color: var(--form-label-text);
+    font-weight: 800;
+    margin-left: 10px;
   }
 
   #tasks .list-side-upper .task-info .task-info-footer{
@@ -2234,14 +2245,14 @@
   }
 
   #tasks .list-side-upper .task-info .task-info-footer div form .task-delete{
-    background-color:var(--main-button-background-color);
-    color: #ff3c3c;
+    background-color: var(--tab-body-background-color);
+    color: var(--other-text);
     font-weight: 600;
   }
 
   #tasks .list-side-upper .task-info .task-info-footer div .task-update{
-    background-color: rgb(255, 251, 0);
-    color: #202020;
+    background-color: var(--tab-heading-background-color);
+    color:var(--tab-heading-text);
     font-weight: 600;
   }
 
@@ -2336,7 +2347,7 @@
 
   #tasks .list-side-upper .list-status .list-status-content{
     height: 100%;
-    color: #fff;
+    color: var(--other-text);
     font-size: 1.2rem;
     background-color: #202020;
   }
@@ -2344,7 +2355,7 @@
   #tasks .list-side-upper .list-status .status-bar{
     height: 60%;
     padding: 20px;
-    background-color: var(--main-background-color);
+    background-color: var(--tab-body-background-color);
   }
 
   #tasks .list-side-upper .list-status .status-bar-content{
@@ -2360,25 +2371,26 @@
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
+    font-weight: 700;
   }
 
   #tasks .list-side-upper .list-status .status-progress{
     height: 20%;
     border-radius: 5px;
     width: 100%;
-    background-color: rgb(90, 90, 90);
+    background-color: var(--main-background-color);
   }
 
   #tasks .list-side-upper .list-status .progress-indicator{
     font-size: .8rem;
     margin-top: 5px;
-    color: rgb(209, 209, 209);
+    color: var(--other-text);
   }
 
   #tasks .list-side-upper .list-status .progress{
     height: 100%;
     border-radius: 5px;
-    background-color: rgb(247, 225, 29);
+    background-color: var(--experience-background-color);
   }
 
   #tasks .list-side-upper .list-status .status-num{
@@ -2400,17 +2412,17 @@
 
   #tasks .list-side-upper .list-status .overall-progress label{
     font-size: .7rem;
-    color: rgb(209, 209, 209);
+    color: var(--page-heading-text);
   }
 
   #tasks .list-side-upper .list-status .overall-progress-done p{
-    color: greenyellow;
+    color: var(--page-heading-text);
     font-weight: 600;
     margin: 0;
   }
 
   #tasks .list-side-upper .list-status .overall-progress-unfinished p{
-    color: rgb(255, 29, 29);
+    color: var(--page-heading-text);
     font-weight: 600;
     margin: 0;
   }
@@ -2428,12 +2440,12 @@
 
   #tasks .list-side-upper .list-status .task-type-progress label{
     font-size: .7rem;
-    color: rgb(209, 209, 209);
+    color: var(--page-heading-text);
   }
 
   #tasks .list-side-upper .list-status .task-type-progress p{
     font-size: .7rem;
-    color: rgb(209, 209, 209);
+    color: var(--page-heading-text);
     margin-bottom: 12px;
   }
 
@@ -2451,7 +2463,7 @@
     background-color: var(--tab-heading-background-color);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    color: rgb(156, 156, 156);
+    color: var(--tab-heading-text);
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -2472,13 +2484,18 @@
 
   #tasks .list-side .new-task .new-task-body label{
     width: 20%;
+    color: var(--form-label-text);
+    font-weight: 700;
   }
 
   #tasks .list-side .new-task .new-task-body input{
     width: 70%;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 5px;
+    border: 0;
     padding: 10px;
+    color: var(--tab-sub-heading-text);
+    font-weight: 600;
     text-align: center;
   }
 
@@ -2576,14 +2593,14 @@
     height: 50%;
     border: 0;
     padding: 5px;
-    background-color: #0bff79;
-    color: #202020;
+    background-color: var(--main-button-background-color);
+    color: var(--tab-heading-text);
     border-radius: 2px;
     font-weight: 600;
   }
 
   #tasks .list-side .new-task .new-task-footer-content div{
-    color: rgb(255, 51, 51);
+    color: var(--other-text);
     margin-right: 20px;
   }
 
@@ -2602,6 +2619,7 @@
     padding-top: 18px;
     padding-left: 20px;
     margin: auto;
+    color: var(--page-heading-text);
   }
 
   #planner-content{
@@ -2656,6 +2674,7 @@
     position: sticky;
     justify-content: space-around;
     align-items: center;
+    color: var(--tab-heading-text);
     background-color: var(--main-background-color);
   }
 
@@ -2664,11 +2683,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(68, 68, 68);
+    background-color: var(--tab-heading-text);
     border-radius: 50px;
     width: 12%;
     font-size: 1.5rem;
-    color: rgb(255, 255, 119);
+    color: var(--main-background-color);
   }
 
   #themes .theme-content{
@@ -2876,6 +2895,7 @@
     display: flex;
     align-items: center;
     user-select: none;
+    color: var(--tab-heading-text);
     text-transform: uppercase;
   }
 
@@ -2885,14 +2905,13 @@
     margin: 5% auto 0;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid#bdbdbd;
   }
 
   #profile .profile-details .user-details-item{
     margin: 5px;
     font-size: 1rem;
     text-align: left;
-    color: #7a7a7a;
+    color: var(--tab-heading-text);
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -2902,6 +2921,7 @@
 
   #profile .profile-details .user-details-item:hover > .user-details-edit{
     display: block;
+    
   }
 
   #profile .profile-details .user-details-item svg{
@@ -2918,7 +2938,7 @@
   }
 
   #profile .profile-details .user-details-info form input{
-    border: 1px solid rgb(66, 66, 66);
+    border: 0;
     border-radius: 10px;
     padding: 2px;
     text-align: center;
@@ -2940,7 +2960,7 @@
 
   #profile .profile-details .user-details-edit i{
     font-size: .8rem;
-    color: #949494;
+    color: var(--tab-heading-text);;
     font-weight: 500;
     cursor: pointer;
   }
@@ -2996,12 +3016,12 @@
     justify-content: center;
     flex-direction: column;
     font-weight: 600;
-    color: #303030;
+    color: var(--tab-heading-text);
     margin: auto;
   }
 
   #profile .stats-content-level .level-container{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--tab-heading-background-color);
     border-radius: 50px;
     height: 100px;
     width: 100px;
@@ -3017,7 +3037,7 @@
     padding: auto;
     font-size: 2rem;
     font-weight: 700;
-    color: #47b2e4;
+    color: var(--tab-heading-text);
   }
 
   #profile .stats-content-level .content-experience{
@@ -3031,8 +3051,7 @@
   }
 
   #profile .stats-content-level .experience-container{
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(255, 255, 255);
+    background-color: var(--progress-background-color);
     border-radius: 50px;
     height: 20px;
     width: 90%;
@@ -3043,7 +3062,7 @@
   }
 
   #profile .stats-content-level .experience-container-progress{
-    background-color: rgb(204, 255, 128);
+    background-color:var(--experience-background-color);
     border-radius: 50px;
     height: 100%;
   }
@@ -3062,7 +3081,7 @@
     width: 40%;
     height: 100%;
     border-radius: 0;
-    border-right: 1px solid rgb(236, 236, 236);
+    border-right: 1px solid var(--tab-body-background-color);
     padding-right: 10px;
   }
 
@@ -3074,13 +3093,13 @@
     flex-direction: column;
     font-weight: 600;
     font-size: 1rem;
-    color: #303030;
+    color: var(--tab-heading-text);
     margin: auto;
     margin-top: 8px;
   }
 
   #profile .stats-content-task .level-container{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--tab-heading-background-color);
     border-radius: 50px;
     height: 70px;
     width: 70px;
@@ -3096,7 +3115,7 @@
     padding: auto;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #47b2e4;
+    color: var(--tab-heading-text);
   }
 
   #profile .stats-content-task .content-experience{
@@ -3138,11 +3157,11 @@
   }
 
   #profile .stats-content-task .content-experience-legend ul li:nth-of-type(1){
-    color: rgb(93, 155, 0);
+    color: var(--tab-heading-text);
   }
 
   #profile .stats-content-task .content-experience-legend ul li:nth-of-type(2){
-    color: rgb(255, 101, 101);
+    color: var(--tab-heading-text);
   }
 
   #profile .stats-content-task .overall-task-stats{
