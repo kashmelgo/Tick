@@ -1171,13 +1171,13 @@
   #add-list-modal-home .modal-footer button{
     background-color: var(--tab-heading-background-color);
     border: 0;
-    color: #fff;
+    color: var(--other-text);
   }
   
   #add-list-modal-home .modal-footer div input{
     background-color: var(--tab-button-background-color);
     border: 0;
-    color: #fff;
+    color: var(--other-text);
   }
 
   #add-list-modal-home .modal-footer div input:hover{
@@ -1547,13 +1547,13 @@
   #add-list-modal .modal-footer button{
     background-color: var(--tab-heading-background-color);
     border: 0;
-    color: #fff;
+    color: var(--other-text);
   }
   
   #add-list-modal .modal-footer div input{
     background-color: var(--tab-button-background-color);
     border: 0;
-    color: #fff;
+    color: var(--other-text);
   }
 
   #add-list-modal .modal-footer div input:hover{
@@ -1633,7 +1633,7 @@
   .add-task-modal .modal-footer button{
     background-color: var(--tab-heading-background-color);
     border: 0;
-    color: #fff;
+    color: var(--other-text);
   }
   
   .add-task-modal .modal-footer div input{
@@ -1641,7 +1641,7 @@
     width: 80px;
     border: 0;
     border-radius: 5px;
-    color: #fff;
+    color: var(--other-text);
   }
 
   .add-task-modal .modal-footer div input:hover{
@@ -1988,7 +1988,7 @@
   #todolist-tasks-content .add-floating div{
     height: 100%;
     width: 100%;
-    color: #fff;
+    color: var(--other-text);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -2261,14 +2261,14 @@
   }
 
   .update-task-modal .modal-header{
-    background-color: rgb(26, 26, 26);
-    color: #b6b6b6;
+    background-color: var(--tab-heading-background-color);
+    color: var(--tab-heading-text);
     padding: 20px;
     border: 0;
   }
   .update-task-modal .modal-body{
-    background-color: #202020;
-    color: #fff;
+    background-color: var(--tab-body-background-color);
+    color: var(--form-label-text);
     padding: 20px;
   }
 
@@ -2288,6 +2288,8 @@
     width: 70%;
     border-radius: 5px;
     padding: 5px;
+    border: 0;
+    color: var(--form-label-text);
   }
 
   .update-task-modal .modal-body .add-task-form div{
@@ -2301,12 +2303,12 @@
     width: 20px;
     height: 20px;
     border-radius: 50px;
-    color: aqua;
+    color: var(--tab-heading-background-color);
     cursor: pointer;
   }
 
   .update-task-modal .modal-body .add-task-form div input:checked{
-    background-color: rgb(39, 212, 212);
+    background-color: var(--tab-heading-background-color);
     color: rgb(39, 212, 212);
   }
 
@@ -2317,27 +2319,27 @@
   }
   
   .update-task-modal .modal-footer{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-heading-background-color);
     border: 0;
     padding: 15px;
   }
 
   .update-task-modal .modal-footer button{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--tab-heading-background-color);
     border: 0;
-    color: #fff;
+    color: var(--other-text);
   }
   
   .update-task-modal .modal-footer div input{
-    background-color: rgb(255, 251, 0);
+    background-color: var(--tab-button-background-color);
     width: 80px;
     border: 0;
     border-radius: 50px;
-    color: #202020;
+    color: var(--other-text);
   }
 
   .update-task-modal .modal-footer div input:hover{
-    background-color: rgb(255, 253, 145);
+    background-color: var(--button-hover-background-color);
     transform: scale(1.05);
   }
 

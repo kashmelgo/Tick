@@ -35,7 +35,8 @@ Route::get('/themes/equip', [App\Http\Controllers\ThemeController::class, 'equip
 
 Route::get('/todolist', [App\Http\Controllers\ToDoListController::class, 'index'])->name('todolist');
 Route::get('seeTask', [App\Http\Controllers\TodolistController::class, 'seeTask'])->name('seeTask');
-Route::get('deleteList/{task_id}', [App\Http\Controllers\ToDoListController::class, 'deleteList'])->name('deleteList');
+Route::get('deleteList', [App\Http\Controllers\ToDoListController::class, 'deleteList'])->name('deleteList');
+Route::get('renameList', [App\Http\Controllers\ToDoListController::class, 'renameList'])->name('renameList');
 Route::get('deleteListHome/{task_id}', [App\Http\Controllers\ToDoListController::class, 'deleteListHome'])->name('deleteListHome');
 Route::post('editList', [App\Http\Controllers\ToDoListController::class, 'editList'])->name('editList');
 

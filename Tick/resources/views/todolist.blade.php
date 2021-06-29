@@ -125,10 +125,10 @@
                 <div class="listCard shadow">
                     <div class="listCard-heading">
                         <h5>{{$list->list_name}}</h5>
-                        <a href="">
+                        <a href="" data-toggle="modal" data-target="#rename-{{$list->task_id}}">
                             <i class="bi bi-pen"></i>
                         </a>
-                        <a href="">
+                        <a href="" data-toggle="modal" data-target="#delete-{{$list->task_id}}">
                             <i class="bi bi-trash2"></i>
                         </a>
                     </div>
@@ -252,6 +252,55 @@
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <div class="add-task-submit">
                                         <input class="btn" type="submit" value="Add">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade add-task-modal" id="rename-{{$list->task_id}}" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <form action="renameList" method="get" role="form">
+                            @csrf
+
+                            <div class="modal-body">
+                                <div class="add-task-form">
+                                    <label for="task">Rename to:</label>
+                                    <input type="text" name="new_name">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="hidden" name="task_id" value="{{$list->task_id}}">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <div class="add-task-submit">
+                                    <input class="btn" type="submit" value="Rename">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade add-task-modal" id="delete-{{$list->task_id}}" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                            <form action="deleteList" method="get" role="form">
+                                @csrf
+
+                                <div class="modal-body">
+                                    <div class="add-task-form">
+                                        <label for="task" class="w-100 font-weight-bold">Delete "{{$list->list_name}}" ?</label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="hidden" name="task_id" value="{{$list->task_id}}">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <div class="add-task-submit">
+                                        <input class="btn" type="submit" value="Remove">
                                     </div>
                                 </div>
                             </form>

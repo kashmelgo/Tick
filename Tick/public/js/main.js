@@ -389,7 +389,7 @@ function loadTheme(theme_id) {
     document.documentElement.style.setProperty('--form-input-text','#626262');
     document.documentElement.style.setProperty('--form-label-text','#54d1ff');
     document.documentElement.style.setProperty('--hover-text','#54d1ff');
-    document.documentElement.style.setProperty('--other-text','#54d1ff');
+    document.documentElement.style.setProperty('--other-text','#fff');
   }
   if(theme_id == 4){
     //background
@@ -416,7 +416,7 @@ function loadTheme(theme_id) {
     document.documentElement.style.setProperty('--form-input-text','#626262');
     document.documentElement.style.setProperty('--form-label-text','#ff405d');
     document.documentElement.style.setProperty('--hover-text','#ff5972');
-    document.documentElement.style.setProperty('--other-text','#ff5972');
+    document.documentElement.style.setProperty('--other-text','#fff');
   }
 } 
 

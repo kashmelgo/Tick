@@ -153,8 +153,8 @@ class ToDoListController extends Controller
         $list = new Todolist;
         $list->list_name = $request->list_name;
         $list->student_id = $id;
-        $value= DB::table('to_do_lists')->get()->count();
-        $list->task_id=$value+1;
+        $value= DB::table('to_do_lists')->latest('list_id')->first();
+        $list->task_id=$value->list_id+1;
         $list->list_id = $list->task_id;
         $list->save();
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
@@ -176,8 +176,8 @@ class ToDoListController extends Controller
         $list = new Todolist;
         $list->list_name = $request->list_name;
         $list->student_id = $id;
-        $value= DB::table('to_do_lists')->get()->count();
-        $list->task_id=$value+1;
+        $value= DB::table('to_do_lists')->latest('list_id')->first();
+        $list->task_id=$value->list_id+1;
         $list->list_id = $list->task_id;
         $list->save();
         return redirect('/home');
@@ -190,17 +190,19 @@ class ToDoListController extends Controller
         return $this->index;
     }
 
-    public function deleteList($id){
-        $list = Todolist::find($id);
-        $list->delete();
+    public function deleteList(Request $request){
+        Task::where('task_id',$request->task_id)->delete();
+        ToDolist::where('list_id',$request->task_id)->delete();
         return $this->index();
     }
 
-    public function deleteListHome($id){
-        $list = Todolist::find($id);
-        $list->delete();
+    public function renameList(Request $request){
+        $newname = Todolist::find($request->task_id);
+        $newname->list_name = $request->new_name;
+        $newname->save();
         return $this->index();
     }
+
 
     public function showList($id){
         $list = Todolist::where('student_id', $id)->get();
@@ -240,8 +242,6 @@ class ToDoListController extends Controller
         return view('todolist-tasks', ['theme'=>$theme,'list'=>$list,'tasks'=>$tasks,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
     }
 
-    public function updateTask(Request $request){
-        return "update task in TodolistController on updateTask()";
-    }
+    
 
 }
