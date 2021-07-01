@@ -89,7 +89,7 @@
         <p>List Name : <span>{{$list->list_name}}</span></p>
         @endforeach
 
-        <a href="javascript:history.back()">
+        <a href="{{ route('todolist') }}">
             <div class="back-btn">
                 <i class="bi bi-backspace-fill"></i>
                 <i class="bi bi-backspace"></i>
@@ -287,7 +287,8 @@
                                         </div>
                                     @endif
                                     <div>
-                                        <form action="">
+                                        <form action="deleteListTask" method="GET">
+                                            @csrf
                                             <input type="hidden" name="id" value="{{$task->tasks_id}}">
                                             <button class="task-delete" type="submit">Delete</button>
                                         </form>

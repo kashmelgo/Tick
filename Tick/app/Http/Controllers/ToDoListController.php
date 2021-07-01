@@ -83,7 +83,7 @@ class ToDoListController extends Controller
     }
 
     public function getPoints($string){
-        if($string == "assignment")
+        if($string == "Assignment")
             return 15;
         else
             return 20;
@@ -240,6 +240,23 @@ class ToDoListController extends Controller
             $theme = $accounttheme->theme_id;
         }
         return view('todolist-tasks', ['theme'=>$theme,'list'=>$list,'tasks'=>$tasks,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel]);
+    }
+
+    public function updateTask(Request $request){
+        $update = Task::find($request->task_id);
+        $update->task = $request->task;
+        $update->due_date = $request->due_date;
+        $update->time = $request->time;
+        $update->task_type = $request->task_type;
+        $update->subject = $request->subject;
+        if($request->task_type == "Project"){
+            $update->task_points = 20;
+        }
+        else {
+            $update->task_points = 15;
+        }
+        $update->save();
+        return $this->showListContent($request->task_id);
     }
 
     
