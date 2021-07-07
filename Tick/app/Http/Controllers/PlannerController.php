@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Account;
 use App\Models\Level;
 use App\Models\Todolist;
+use App\Models\Plan;
 
 class PlannerController extends Controller
 {
@@ -39,6 +40,7 @@ class PlannerController extends Controller
     {
 
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
+        $plans = Plan::where('plan_id', Auth::user()->id)->get();
 
         // $id = Auth::user()->list()->list_id;
 
@@ -55,6 +57,7 @@ class PlannerController extends Controller
         }
 
         // foreach ($this->sources as $source) {
+            //gets tasks
             foreach ($this->sources[0]['model']::where('tasks_id', $lists[0]->task_id)->get() as $model) { /*change to where() */
 
                 $due_date = $model->getAttributes()['due_date'];
@@ -69,6 +72,28 @@ class PlannerController extends Controller
                 ];
             }
         // }
+
+            //gets plans
+        foreach ($this->sources[1]['model']::where('plan_id', Auth::user()->id)->get() as $model) { /*change to where() */
+            $start = $model->getAttributes()['start'];
+            $end = $model->getAttributes()['end'];
+            if (!$start || !$end) {
+                continue;
+            }
+
+            array_push($events, [
+                'title' => trim($this->sources[1]['prefix'] . ' ' . $model->{$this->sources[1]['field']} . ' ' . $this->sources[1]['suffix']),
+                'start' => $start,
+                'end' => $end,
+            ]);
+
+            // $plans[] = [
+            //     'title' => trim($this->sources[0]['prefix'] . ' ' . $model->{$this->sources[0]['field']} . ' ' . $this->sources[0]['suffix']),
+            //     'start' => $start,
+            //     'end' => $end,
+            //     // 'url'   => route($this->sources[0]['route'], $model->id),
+            // ];
+        }
 
         return view('planner', ['theme'=>$theme, 'sidebarlevel'=>$sidebarlevel,'sidebarexperience'=>$sidebarexperience, 'events'=>$events] );
     }
