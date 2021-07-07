@@ -80,7 +80,7 @@
     @php
         echo '<script type="text/javascript">
               loadTheme('.$theme.');
-            </script>';  
+            </script>';
     @endphp
     <div id="planner-title">
         <h3>Your Scheduler</h3>
@@ -102,7 +102,7 @@
     <script>
         $(document).ready(function () {
                 // page is now ready, initialize the calendar...
-                events={!! json_encode($plans) !!};
+                events={!! json_encode($events) !!};
                 $('#calendar').fullCalendar({
                     // put your options and callbacks here
                     events: events,

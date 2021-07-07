@@ -130,7 +130,6 @@ class ToDoListController extends Controller
     }
 
     public function editTask(Request $request){
-        dd($request);
         $task = Task::find($request->tasks_id);
         $task->task = $request->task;
         $task->subject = $request->subject;
@@ -184,7 +183,6 @@ class ToDoListController extends Controller
         }
 
     public function editList(Request $request){
-        dd($request);
         $list = ToDoList::find();
         $list->list_name = $request->list_name;
         return $this->index;
@@ -211,7 +209,7 @@ class ToDoListController extends Controller
 
     public function markAsDone($id){
         $finTask = Task::find($id);
-        $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore'); 
+        $date = Carbon::parse($finTask->due_date . " " . $finTask->time, 'Asia/Singapore');
         $finTask->status = "done";
         $finTask->date_finished = Carbon::now();
         $finTask->save();
@@ -259,6 +257,6 @@ class ToDoListController extends Controller
         return $this->showListContent($request->task_id);
     }
 
-    
+
 
 }

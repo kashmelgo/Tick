@@ -7,47 +7,46 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Account;
 use App\Models\Level;
+use App\Models\Todolist;
 
 class PlannerController extends Controller
 {
     public $sources = [
         [
-            'model'      => '\App\Models\Plan',
-            'date_start' => 'date_start',
-            'date_end' => 'date_end',
-            'field'      => 'plan_name',
+            'model'      => '\App\Models\Task',
+            'date_start' => 'due_date',
+            'date_end'   => '',
+            'field'      => 'task',
             'prefix'     => '',
             'suffix'     => '',
-            'route'      => 'planner.show',
-            'model2' => '\App\Models\Task'
+            'route'      => 'todolist-tasks',
         ],
+        [
+            'model'      => '\App\Models\Plan',
+            'date_start' => 'start',
+            'date_end' => 'end',
+            'field'      => 'event',
+            'prefix'     => '',
+            'suffix'     => '',
+            'route'      => 'plan.edit',
+
+        ],
+
 
     ];
 
     public function index()
     {
+
+        $lists = Todolist::where('student_id', Auth::user()->id)->get();
+
+        // $id = Auth::user()->list()->list_id;
+
+
         $sidebaraccount = Account::where('account_id', Auth::user()->id)->get();
         foreach ($sidebaraccount as $sidebaraccount) {
             $sidebarlevel = Level::where('level_id', $sidebaraccount->level_id+1)->get();
             $sidebarexperience = $sidebaraccount->experience;
-        }
-
-        $plans = [];
-        foreach ($this->sources as $source) {
-            foreach ($source['model']::all() as $model) { /*change to where() */
-                $start = $model->getAttributes()[$source['date_start']];
-                $end = $model->getAttributes()[$source['date_end']];
-                if (!$start || !$end) {
-                    continue;
-                }
-
-                $plans[] = [
-                    'title' => trim($source['prefix'] . ' ' . $model->{$source['field']} . ' ' . $source['suffix']),
-                    'start' => $start,
-                    'end' => $end,
-                    // 'url'   => route($source['route'], $model->id),
-                ];
-            }
         }
 
         $accounttheme = DB::table('accounts')->where('accounts.account_id','=',Auth::user()->id)->get();
@@ -55,7 +54,23 @@ class PlannerController extends Controller
             $theme = $accounttheme->theme_id;
         }
 
-        return view('planner', ['theme'=>$theme, 'sidebarlevel'=>$sidebarlevel,'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel, 'plans'=>$plans] );
+        // foreach ($this->sources as $source) {
+            foreach ($this->sources[0]['model']::where('tasks_id', $lists[0]->task_id)->get() as $model) { /*change to where() */
+
+                $due_date = $model->getAttributes()['due_date'];
+                if (!$due_date) {
+                    continue;
+                }
+
+                $events[] = [
+                    'title' => trim($this->sources[0]['prefix'] . ' ' . $model->{$this->sources[0]['field']} . ' ' . $this->sources[0]['suffix']),
+                    'start' => $due_date,
+                    // 'url'   => route($this->sources[0]['route'], $model->id),
+                ];
+            }
+        // }
+
+        return view('planner', ['theme'=>$theme, 'sidebarlevel'=>$sidebarlevel,'sidebarexperience'=>$sidebarexperience, 'events'=>$events] );
     }
 
     /**
