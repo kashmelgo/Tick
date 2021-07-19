@@ -60,8 +60,7 @@ Route::post('markAsDone/{tasks_id}', [App\Http\Controllers\ToDoListController::c
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::post('profile/edit', [App\Http\Controllers\ProfileController::class, 'update'])->name('update');
 
-
-//Dummy Routes - Change to connect back-end to front-end
-
 Route::get('todolist/{list_id}', [App\Http\Controllers\ToDoListController::class, 'showListContent'])->name('todolist-tasks');
+
+Route::get('admin-dashboard', [App\Http\Controllers\HomeController::class, 'admin-dashboard'])->name('admin-dashboard');
 

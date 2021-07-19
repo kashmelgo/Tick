@@ -3181,3 +3181,268 @@
     width: 50%;
     height: 100%;
   }
+
+
+    /*--------------------------------------------------------------
+  # Admin
+  --------------------------------------------------------------*/
+  #side .admin-logout a:hover{
+    color: rgb(255, 44, 44);
+    transition: .5s;
+  }
+
+  #side .admin-logout a{
+    color: rgb(255, 102, 102);
+  }
+  #admin-sidebar #sidebar{
+    height: 100vh;
+    width: 270px;
+    background-color: #202020;
+  }
+
+  #admin-sidebar #sidebar-level{
+    background-color: #202020;
+    width: 250px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  #admin-sidebar #sidebar-level p{
+    color: #47b2e4;
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 0;
+    font-family: "Jost", sans-serif;
+  }
+
+  #admin-sidebar #sidebar-level span{
+    color: #067db4;
+    font-size: 1.4rem;
+    font-family: "Jost", sans-serif;
+  }
+
+  .admin-sidebar-tab{
+    padding: 10px;
+    color: #686868;
+  }
+
+  .admin-sidebar-tab p{
+    font-weight: 600;
+  }
+
+  .admin-sidebar-tab .tab{
+    width:250px;
+    height: 50px;
+    display: flex;
+    margin: 3px 0;
+    cursor: pointer;
+  }
+
+  .admin-sidebar-tab .tab .tab-color{
+    width:10px;
+    height: 50px;
+    background-color: #444444;
+    border-radius: 5px;
+  }
+
+  .admin-sidebar-tab .tab .tab-text{
+    width:240px;
+    height: 50px;
+    padding: 15px 20px;
+    font-size: .9rem;
+    color: #696969;
+  }
+
+  .admin-sidebar-tab .tab .tab-text i{
+    margin-right: 8px;
+  }
+
+  .admin-sidebar-tab .tab:hover{
+    background-color: #1a1a1a;
+    transition: .3s;
+  }
+
+  .admin-sidebar-tab .tab:hover > .tab-color{
+    background-color: #9bdfff;
+    width: 20px;
+    transition: .3s;
+  }
+
+  .admin-sidebar-tab .tab:hover > .tab-text{
+    color: #9bdfff;
+    width: 230px;
+    transition: .3s;
+  }
+
+  .admin-sidebar-tab .active{
+    pointer-events: none;
+    background-color: #1a1a1a;
+  }
+
+  .admin-sidebar-tab .active .tab-color{
+    background-color: #47b2e4;
+    width: 20px;
+    transition: .3s;
+  }
+
+  .admin-sidebar-tab .active .tab-text{
+    color: #47b2e4;
+    width: 230px;
+    transition: .3s;
+  }
+
+  #admin-dashboard-views{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 2% 4% 0 0;
+  }
+
+  #admin-dashboard-views i{
+    background-color: rgb(245, 245, 245);
+    padding: 1% 1.5%;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  #admin-dashboard-views i:hover{
+    background-color: rgb(250, 250, 250);
+    color: #47b2e4;
+    padding: 1% 1.5%;
+    border-radius: 5px;
+    font-size: 1.5rem;
+  }
+
+  #admin-dashboard-views .cardview{
+    display: none;
+  }
+
+  #admin-dashboard-views .listview{
+    display: block;
+  }
+
+  #admin-dashboard-cardView{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    user-select: none;
+  }
+
+  #admin-dashboard-cardView .dashboard-cards{
+    height: 45%;
+    width: 45%;
+    margin: 20px 20px;
+    border-radius: 5px;
+    transition: .2s;
+    border: 1px solid rgb(231, 231, 231);
+    display: flex;
+  }
+
+  #admin-dashboard-cardView .dashboard-cards:hover{
+    transform: scale(1.02);
+  }
+
+  #admin-dashboard-cardView .dashboard-cards:hover >.dashboard-cards-header i{
+    display: none;
+  }
+
+  #admin-dashboard-cardView .dashboard-cards:hover >.dashboard-cards-header .card-onhover{
+    display: block;
+  }
+
+  #admin-dashboard-cardView .dashboard-cards-header{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: #fff;
+  }
+
+  #admin-dashboard-cardView .dashboard-cards-header p{
+    margin: 0;
+  }
+
+  #admin-dashboard-cardView .dashboard-cards-header i{
+    font-size: 3rem;
+  }
+
+  #admin-dashboard-cardView .dashboard-cards-header .card-onhover{
+    display: none;
+  }
+
+  #admin-dashboard-cardView .dashboard-cards-body{
+    width: 75%;
+    background-color: rgb(243, 243, 243);
+  }
+
+  #admin-dashboard-listView{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+    user-select: none;
+    overflow-y: auto;
+  }
+
+  #admin-dashboard-listView .dashboard-lists{
+    height: 24%;
+    width: 60%;
+    border: 1px solid rgb(231, 231, 231);
+    margin: 2% auto;
+    user-select: none;
+    transition: .2s;
+    display: flex;
+  }
+
+  #admin-dashboard-listView .dashboard-lists:hover{
+    transform: scale(1.04);
+  }
+
+  #admin-dashboard-listView .dashboard-lists:hover > .dashboard-lists-header i{
+    display: none;
+  }
+
+  #admin-dashboard-listView .dashboard-lists:hover > .dashboard-lists-header .list-onhover{
+    display: block;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-header{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: .2s;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-header i{
+    font-size: 5rem;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-header .list-onhover{
+    display: none;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body{
+    width: 50%;
+    background-color: rgb(88, 88, 88);
+  }
+
+  #admin-dashboard-listView .dashboard-lists-footer{
+    width: 20%;
+    background-color: rgb(172, 172, 172);
+  }

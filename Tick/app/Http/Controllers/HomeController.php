@@ -41,7 +41,14 @@ class HomeController extends Controller
         foreach ($accounttheme as $accounttheme) {
             $theme = $accounttheme->theme_id;
         }
+
+        if(Auth::user()->user_type == "Student"){
+            return view('home', ['theme'=>$theme,'lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel] );
+        }
+        else {
+            return view('adminHome');
+        }
         
-        return view('home', ['theme'=>$theme,'lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel] );
+        
     }
 }

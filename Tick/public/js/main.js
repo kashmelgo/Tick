@@ -309,6 +309,22 @@ function closeUpdateInfo() {
   }
 }
 
+function viewtype(num) {
+  
+  if(num==0){
+    document.querySelector('#admin-dashboard-views .cardview').style.display = "block";
+    document.querySelector('#admin-dashboard-views .listview').style.display = "none";
+    document.getElementById('admin-dashboard-listView').style.display = "block";
+    document.getElementById('admin-dashboard-cardView').style.display = "none";
+  }
+  if(num==1){
+    document.querySelector('#admin-dashboard-views .cardview').style.display = "none";
+    document.querySelector('#admin-dashboard-views .listview').style.display = "block";
+    document.getElementById('admin-dashboard-listView').style.display = "none";
+    document.getElementById('admin-dashboard-cardView').style.display = "flex";
+  }
+}
+
 function loadTheme(theme_id) {
   if(theme_id == 1){
     //background
