@@ -155,24 +155,21 @@
                 <p>Users</p>
             </div>
             <div class="dashboard-lists-body bg-dark">
-                <div class="dashboard-lists-overall bg-danger">
-
+                <div class="dashboard-lists-overall bg-dark">
+                    <p class="labelText">Total User</p>
+                    <p class="mainText">744</p>
                 </div>
-                <div class="dashboard-lists-specific bg-warning">
-                    
+                <div class="dashboard-user-specific bg-dark">
+                    <p class="adminText">Total Admin</p>
+                    <p class="mainText">5</p>
+                    <p class="studentText">Total Student</p>
+                    <p class="mainText">473</p>
                 </div>
             </div>
             <div class="dashboard-lists-footer">
                 <a href="">View Users</a>
             </div>
         </div>
-
-
-
-
-
-
-
 
         <div class="dashboard-lists shadow">
             <div class="dashboard-lists-header">
@@ -181,10 +178,17 @@
                 <p>To-Do Lists</p>
             </div>
             <div class="dashboard-lists-body bg-dark">
-                
+                <div class="dashboard-lists-overall bg-dark">
+                    <p class="labelText">Total To-Do List</p>
+                    <p class="mainText">96</p>
+                </div>
+                <div class="dashboard-lists-specific bg-dark">
+                    <p class="labelText">Total Tasks</p>
+                    <p class="mainText">823</p>
+                </div>
             </div>
             <div class="dashboard-lists-footer">
-                
+                <a href="">View To-Do Lists</a>
             </div>
         </div>
         <div class="dashboard-lists shadow">
@@ -194,10 +198,17 @@
                 <p>Planners</p>
             </div>
             <div class="dashboard-lists-body bg-dark">
-                
+                <div class="dashboard-lists-overall bg-dark">
+                    <p class="labelText">Total Planner</p>
+                    <p class="mainText">34</p>
+                </div>
+                <div class="dashboard-lists-specific bg-dark">
+                    <p class="labelText">Total Events</p>
+                    <p class="mainText">764</p>
+                </div>
             </div>
             <div class="dashboard-lists-footer">
-                
+                <a href="">View Planners</a>
             </div>
         </div>
         <div class="dashboard-lists shadow">
@@ -207,10 +218,13 @@
                 <p>Themes</p>
             </div>
             <div class="dashboard-lists-body bg-dark">
-                
+                <div class="dashboard-theme-overall bg-dark">
+                    <p class="labelText">Total Themes</p>
+                    <p class="mainText">6</p>
+                </div>
             </div>
             <div class="dashboard-lists-footer">
-                
+                <a href="">View Themes</a>
             </div>
         </div>
     </div>

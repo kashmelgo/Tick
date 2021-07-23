@@ -3668,11 +3668,99 @@
   #admin-dashboard-listView .dashboard-lists-body .dashboard-lists-overall{
     width: 50%;
     transition: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-lists-overall .labelText{
+    margin: 0;
+    font-weight: 600;
+    color: #7e7e7e;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-lists-overall .mainText{
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: "Jost", sans-serif;
+    margin: 0;
+    color: #73c5eb;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-user-specific{
+    width: 50%;
+    transition: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-user-specific .adminText{
+    margin: 0;
+    font-weight: 600;
+    color: #7e7e7e;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-user-specific .studentText{
+    margin: 3% 0 0 0;
+    font-weight: 600;
+    color: #7e7e7e;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-user-specific .mainText{
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Jost", sans-serif;
+    margin: 0;
+    color: rgb(139, 139, 139);
   }
 
   #admin-dashboard-listView .dashboard-lists-body .dashboard-lists-specific{
     width: 50%;
     transition: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-lists-specific .labelText{
+    margin: 0;
+    font-weight: 600;
+    color: #7e7e7e;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-lists-specific .mainText{
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "Jost", sans-serif;
+    margin-bottom: 5%;
+    color: rgb(139, 139, 139);
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-theme-overall{
+    width: 100%;
+    transition: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-theme-overall .labelText{
+    margin: 0;
+    font-weight: 600;
+    color: #7e7e7e;
+  }
+
+  #admin-dashboard-listView .dashboard-lists-body .dashboard-theme-overall .mainText{
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: "Jost", sans-serif;
+    margin: 0;
+    color: #73c5eb;
   }
 
   #admin-dashboard-listView .dashboard-lists-footer{
