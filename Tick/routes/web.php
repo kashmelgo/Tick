@@ -62,5 +62,11 @@ Route::post('profile/edit', [App\Http\Controllers\ProfileController::class, 'upd
 
 Route::get('todolist/{list_id}', [App\Http\Controllers\ToDoListController::class, 'showListContent'])->name('todolist-tasks');
 
+//Admin Routes
+
 Route::get('admin-dashboard', [App\Http\Controllers\HomeController::class, 'admin-dashboard'])->name('admin-dashboard');
+Route::get('admin-users', [App\Http\Controllers\AdminController::class, 'viewUsers'])->name('admin-users');
+Route::get('admin-todolists', [App\Http\Controllers\AdminController::class, 'viewTodolists'])->name('admin-todolists');
+Route::get('admin-planners', [App\Http\Controllers\AdminController::class, 'viewPlanners'])->name('admin-planners');
+Route::get('admin-themes', [App\Http\Controllers\AdminController::class, 'viewThemes'])->name('admin-themes');
 
