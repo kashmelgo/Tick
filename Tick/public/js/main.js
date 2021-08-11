@@ -325,6 +325,30 @@ function viewtype(num) {
   }
 }
 
+function userFilter(num) {
+  var All = document.querySelector('#admin-user-nav .user-all');
+  var Admin = document.querySelector('#admin-user-nav .user-admin');
+  var Student = document.querySelector('#admin-user-nav .user-student');
+
+  All.style.backgroundColor = "rgb(243, 243, 243)";
+  All.style.color = "#000";
+  Admin.style.backgroundColor = "rgb(243, 243, 243)";
+  Admin.style.color = "#000";
+  Student.style.backgroundColor = "rgb(243, 243, 243)";
+  Student.style.color = "#000";
+  
+  if (num==0) {
+    All.style.backgroundColor = "#3b3b3b";
+    All.style.color = "#fff";
+  } else if(num==1){
+    Admin.style.backgroundColor = "#3b3b3b";
+    Admin.style.color = "#fff";
+  } else{
+    Student.style.backgroundColor = "#3b3b3b";
+    Student.style.color = "#fff";
+  }
+}
+
 function loadTheme(theme_id) {
   if(theme_id == 1){
     //background

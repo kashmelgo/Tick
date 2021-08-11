@@ -66,17 +66,17 @@
                 <div class="dashboard-stats">
                     <div class="dashboard-user-overall bg-dark">
                         <p class="labelText">Total Users</p>
-                        <p class="mainText">423</p>
+                        <p class="mainText">{{$users}}</p>
                     </div>
                     <div class="dashboard-user-specific">
                         <p class="admin-labelText">Total Admin</p>
-                        <p class="admin-mainText">123</p>
+                        <p class="admin-mainText">{{$user_admin}}</p>
                         <p class="user-labelText">Total Students</p>
-                        <p class="user-mainText">259</p>
+                        <p class="user-mainText">{{$user_student}}</p>
                     </div>
                 </div>
                 <div class="dashboard-button">
-                    <a href="">View Users</a>
+                    <a href="admin-users">View Users</a>
                 </div>
             </div>
         </div>
@@ -91,15 +91,15 @@
                 <div class="dashboard-stats">
                     <div class="dashboard-stats-overall bg-dark">
                         <p class="labelText">Total To-Do Lists</p>
-                        <p class="mainText">23</p>
+                        <p class="mainText">{{$todolists}}</p>
                     </div>
                     <div class="dashboard-stats-specific">
                         <p class="user-labelText">Total Tasks</p>
-                        <p class="user-mainText">3056</p>
+                        <p class="user-mainText">{{$tasks}}</p>
                     </div>
                 </div>
                 <div class="dashboard-button">
-                    <a href="">View To-Do Lists</a>
+                    <a href="admin-todolists">View To-Do Lists</a>
                 </div>
             </div>
         </div>
@@ -114,15 +114,15 @@
                 <div class="dashboard-stats">
                     <div class="dashboard-stats-overall bg-dark">
                         <p class="labelText">Total Planners</p>
-                        <p class="mainText">345</p>
+                        <p class="mainText">{{$planners}}</p>
                     </div>
                     <div class="dashboard-stats-specific">
                         <p class="user-labelText">Total Events</p>
-                        <p class="user-mainText">9238</p>
+                        <p class="user-mainText">{{$plans}}</p>
                     </div>
                 </div>
                 <div class="dashboard-button">
-                    <a href="">View Planners</a>
+                    <a href="admin-planners">View Planners</a>
                 </div>
             </div>
         </div>
@@ -136,11 +136,11 @@
                 <div class="dashboard-stats">
                     <div class="dashboard-theme-overall bg-dark">
                         <p class="labelText">Total Themes</p>
-                        <p class="mainText">7</p>
+                        <p class="mainText">{{$themes}}</p>
                     </div>
                 </div>
                 <div class="dashboard-button">
-                    <a href="">View Themes</a>
+                    <a href="admin-themes">View Themes</a>
                 </div>
             </div>
         </div>
@@ -157,17 +157,17 @@
             <div class="dashboard-lists-body bg-dark">
                 <div class="dashboard-lists-overall bg-dark">
                     <p class="labelText">Total User</p>
-                    <p class="mainText">744</p>
+                    <p class="mainText">{{$users}}</p>
                 </div>
                 <div class="dashboard-user-specific bg-dark">
                     <p class="adminText">Total Admin</p>
-                    <p class="mainText">5</p>
+                    <p class="mainText">{{$user_admin}}</p>
                     <p class="studentText">Total Student</p>
-                    <p class="mainText">473</p>
+                    <p class="mainText">{{$user_student}}</p>
                 </div>
             </div>
             <div class="dashboard-lists-footer">
-                <a href="">View Users</a>
+                <a href="admin-users">View Users</a>
             </div>
         </div>
 
@@ -180,15 +180,15 @@
             <div class="dashboard-lists-body bg-dark">
                 <div class="dashboard-lists-overall bg-dark">
                     <p class="labelText">Total To-Do List</p>
-                    <p class="mainText">96</p>
+                    <p class="mainText">{{$todolists}}</p>
                 </div>
                 <div class="dashboard-lists-specific bg-dark">
                     <p class="labelText">Total Tasks</p>
-                    <p class="mainText">823</p>
+                    <p class="mainText">{{$tasks}}</p>
                 </div>
             </div>
             <div class="dashboard-lists-footer">
-                <a href="">View To-Do Lists</a>
+                <a href="admin-todolists">View To-Do Lists</a>
             </div>
         </div>
         <div class="dashboard-lists shadow">
@@ -200,15 +200,15 @@
             <div class="dashboard-lists-body bg-dark">
                 <div class="dashboard-lists-overall bg-dark">
                     <p class="labelText">Total Planner</p>
-                    <p class="mainText">34</p>
+                    <p class="mainText">{{$planners}}</p>
                 </div>
                 <div class="dashboard-lists-specific bg-dark">
                     <p class="labelText">Total Events</p>
-                    <p class="mainText">764</p>
+                    <p class="mainText">{{$plans}}</p>
                 </div>
             </div>
             <div class="dashboard-lists-footer">
-                <a href="">View Planners</a>
+                <a href="admin-planners">View Planners</a>
             </div>
         </div>
         <div class="dashboard-lists shadow">
@@ -220,11 +220,11 @@
             <div class="dashboard-lists-body bg-dark">
                 <div class="dashboard-theme-overall bg-dark">
                     <p class="labelText">Total Themes</p>
-                    <p class="mainText">6</p>
+                    <p class="mainText">{{$themes}}</p>
                 </div>
             </div>
             <div class="dashboard-lists-footer">
-                <a href="">View Themes</a>
+                <a href="admin-themes">View Themes</a>
             </div>
         </div>
     </div>
