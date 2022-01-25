@@ -19,6 +19,7 @@
   <link href="{{asset('vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
   <link href="{{asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
   <link href="{{asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="{{asset('css/style2.css')}}" rel="stylesheet">

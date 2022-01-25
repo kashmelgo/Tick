@@ -70,3 +70,5 @@ Route::get('admin-todolists', [App\Http\Controllers\AdminController::class, 'vie
 Route::get('admin-planners', [App\Http\Controllers\AdminController::class, 'viewPlanners'])->name('admin-planners');
 Route::get('admin-themes', [App\Http\Controllers\AdminController::class, 'viewThemes'])->name('admin-themes');
 
+Route::get('admin-users/searchUsers', [App\Http\Controllers\AdminController::class, 'searchUsers'])->name('searchUsers');
+Route::delete('admin-users/deleteUser/{id}',[App\Http\Controllers\AdminController::class, 'deleteUser'])->name('deleteUser');

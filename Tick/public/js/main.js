@@ -34,7 +34,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -165,7 +165,7 @@
   }
 
   /**
-   * Initiate  glightbox 
+   * Initiate  glightbox
    */
   const glightbox = GLightbox({
     selector: '.glightbox'
@@ -219,7 +219,7 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
@@ -278,7 +278,7 @@ function showUpdateInfo(num) {
   var input = document.querySelectorAll('.user-details-info form input');
   var editbtn = document.querySelectorAll('.editBtn');
   var buttons = document.querySelectorAll('.user-details-edit-onhover');
-  
+
   for (let i = 0; i < editbtn.length; i++) {
     p[i].style.display = "block";
     form[i].style.display = "none";
@@ -300,7 +300,7 @@ function closeUpdateInfo() {
   var input = document.querySelectorAll('.user-details-info form input');
   var editbtn = document.querySelectorAll('.editBtn');
   var buttons = document.querySelectorAll('.user-details-edit-onhover');
-  
+
   for (let i = 0; i < editbtn.length; i++) {
     p[i].style.display = "block";
     form[i].style.display = "none";
@@ -310,7 +310,7 @@ function closeUpdateInfo() {
 }
 
 function viewtype(num) {
-  
+
   if(num==0){
     document.querySelector('#admin-dashboard-views .cardview').style.display = "block";
     document.querySelector('#admin-dashboard-views .listview').style.display = "none";
@@ -326,6 +326,7 @@ function viewtype(num) {
 }
 
 function userFilter(num) {
+
   var All = document.querySelector('#admin-user-nav .user-all');
   var Admin = document.querySelector('#admin-user-nav .user-admin');
   var Student = document.querySelector('#admin-user-nav .user-student');
@@ -336,8 +337,8 @@ function userFilter(num) {
   Admin.style.color = "#000";
   Student.style.backgroundColor = "rgb(243, 243, 243)";
   Student.style.color = "#000";
-  
-  if (num==0) {
+
+  if (num==0 || num==null) {
     All.style.backgroundColor = "#3b3b3b";
     All.style.color = "#fff";
   } else if(num==1){
@@ -458,6 +459,6 @@ function loadTheme(theme_id) {
     document.documentElement.style.setProperty('--hover-text','#ff5972');
     document.documentElement.style.setProperty('--other-text','#fff');
   }
-} 
+}
 
 
