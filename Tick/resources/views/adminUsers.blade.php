@@ -47,6 +47,7 @@
         </a>
     </div>
 
+
 @endsection
 
 @section('pageContent')
@@ -65,7 +66,6 @@
             </button>
         </form>
 
-
         {{-- <div class="user-buttons user-admin" onclick="userFilter(1)">
             <i class="bi bi-person"></i>Admin
         </div>
@@ -80,6 +80,9 @@
                 <div class="row">
                     <div class="col-sm-8"><h2>User <b>Details</b></h2></div>
                     <div class="col-sm-4">
+                        <div class="add-floating">
+                            <button class=" shadow"  data-toggle="modal" data-target="#add-admin-modal"><i class="bi bi-plus"></i></button>
+                        </div>
                         <form method="GET" action="{{route('searchUsers')}}">
                             <div class="search-box d-flex">
                                 <button type ="submit" class="btn material-icons"></button>
@@ -106,15 +109,44 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->user_type}}</td>
-                        <td>
+                        <td class="d-flex">
                             {{-- <a href="#" class="edit" title="" data-toggle="tooltip" data-original-title="Edit"><i class="material-icons"></i></a> --}}
                             <form method="post" action="{{ route('deleteUser', $user->id) }}">
                                 @method('DELETE')
                                 @csrf
-                                <input class="btn btn-warning" type="submit" value="Delete" />
+                                <input class="m-1 btn btn-warning" type="submit" value="Delete" />
                             </form>
+                            <button class="m-1 btn btn-primary"  data-toggle="modal" data-target="#edit-user-modal-{{$user->id}}">Edit</button>
                         </td>
                     </tr>
+
+                    <div class="modal fade" id="edit-user-modal-{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header"> </div>
+
+                                <form action="{{route('editUser', $user->id)}}" method="POST" role="form">
+                                    @csrf
+                                    <div class="modal-body">
+                                        <div class="add-list-form">
+                                            <label for="admin_name">Name</label>
+                                            <input type="text" name="name" value = {{$user->name}}>
+                                        </div>
+                                        <div class="add-list-form">
+                                            <label for="admin_name">Email</label>
+                                            <input type="text" name="email" value = {{$user->email}}>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <div class="add-list-submit">
+                                            <input class="btn btn-primary" type="submit" value="Confirm Edit">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
 
                 </tbody>
@@ -122,7 +154,40 @@
             {{$users->links()}}
         </div>
 
+        <div class="modal fade" id="add-admin-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header"> </div>
+
+                    <form action="{{route('adminUsers.createAdmin')}}" method="POST" role="form">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="add-list-form">
+                                <label for="admin_name">Admin Name</label>
+                                <input type="text" name="adminname" placeholder="e.g. John Doe">
+                            </div>
+                            <div class="add-list-form">
+                                <label for="admin_name">Admin Email</label>
+                                <input type="text" name="adminemail" placeholder="e.g. admin@gmail.com">
+                            </div>
+                            <div class="add-list-form">
+                                <label for="admin_name">Password</label>
+                                <input type="password" name="adminpassword">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <div class="add-list-submit">
+                                <input class="btn" type="submit" value="Create">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 
 @endsection
 

@@ -18,6 +18,10 @@ class Todolist extends Model
     protected $table = 'to_do_lists';
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'student_id');
+    }
+
+    public function tasks(){
+        return $this->hasMany(Task::class, 'task_id');
     }
 }

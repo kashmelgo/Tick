@@ -70,5 +70,15 @@ Route::get('admin-todolists', [App\Http\Controllers\AdminController::class, 'vie
 Route::get('admin-planners', [App\Http\Controllers\AdminController::class, 'viewPlanners'])->name('admin-planners');
 Route::get('admin-themes', [App\Http\Controllers\AdminController::class, 'viewThemes'])->name('admin-themes');
 
+Route::post('admin-users', [App\Http\Controllers\AdminController::class, 'createAdmin'])->name('adminUsers.createAdmin');
 Route::get('admin-users/searchUsers', [App\Http\Controllers\AdminController::class, 'searchUsers'])->name('searchUsers');
+Route::post('admin-users/editUser/{id}',[App\Http\Controllers\AdminController::class, 'editUser'])->name('editUser');
 Route::delete('admin-users/deleteUser/{id}',[App\Http\Controllers\AdminController::class, 'deleteUser'])->name('deleteUser');
+
+Route::delete('admin-todolists/deleteList/{id}',[App\Http\Controllers\AdminController::class, 'deleteList'])->name('deleteList');
+Route::get('admin-users/searchLists', [App\Http\Controllers\AdminController::class, 'searchLists'])->name('searchLists');
+
+Route::post('admin-themes/createTheme', [App\Http\Controllers\AdminController::class, 'createTheme'])->name('createTheme');
+Route::get('admin-themes/searchThemes', [App\Http\Controllers\AdminController::class, 'searchThemes'])->name('searchThemes');
+Route::delete('admin-themes/deleteTheme/{id}',[App\Http\Controllers\AdminController::class, 'deleteTheme'])->name('deleteTheme');
+Route::post('admin-themes/editTheme/{id}', [App\Http\Controllers\AdminController::class, 'editTheme'])->name('editTheme');
