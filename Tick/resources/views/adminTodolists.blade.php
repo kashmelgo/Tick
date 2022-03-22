@@ -28,15 +28,7 @@
             </div>
         </a>
     </div>
-    <div class="admin-sidebar-tab">
-        <p>Planners</p>
-        <a href="{{route('admin-planners')}}">
-            <div class="tab">
-                <div class="tab-color"></div>
-                <div class="tab-text"><i class="bi bi-check-all"></i> Show All</div>
-            </div>
-        </a>
-    </div>
+    
     <div class="admin-sidebar-tab">
         <p>Themes</p>
         <a href="{{route('admin-themes')}}">
@@ -78,9 +70,9 @@
         <table class="table table-striped table-hover table-bordered">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Todolist Name <i class="fa fa-sort"></i></th>
-                    <th>Owned by</th>
+                    <th>List ID</th>
+                    <th>User ID <i class="fa fa-sort"></i></th>
+                    <th>List Name</th>
                     <th>Number of Tasks</th>
                     <th>Actions</th>
                 </tr>
@@ -89,9 +81,10 @@
                 @foreach ($todolists as $todolist)
                 <tr>
                     <td>{{$todolist->list_id}}</td>
+                    <td>{{$todolist->user->id}}</td>
                     <td>{{$todolist->list_name}}</td>
-                    <td>{{$todolist->user->name}}</td>
                     <td> {{$todolist->tasks->count()}}</td>
+                    
                     <td>
                         {{-- <a href="#" class="edit" title="" data-toggle="tooltip" data-original-title="Edit"><i class="material-icons"></i></a> --}}
                         <form method="post" action="{{ route('deleteList', $todolist->list_id) }}">

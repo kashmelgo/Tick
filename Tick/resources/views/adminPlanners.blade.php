@@ -28,15 +28,7 @@
             </div>
         </a>
     </div>
-    <div class="admin-sidebar-tab">
-        <p>Planners</p>
-        <a href="{{route('admin-planners')}}">
-            <div class="tab active">
-                <div class="tab-color"></div>
-                <div class="tab-text"><i class="bi bi-check-all"></i> Show All</div>
-            </div>
-        </a>
-    </div>
+    
     <div class="admin-sidebar-tab">
         <p>Themes</p>
         <a href="{{route('admin-themes')}}">

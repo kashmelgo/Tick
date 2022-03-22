@@ -28,15 +28,7 @@
             </div>
         </a>
     </div>
-    <div class="admin-sidebar-tab">
-        <p>Planners</p>
-        <a href="{{route('admin-planners')}}">
-            <div class="tab">
-                <div class="tab-color"></div>
-                <div class="tab-text"><i class="bi bi-check-all"></i> Show All</div>
-            </div>
-        </a>
-    </div>
+    
     <div class="admin-sidebar-tab">
         <p>Themes</p>
         <a href="{{route('admin-themes')}}">
@@ -104,28 +96,7 @@
             </div>
         </div>
         
-        <div class="dashboard-cards shadow">
-            <div class="dashboard-cards-header shadow-sm">
-                <i class="bi bi-calendar3-week"></i>
-                <i class="bi bi-calendar3 card-onhover"></i>
-                <p>Planners</p>
-            </div>
-            <div class="dashboard-cards-body">
-                <div class="dashboard-stats">
-                    <div class="dashboard-stats-overall bg-dark">
-                        <p class="labelText">Total Planners</p>
-                        <p class="mainText">{{$planners}}</p>
-                    </div>
-                    <div class="dashboard-stats-specific">
-                        <p class="user-labelText">Total Events</p>
-                        <p class="user-mainText">{{$plans}}</p>
-                    </div>
-                </div>
-                <div class="dashboard-button">
-                    <a href="admin-planners">View Planners</a>
-                </div>
-            </div>
-        </div>
+        
         <div class="dashboard-cards shadow">
             <div class="dashboard-cards-header shadow-sm">
                 <i class="bi bi-brightness-alt-high"></i>

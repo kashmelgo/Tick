@@ -28,15 +28,7 @@
             </div>
         </a>
     </div>
-    <div class="admin-sidebar-tab">
-        <p>Planners</p>
-        <a href="{{route('admin-planners')}}">
-            <div class="tab">
-                <div class="tab-color"></div>
-                <div class="tab-text"><i class="bi bi-check-all"></i> Show All</div>
-            </div>
-        </a>
-    </div>
+    
     <div class="admin-sidebar-tab">
         <p>Themes</p>
         <a href="{{route('admin-themes')}}">
@@ -95,7 +87,7 @@
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>User ID</th>
                         <th>Name <i class="fa fa-sort"></i></th>
                         <th>Email</th>
                         <th>User Type</th>

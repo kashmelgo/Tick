@@ -25,21 +25,7 @@
             </div>
         </a>
     </div>
-    <div class="sidebar-tab">
-        <p>Planner</p>
-        <a href="{{ route('planner.index') }}">
-            <div class="tab">
-                <div class="tab-color"></div>
-                <div class="tab-text"><i class="bi bi-check-all"></i> All</div>
-            </div>
-        </a>
-        <a href="">
-            <div class="tab">
-                <div class="tab-color"></div>
-                <div class="tab-text"><i class="bi bi-calendar2-plus"></i> Add Plan</div>
-            </div>
-        </a>
-    </div>
+   
     <div class="sidebar-tab">
         <p>Shop</p>
         <a href="{{ route('themes') }}">
@@ -214,14 +200,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="overall-plan-stats">
-                            <div class="content-level">
-                                <p>Planned Event(s)</p>
-                                <div class="level-container shadow">
-                                    <p>--</p>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

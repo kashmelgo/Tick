@@ -28,15 +28,7 @@
             </div>
         </a>
     </div>
-    <div class="admin-sidebar-tab">
-        <p>Planners</p>
-        <a href="{{route('admin-planners')}}">
-            <div class="tab">
-                <div class="tab-color"></div>
-                <div class="tab-text"><i class="bi bi-check-all"></i> Show All</div>
-            </div>
-        </a>
-    </div>
+    
     <div class="admin-sidebar-tab">
         <p>Themes</p>
         <a href="{{route('admin-themes')}}">
@@ -100,7 +92,7 @@
                             @csrf
                             <input class="btn btn-warning" type="submit" value="Delete" />
                         </form>
-                        <button class="m-1 btn btn-primary"  data-toggle="modal" data-target="#edit-theme-modal-{{$theme->theme_id}}">Edit</button>
+                        <button class="mx-2 my-0 btn btn-primary"  data-toggle="modal" data-target="#edit-theme-modal-{{$theme->theme_id}}">Edit</button>
                     </td>
                 </tr>
 
