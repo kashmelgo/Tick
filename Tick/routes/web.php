@@ -48,6 +48,7 @@ Route::get('/todolist-add-task/{task_id}', [App\Http\Controllers\ToDoListControl
 Route::post('/todolist-add-home',[App\Http\Controllers\ToDoListController::class, 'createListHome'])->name('todolist-add.createListHome');
 
 Route::post('/todolist-add-task', [App\Http\Controllers\ToDoListController::class, 'createTask'])->name('todolist-add-task.createTask');
+Route::post('/todolist-new-task', [App\Http\Controllers\ToDoListController::class, 'newTask'])->name('todolist-new-task.newTask');
 Route::post('/todolist-add-task-insidelist', [App\Http\Controllers\ToDoListController::class, 'createTaskInsideList'])->name('todolist-add-task-insidelist.createTaskInsideList');
 Route::post('/todolist-update-task', [App\Http\Controllers\ToDoListController::class, 'updateTask'])->name('todolist-add-task.updateTask');
 

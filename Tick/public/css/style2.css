@@ -1286,6 +1286,29 @@
     opacity: .9;
   }
 
+  .main-content-list .listCard:hover > .preview .preview-list-task{
+    opacity: 0;
+  }
+
+  .main-content-list .listCard .preview .preview-list-task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: .2s;
+  }
+
+  .main-content-list .listCard .preview .preview-list-task .status-progress{
+    width: 200px;
+    height: 30px;
+    background-color: var(--sub-button-background-color);
+  }
+
+  .main-content-list .listCard .preview .preview-list-task .status-progress .progress{
+    height: 100%;
+    background-color: var(--main-button-background-color);
+  }
+
   .main-content-list .listCard:hover > .preview-title{
     height: 50px;
     padding: 12px;
@@ -1325,7 +1348,7 @@
     bottom: 0;
     opacity: 1;
     right: 55%;
-    transition: .2s;
+    transition: .5s;
   }
 
   .main-content-list .listCard .preview a:nth-of-type(1) div:hover{
@@ -1336,7 +1359,7 @@
     bottom: 0;
     opacity: 1;
     left: 55%;
-    transition: .3s;
+    transition: .6s;
   }
 
   .main-content-list .listCard .preview a:nth-of-type(2) div:hover{
@@ -2002,6 +2025,7 @@
   #tasks{
     height: 100%;
     display: flex;
+    justify-content: center;
   }
 
   #tasks .list-tasks{
@@ -2042,6 +2066,11 @@
     height: calc(100% - 50px);
     width: 100%;
     padding-top: 10px;
+    overflow-y:auto;
+  }
+
+  #tasks .list-of-tasks-content::-webkit-scrollbar{
+    width: 5px;
   }
 
 
@@ -2141,119 +2170,27 @@
   }
 
   #tasks .list-side{
-    width: 60%;
-    padding-left: .7%;
+    width: 20%;
   }
 
   #tasks .list-side-upper{
     width: 100%;
     height: 40%;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
   }
 
-  #tasks .list-side-upper .task-info{
-    width: 60%;
-    height: 100%;
-    padding: 5px;
-    display: none;
-
-  }
-
   #tasks .list-side-upper .list-status{
-    width: 40%;
+    width: 100%;
     height: 100%;
     padding: 5px;
   }
 
   #tasks .list-side .new-task{
     width: 100%;
-    height: 60%;
+    height: 10%;
     padding: 5px;
-  }
-
-  #tasks .list-side-upper .task-info div{
-    height: 100%;
-    border-radius: 5px;
-    background-color: var(--tab-body-background-color);
-  }
-
-  #tasks .list-side-upper .task-info .task-info-title{
-    height: 15%;
-    display: flex;
-    justify-content: left;
-    border-radius: 0;
-    background-color: var(--tab-heading-background-color);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-
-  #tasks .list-side-upper .task-info .task-info-title p{
-    margin: auto 20px;
-    color: var(--tab-sub-heading-text);
-  }
-
-  #tasks .list-side-upper .task-info .task-info-title span{
-    margin: auto 10px;
-    font-weight: 700;
-    color: var(--tab-heading-text);
-  }
-
-  #tasks .list-side-upper .task-info .task-info-body{
-    height: 65%;
-    border-radius: 0;
-    padding: 20px;
-  }
-
-  #tasks .list-side-upper .task-info .task-info-body div{
-    height: 50px;
-    color: var(--tab-sub-heading-text);
-  }
-
-  #tasks .list-side-upper .task-info .task-info-body div span{
-    color: var(--form-label-text);
-    font-weight: 800;
-    margin-left: 10px;
-  }
-
-  #tasks .list-side-upper .task-info .task-info-footer{
-    height: 20%;
-    border-radius: 0;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    display: flex;
-    flex-direction: row-reverse;
-    padding-right: 10px;
-  }
-
-  #tasks .list-side-upper .task-info .task-info-footer div{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 30px;
-    padding: 5px;
-    border-radius: 50px;
-  }
-
-  #tasks .list-side-upper .task-info .task-info-footer div button{
-    border: 0;
-    padding: 8px 10px;
-    border-radius: 5px;
-  }
-
-  #tasks .list-side-upper .task-info .task-info-footer div form .task-delete{
-    background-color: var(--tab-body-background-color);
-    color: var(--other-text);
-    font-weight: 600;
-  }
-
-  #tasks .list-side-upper .task-info .task-info-footer div .task-update{
-    background-color: var(--tab-heading-background-color);
-    color:var(--tab-heading-text);
-    font-weight: 600;
   }
 
   .update-task-modal{
@@ -2452,11 +2389,19 @@
   }
 
   #tasks .list-side .new-task .new-task-content{
-    height: 100%;
+    height: 70%;
     width: 100%;
     border-radius: 5px;
     background-color: var(--tab-body-background-color);
     border-radius: 10px;
+  }
+
+  #tasks .list-side .new-task .new-task-content button{
+    background-color: var(--main-button-background-color);
+    color: var(--page-heading-text);
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
   }
 
   #tasks .list-side .new-task .new-task-header{
@@ -2469,6 +2414,8 @@
     font-size: 1.2rem;
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-weight: bold;
   }
 
   #tasks .list-side .new-task .new-task-header p{
@@ -2485,13 +2432,13 @@
   }
 
   #tasks .list-side .new-task .new-task-body label{
-    width: 20%;
+    width: 80%;
     color: var(--form-label-text);
     font-weight: 700;
   }
 
   #tasks .list-side .new-task .new-task-body input{
-    width: 70%;
+    width: 100%;
     height: 50px;
     border-radius: 5px;
     border: 0;

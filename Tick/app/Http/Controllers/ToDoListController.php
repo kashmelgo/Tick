@@ -66,6 +66,22 @@ class ToDoListController extends Controller
         return redirect('/todolist');
     }
 
+    public function newTask(Request $request){
+        $lists = Todolist::where('student_id', Auth::user()->id)->get();
+        $task = new Task;
+        $task->task_id = $request->task_id;
+        $task->task = $request->task;
+        $task->due_date = $request->due_date;
+        $task->time = $request->time;
+        $task->task_type = $request->task_type;
+        $task->subject = $request->subject;
+        $task->date_finished = null;
+        $task->task_points = $this->getPoints($task->task_type);
+        $task->save();
+        $tasks = Task::all();
+        return $this->showListContent($request->task_id);
+    }
+
     public function createTaskInsideList(Request $request){
         $lists = Todolist::where('student_id', Auth::user()->id)->get();
         $task = new Task;

@@ -75,10 +75,31 @@
         <div class="main-content-list">
 
             @foreach ($lists as $list)
+                @php
+                    $alltask = 0;
+                    $donetask = 0;
+                    $progress = 0;
+                    foreach ($tasks as $task) {
+                        if ($task->task_id === $list->task_id){
+                            $alltask+=1;
+                            if($task->status === 'done')
+                                $donetask+=1;
+                        }   
+                    }
+                    if($alltask>0)
+                        $progress = round(($donetask/$alltask)*100,2);
+                @endphp
                 <div class="listCard shadow">
                     <div class="preview">
                         <div class="preview-list-task">
-
+                            @if ($alltask > 0)
+                                <h2 for="">{{$progress}}%</h2>
+                            @else
+                                <h2 for="">-   -</h2>
+                            @endif
+                            <div class="status-progress">
+                                <div class="progress" style="width: {{$progress}}%"></div>
+                            </div>
                         </div>
                         <a>
                             <div class="preview-view shadow-sm" data-toggle="modal" data-target="#previewList-{{$list->list_id}}">Preview</div>
