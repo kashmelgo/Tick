@@ -72,7 +72,6 @@
     <div id="profile">
         <div class="profile-main">
             <div class="profile-content shadow-sm">
-                <div class="profile-picture"></div>
                 <div class="profile-details">
                     @foreach ($profile as $profile)
                         <div class="username">
