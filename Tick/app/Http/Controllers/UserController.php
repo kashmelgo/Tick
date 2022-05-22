@@ -48,11 +48,9 @@ class UserController extends Controller
         $details->address_id = $id;
         $details->fname = $request->fname;
         $details->lname = $request->lname;
-        $details->image = $request->profile->store('images/profilepic', 'public');
         $details->contact_num = $request->contact;
         $details->birthdate = $request->birthdate;
         $details->gender = $request->gender;
-        $details->educational_attainment = $request->attainment;
         $details->save();
 
         $address = new Address;

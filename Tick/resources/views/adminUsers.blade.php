@@ -106,9 +106,9 @@
                             <form method="post" action="{{ route('deleteUser', $user->id) }}">
                                 @method('DELETE')
                                 @csrf
-                                <input class="m-1 btn btn-warning" type="submit" value="Delete" />
+                                <input class="m-1 btn btn-dark text-light" type="submit" value="Delete" />
                             </form>
-                            <button class="m-1 btn btn-primary"  data-toggle="modal" data-target="#edit-user-modal-{{$user->id}}">Edit</button>
+                            <button class="m-1 btn btn-dark text-light"  data-toggle="modal" data-target="#edit-user-modal-{{$user->id}}">Edit</button>
                         </td>
                     </tr>
 
@@ -147,30 +147,66 @@
         </div>
 
         <div class="modal fade" id="add-admin-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered " role="document">
               <div class="modal-content">
-                <div class="modal-header"> </div>
+                <div class="modal-header bg-dark"> </div>
 
                     <form action="{{route('adminUsers.createAdmin')}}" method="POST" role="form">
                         @csrf
-                        <div class="modal-body">
-                            <div class="add-list-form">
-                                <label for="admin_name">Admin Name</label>
-                                <input type="text" name="adminname" placeholder="e.g. John Doe">
+                        <div class="modal-body admin-add-user-form">
+                            <div class=" form-group my-3">
+                                <input class="form-control form-control-sm" type="text" name="adminname" placeholder="Username">
                             </div>
-                            <div class="add-list-form">
-                                <label for="admin_name">Admin Email</label>
-                                <input type="text" name="adminemail" placeholder="e.g. admin@gmail.com">
+                            <div class="form-group my-3">
+                                <input class="form-control form-control-sm" type="text" name="adminemail" placeholder="Email">
                             </div>
-                            <div class="add-list-form">
-                                <label for="admin_name">Password</label>
-                                <input type="password" name="adminpassword">
+                            <div class="form-group my-3">
+                                <input class="form-control form-control-sm" type="password" name="adminpassword" placeholder="Password">
+                            </div>
+                            <div class="form-group my-3">
+                                <input class="form-control form-control-sm" type="password" name="adminusertype" placeholder="UserType">
+                            </div>
+                            <div class="row">
+                                <div class="form-group my-3 col m-0">
+                                    <input class="form-control form-control-sm" type="text" name="adminfname" placeholder="First Name">
+                                </div>
+                                <div class="form-group my-3 col m-0">
+                                    <input class="form-control form-control-sm" type="text" name="adminlname" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="form-group my-3">
+                                <input class="form-control form-control-sm" type="password" name="admingender" placeholder="Gender">
+                            </div>
+                            <div class="form-group my-3">
+                                <input class="form-control form-control-sm" type="password" name="admincontact" placeholder="Contact">
+                            </div>
+                            <div class="form-group my-3">
+                                <input class="form-control form-control-sm" type="password" name="adminbirthdate" placeholder="Birthdate">
+                            </div>
+                            <div class=" form-group my-3 col">
+                                <input class="form-control form-control-sm" type="text" name="adminstreet" placeholder="Street">
+                            </div>
+                            <div class="row">
+                                <div class=" form-group my-3 col m-0">
+                                    <input class="form-control form-control-sm" type="text" name="adminbarangay" placeholder="Barangay">
+                                </div>
+                                <div class="form-group my-3 col m-0">
+                                    <input class="form-control form-control-sm" type="text" name="admincity" placeholder="City/Town">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" form-group my-3 col m-0">
+                                    <input class="form-control form-control-sm" type="text" name="adminprovince" placeholder="Province">
+                                </div>
+                                <div class="form-group my-3 col m-0">
+                                    <input class="form-control form-control-sm" type="text" name="adminpostal" placeholder="Postal Code">
+                                </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <div class="add-list-submit">
-                                <input class="btn" type="submit" value="Create">
+                        <div class="modal-footer bg-dark px-4">
+                            <button type="button" class="btn p-0 text-light" data-dismiss="modal">Close</button>
+                            <div class="btn p-0">
+                                <input class="btn btn-sm text-light btn-success" type="submit" value="Create">
                             </div>
                         </div>
                     </form>

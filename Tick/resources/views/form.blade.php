@@ -61,18 +61,6 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="attainment" class="col-md-4 col-form-label text-md-right">{{ __('Educational Attainment') }}</label>
-
-                                    <div class="col-md-6 ">
-                                        <select id="attainment" class="form-control" name="attainment" required>
-                                            <option value="" hidden>Select . . .</option>
-                                            <option value="HighSchool">Highschool</option>
-                                            <option value="College">College</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
                                     <label for="contact" class="col-md-4 col-form-label text-md-right">{{ __('Contact Number') }}</label>
 
                                     <div class="col-md-6">
@@ -80,13 +68,6 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="profile" class="col-md-4 col-form-label text-md-right">{{ __('Profile Picture') }}</label>
-
-                                    <div class="col-md-6">
-                                        <input id="profile" type="file" class="form-control" name="profile">
-                                    </div>
-                                </div>
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">{{ __('Street') }}</label>
 
