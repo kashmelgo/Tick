@@ -144,7 +144,7 @@ class AdminController extends Controller
         $theme->cost = $request->themecost;
         $theme->save();
 
-        return redirect('adminThemes');
+        return $this->viewThemes();
     }
     public function editTheme($id, Request $request){
         $theme = Theme::find($id);
@@ -153,14 +153,14 @@ class AdminController extends Controller
         $theme->cost = $request->themecost;
         $theme->save();
 
-        return redirect('adminThemes');
+        return $this->viewThemes();
     }
 
     public function deleteTheme($id){
         $theme = Theme::find($id);
         $theme->delete();
 
-        return redirect('adminThemes');
+        return $this->viewThemes();
     }
 
     public function searchThemes(Request $request){
