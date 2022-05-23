@@ -3765,9 +3765,7 @@
     padding: .5% 1%;
     width: auto;
     font-weight: 600;
-    user-select: none;
-    border-radius: 10px;
-    background-color: rgb(243, 243, 243);
+    user-select: none;  
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -3776,14 +3774,10 @@
     cursor: pointer;
   }
 
-  #admin-user-nav .user-buttons:nth-of-type(1){
-    color: #fff;
-    background-color: #3b3b3b;
-  }
 
   #admin-user-nav .user-buttons:hover{
     color: #fff;
-    background-color: #6d6d6d;
+    background-color: #1b1b1b;
   }
 
   #admin-user-nav .user-buttons i{

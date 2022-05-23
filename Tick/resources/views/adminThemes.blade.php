@@ -64,7 +64,7 @@
                     <form method="GET" action="{{route('searchThemes')}}">
                         <div class="search-box d-flex">
                             <button type ="submit" class="btn material-icons"></button>
-                            <input type="text" name="searchthemes" class="form-control" placeholder="Search…">
+                            <input type="text" name="searchthemes" class="form-control" placeholder="Search Theme">
                         </div>
                     </form>
                 </div>
@@ -90,33 +90,31 @@
                         <form method="post" action="{{ route('deleteTheme', $theme->theme_id) }}">
                             @method('DELETE')
                             @csrf
-                            <input class="btn btn-warning" type="submit" value="Delete" />
+                            <input class="btn btn-dark" type="submit" value="Delete" />
                         </form>
-                        <button class="mx-2 my-0 btn btn-primary"  data-toggle="modal" data-target="#edit-theme-modal-{{$theme->theme_id}}">Edit</button>
+                        <button class="mx-2 my-0 btn btn-dark"  data-toggle="modal" data-target="#edit-theme-modal-{{$theme->theme_id}}">Edit</button>
                     </td>
                 </tr>
 
                 <div class="modal fade" id="edit-theme-modal-{{$theme->theme_id}}" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
-                        <div class="modal-header"> </div>
+                        <div class="modal-header bg-dark"> </div>
 
                             <form action="{{route('editTheme', $theme->theme_id)}}" method="POST" role="form">
                                 @csrf
                                 <div class="modal-body">
-                                    <div class="add-list-form">
-                                        <label for="themename">Theme Name</label>
-                                        <input type="text" name="themename" value = {{$theme->theme_name}}>
-                                    </div>
-                                    <div class="add-list-form">
-                                        <label for="themecost">Email</label>
-                                        <input type="number" name="themecost" value = {{$theme->cost}}>
+                                    <div class="form-group my-3">
+                                        <input class="form-control form-control-sm my-2" type="text" value = {{$theme->theme_name}} readonly>
+                                        <input class="form-control form-control-sm my-2" type="text" name="themename" value = "" placeholder="New Theme Name">
+                                        <input class="form-control form-control-sm my-2" type="number" value = {{$theme->cost}} readonly>
+                                        <input class="form-control form-control-sm my-2" type="number" name="themecost" value = "" placeholder="New Theme Cost">
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <div class="modal-footer bg-dark">
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                     <div class="add-list-submit">
-                                        <input class="btn btn-primary" type="submit" value="Confirm Edit">
+                                        <input class="btn btn-success" type="submit" value="Confirm Edit">
                                     </div>
                                 </div>
                             </form>
@@ -133,24 +131,20 @@
     <div class="modal fade" id="add-theme-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
-            <div class="modal-header"> </div>
+            <div class="modal-header bg-dark"> </div>
 
                 <form action="{{route('createTheme')}}" method="POST" role="form">
                     @csrf
                     <div class="modal-body">
-                        <div class="add-list-form">
-                            <label for="theme_name">Theme Name</label>
-                            <input type="text" name="themename" placeholder="Orange">
-                        </div>
-                        <div class="add-list-form">
-                            <label for="theme_cost">Theme Cost</label>
-                            <input type="number" name="themecost" placeholder="5000">
+                        <div class="form-group my-3">
+                            <input class="form-control form-control-sm my-2" type="text" name="themename" value = "" placeholder="Theme Name">
+                            <input class="form-control form-control-sm my-2" type="number" name="themecost" value = "" placeholder="Theme Cost">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <div class="modal-footer bg-dark">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                         <div class="add-list-submit">
-                            <input class="btn" type="submit" value="Create">
+                            <input class="btn btn-success" type="submit" value="Create">
                         </div>
                     </div>
                 </form>

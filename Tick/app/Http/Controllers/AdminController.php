@@ -41,7 +41,9 @@ class AdminController extends Controller
 
         $last=User::latest()->first();
         $useradded = User::find($last->id);
+
         $id=$useradded->id;
+        
         $useradded->user_detail_id = $useradded->id;
         $useradded->account_id = $useradded->id;
         $useradded->save();

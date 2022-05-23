@@ -78,7 +78,7 @@
                         <form method="GET" action="{{route('searchUsers')}}">
                             <div class="search-box d-flex">
                                 <button type ="submit" class="btn material-icons"></button>
-                                <input type="text" name="searchusers" class="form-control" placeholder="Search…">
+                                <input type="text" name="searchusers" class="form-control" placeholder="Search Username">
                             </div>
                         </form>
                     </div>
@@ -115,24 +115,22 @@
                     <div class="modal fade" id="edit-user-modal-{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                           <div class="modal-content">
-                            <div class="modal-header"> </div>
+                            <div class="modal-header bg-dark"> </div>
 
                                 <form action="{{route('editUser', $user->id)}}" method="POST" role="form">
                                     @csrf
                                     <div class="modal-body">
-                                        <div class="add-list-form">
-                                            <label for="admin_name">Name</label>
-                                            <input type="text" name="name" value = {{$user->name}}>
-                                        </div>
-                                        <div class="add-list-form">
-                                            <label for="admin_name">Email</label>
-                                            <input type="text" name="email" value = {{$user->email}}>
+                                        <div class="form-group my-3">
+                                            <input class="form-control form-control-sm my-2" type="text" value = {{$user->name}} readonly>
+                                            <input class="form-control form-control-sm my-2" type="text" name="name" value = "" placeholder="New Username">
+                                            <input class="form-control form-control-sm my-2" type="email" value = {{$user->email}} readonly>
+                                            <input class="form-control form-control-sm my-2" type="email" name="email" value = "" placeholder="New Email">
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <div class="modal-footer bg-dark">
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                         <div class="add-list-submit">
-                                            <input class="btn btn-primary" type="submit" value="Confirm Edit">
+                                            <input class="btn btn-success" type="submit" value="Confirm Edit">
                                         </div>
                                     </div>
                                 </form>

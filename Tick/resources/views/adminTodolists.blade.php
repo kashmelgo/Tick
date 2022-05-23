@@ -61,7 +61,7 @@
                     <form method="GET" action="{{route('searchLists')}}">
                         <div class="search-box d-flex">
                             <button type ="submit" class="btn material-icons"></button>
-                            <input type="text" name="searchlists" class="form-control" placeholder="Search…">
+                            <input type="text" name="searchlists" class="form-control" placeholder="Search List">
                         </div>
                     </form>
                 </div>
@@ -90,7 +90,7 @@
                         <form method="post" action="{{ route('deleteList', $todolist->list_id) }}">
                             @method('DELETE')
                             @csrf
-                            <input class="btn btn-warning" type="submit" value="Delete" />
+                            <input class="btn btn-dark" type="submit" value="Delete" />
                         </form>
                     </td>
                 </tr>
