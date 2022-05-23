@@ -164,7 +164,11 @@
                                 <input class="form-control form-control-sm" type="password" name="adminpassword" placeholder="Password">
                             </div>
                             <div class="form-group my-3">
-                                <input class="form-control form-control-sm" type="password" name="adminusertype" placeholder="UserType">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="adminusertype">
+                                    <option selected hidden>UserType</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Student">Student</option>
+                                </select>
                             </div>
                             <div class="row">
                                 <div class="form-group my-3 col m-0">
@@ -175,13 +179,17 @@
                                 </div>
                             </div>
                             <div class="form-group my-3">
-                                <input class="form-control form-control-sm" type="password" name="admingender" placeholder="Gender">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="admingender">
+                                    <option selected hidden>Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
                             </div>
                             <div class="form-group my-3">
-                                <input class="form-control form-control-sm" type="password" name="admincontact" placeholder="Contact">
+                                <input class="form-control form-control-sm" type="number" name="admincontact" placeholder="Contact">
                             </div>
                             <div class="form-group my-3">
-                                <input class="form-control form-control-sm" type="password" name="adminbirthdate" placeholder="Birthdate">
+                                <input class="form-control form-control-sm" type="date" name="adminbirthdate" placeholder="Birthdate">
                             </div>
                             <div class=" form-group my-3 col">
                                 <input class="form-control form-control-sm" type="text" name="adminstreet" placeholder="Street">

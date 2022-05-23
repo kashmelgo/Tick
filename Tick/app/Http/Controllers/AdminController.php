@@ -5,7 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Theme;
 use App\Models\Todolist;
 use App\Models\User;
+use App\Models\UserDetails;
+use App\Models\Address;
+use App\Models\Account;
+use App\Models\Planner;
+use App\Models\OwnedTheme;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -23,14 +30,55 @@ class AdminController extends Controller
     }
 
     public function createAdmin(Request $request){
+
         $newadmin = User::create([
             'name' => $request->adminname,
             'email' => $request->adminemail,
-            'password' => $request->adminpassword,
+            'password' => Hash::make($request->adminpassword),
         ]);
-
-        $newadmin->user_type = 'Admin';
+        $newadmin->user_type = $request->adminusertype;
         $newadmin->save();
+
+        $last=User::latest()->first();
+        $useradded = User::find($last->id);
+        $id=$useradded->id;
+        $useradded->user_detail_id = $useradded->id;
+        $useradded->account_id = $useradded->id;
+        $useradded->save();
+
+        $details = new UserDetails;
+        $details->address_id = $id;
+        $details->fname = $request->adminfname;
+        $details->lname = $request->adminlname;
+        $details->contact_num = $request->admincontact;
+        $details->birthdate = $request->adminbirthdate;
+        $details->gender = $request->admingender;
+        $details->save();
+
+        $address = new Address;
+        $address->street = $request->adminstreet;
+        $address->barangay = $request->adminbarangay;
+        $address->town = $request->admincity;
+        $address->province = $request->adminprovince;
+        $address->postal_code = $request->adminpostal;
+        $address->save();
+
+        $account = new Account;
+        $account->theme_id=1;
+        $account->level_id=1;
+        $account->save();
+
+        $list = new ToDoList;
+        $list->task_id = $id;
+        $list->student_id = $id;
+        $list->list_name = "To Do List: ";
+        $list->save();
+
+        $ownedtheme = new OwnedTheme;
+        $ownedtheme->theme_id = 1;
+        $ownedtheme->student_id = $id;
+        $ownedtheme->status = 'equipped';
+        $ownedtheme->save();
 
         return redirect('admin-users');
     }
