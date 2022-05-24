@@ -11,6 +11,9 @@ class LevelController extends Controller
 {
 
     public function canLevelUp(Account $account){
-        dd($account);
+        if($account->accounts()->experience > $account->accounts()->level()->experience_needed){
+            $account->accounts()->experience = $account->accounts()->level()->experience_needed - $account->accounts()->experience;
+            $account->accounts()->level_id += 1;
+        }
     }
 }

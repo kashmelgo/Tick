@@ -34,7 +34,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
+
 
         if(Auth::user()->user_type == "Student"){
             $lists = Todolist::where('student_id', Auth::user()->id)->get();
@@ -48,7 +48,7 @@ class HomeController extends Controller
             foreach ($accounttheme as $accounttheme) {
                 $theme = $accounttheme->theme_id;
             }
-            return view('home', ['theme'=>$theme,'lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel] );
+            return view('home', ['theme' => $theme, 'lists'=>$lists, 'tasks'=>$tasks, 'sidebarexperience'=>$sidebarexperience, 'sidebarlevel'=>$sidebarlevel] );
         }
         else {
             $users = User::all()->count();
@@ -61,7 +61,7 @@ class HomeController extends Controller
             $themes = Theme::all()->count();
             return view('adminHome',['users'=>$users,'user_admin'=>$user_admin,'user_student'=>$user_student,'todolists'=>$todolists,'tasks'=>$tasks,'planners'=>$planners,'plans'=>$plans,'themes'=>$themes]);
         }
-        
-        
+
+
     }
 }

@@ -83,7 +83,8 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        $task = Task::find($id);
+        $task->delete();
         return view ('todolist');
     }
 }
